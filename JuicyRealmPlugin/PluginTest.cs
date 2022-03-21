@@ -73,7 +73,7 @@ namespace JuicyRealmPlugin
             }
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                //F6：上帝模式
+                //F7：上帝模式
                 this.GodModOn = !this.GodModOn;
                 if (this.GodModOn)
                 {
@@ -83,6 +83,12 @@ namespace JuicyRealmPlugin
                 {
                     Logger.LogInfo("上帝模式已关闭");
                 }
+            }
+            if (Input.GetKeyDown(KeyCode.F8))
+            {
+                //F8：增加500金币
+                Logger.LogInfo("增加500金币");
+                PlayerObjectPatch.POinstance.Coin += 500;
             }
         }
 
