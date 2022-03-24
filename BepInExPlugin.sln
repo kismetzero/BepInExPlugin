@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuicyRealmPlugin", "JuicyRealmPlugin\JuicyRealmPlugin.csproj", "{455E9CFC-3DCC-44ED-AD1A-75836C2034EC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuicyRealmPlugin", "JuicyRealmPlugin\JuicyRealmPlugin.csproj", "{DA7354CD-BC8F-4DF0-8083-4797B52F5E71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardOfLegendPlugin", "WizardOfLegendPlugin\WizardOfLegendPlugin.csproj", "{9A947881-544C-4608-A859-8A4AFF4B9097}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardOfLegendPlugin", "WizardOfLegendPlugin\WizardOfLegendPlugin.csproj", "{6085AA04-118D-4DC7-A220-EB647B1FDAA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroforcePlugin", "BroforcePlugin\BroforcePlugin.csproj", "{E5CEB180-3605-489E-98F0-0E743DAFDBA5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{455E9CFC-3DCC-44ED-AD1A-75836C2034EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{455E9CFC-3DCC-44ED-AD1A-75836C2034EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{455E9CFC-3DCC-44ED-AD1A-75836C2034EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{455E9CFC-3DCC-44ED-AD1A-75836C2034EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A947881-544C-4608-A859-8A4AFF4B9097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A947881-544C-4608-A859-8A4AFF4B9097}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A947881-544C-4608-A859-8A4AFF4B9097}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A947881-544C-4608-A859-8A4AFF4B9097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA7354CD-BC8F-4DF0-8083-4797B52F5E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7354CD-BC8F-4DF0-8083-4797B52F5E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7354CD-BC8F-4DF0-8083-4797B52F5E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7354CD-BC8F-4DF0-8083-4797B52F5E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6085AA04-118D-4DC7-A220-EB647B1FDAA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6085AA04-118D-4DC7-A220-EB647B1FDAA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6085AA04-118D-4DC7-A220-EB647B1FDAA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6085AA04-118D-4DC7-A220-EB647B1FDAA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5CEB180-3605-489E-98F0-0E743DAFDBA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5CEB180-3605-489E-98F0-0E743DAFDBA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5CEB180-3605-489E-98F0-0E743DAFDBA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5CEB180-3605-489E-98F0-0E743DAFDBA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
