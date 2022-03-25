@@ -9,7 +9,6 @@ namespace JuicyRealmPlugin
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest PTinstance;
-
         private bool UpdateFirstOn;
 
         public bool GodModOn;
@@ -20,7 +19,6 @@ namespace JuicyRealmPlugin
         {
             Logger.LogInfo("Hello World！！！");
             Logger.LogInfo("插件的Awake()方法被调用了");
-
             PTinstance = this;
             this.UpdateFirstOn = true;
 
@@ -47,43 +45,28 @@ namespace JuicyRealmPlugin
 
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                //F5：无限技能
-                this.infiniteSkillOn = !this.infiniteSkillOn;
-                if (this.infiniteSkillOn)
-                {
-                    Logger.LogInfo("无限技能已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("无限技能已关闭");
-                }
+                //F5：上帝模式
+                this.GodModOn = !this.GodModOn;
+                if (this.GodModOn) { Logger.LogInfo("上帝模式已开启"); }
+                else { Logger.LogInfo("上帝模式已关闭"); }
             }
+
             if (Input.GetKeyDown(KeyCode.F6))
             {
                 //F6：无限金币
                 this.infiniteGoldOn = !this.infiniteGoldOn;
-                if (this.infiniteGoldOn)
-                {
-                    Logger.LogInfo("无限金钱已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("无限金钱已关闭");
-                }
+                if (this.infiniteGoldOn) { Logger.LogInfo("无限金钱已开启"); }
+                else { Logger.LogInfo("无限金钱已关闭"); }
             }
+
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                //F7：上帝模式
-                this.GodModOn = !this.GodModOn;
-                if (this.GodModOn)
-                {
-                    Logger.LogInfo("上帝模式已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("上帝模式已关闭");
-                }
+                //F7：无限技能
+                this.infiniteSkillOn = !this.infiniteSkillOn;
+                if (this.infiniteSkillOn) { Logger.LogInfo("无限技能已开启"); }
+                else { Logger.LogInfo("无限技能已关闭"); }
             }
+
             if (Input.GetKeyDown(KeyCode.F8))
             {
                 //F8：增加500金币
@@ -109,10 +92,7 @@ namespace JuicyRealmPlugin
             {
                 if (PluginTest.PTinstance.infiniteGoldOn)
                 {
-                    if (__instance.Coin < 233)
-                    {
-                        __instance.Coin = 350;
-                    }
+                    if (__instance.Coin < 233) { __instance.Coin = 350; }
                 }
             }
 
@@ -121,24 +101,15 @@ namespace JuicyRealmPlugin
             {
                 if (PluginTest.PTinstance.infiniteGoldOn)
                 {
-                    if (__instance.Coin < 233)
-                    {
-                        __instance.Coin = 350;
-                    }
+                    if (__instance.Coin < 233) { __instance.Coin = 350; }
                 }
             }
 
             [HarmonyPrefix, HarmonyPatch(typeof(PlayerObject), "Hurt")]
             public static bool HurtPrefix(PlayerObject __instance)
             {
-                if (PluginTest.PTinstance.GodModOn)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
+                if (PluginTest.PTinstance.GodModOn) { return false; }
+                else { return true; }
 
             }
 
@@ -147,10 +118,7 @@ namespace JuicyRealmPlugin
             {
                 if (PluginTest.PTinstance.GodModOn)
                 {
-                    if (__instance.CurrentHp < 3)
-                    {
-                        __instance.CurrentHp = 5;
-                    }
+                    if (__instance.CurrentHp < 3) { __instance.CurrentHp = 5; }
                 }
             }
         }

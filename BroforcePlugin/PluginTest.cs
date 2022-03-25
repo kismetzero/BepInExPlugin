@@ -9,31 +9,29 @@ namespace BroforcePlugin
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest PTinstance;
-
         private bool UpdateFirstOn;
 
-        public bool GodModOn;
         public bool infiniteLiveOn;
-        public bool infiniteAmmoOn;
+        public bool GodModOn;
+        public bool LockAmmoOn;
 
         void Awake()
         {
             Logger.LogInfo("Hello World！！！");
             Logger.LogInfo("插件的Awake()方法被调用了");
-
             PTinstance = this;
             this.UpdateFirstOn = true;
 
-            this.GodModOn = false;
             this.infiniteLiveOn = false;
-            this.infiniteAmmoOn = false;
+            this.GodModOn = false;
+            this.LockAmmoOn = false;
         }
 
         void Start()
         {
             Logger.LogInfo("插件的Start()方法被调用了");
             Harmony.CreateAndPatchAll(typeof(PlayerPatch));
-            Harmony.CreateAndPatchAll(typeof(HeroControllerPatch));
+            Harmony.CreateAndPatchAll(typeof(BroBasePatch));
             Logger.LogInfo("Harmony补丁已开启");
         }
 
@@ -49,47 +47,32 @@ namespace BroforcePlugin
             {
                 //F5：无限生命
                 this.infiniteLiveOn = !this.infiniteLiveOn;
-                if (this.infiniteLiveOn)
-                {
-                    Logger.LogInfo("无限生命已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("无限生命已关闭");
-                }
+                if (this.infiniteLiveOn) { Logger.LogInfo("无限生命已开启"); }
+                else { Logger.LogInfo("无限生命已关闭"); }
             }
+
             if (Input.GetKeyDown(KeyCode.F6))
             {
                 //F6：上帝模式
                 this.GodModOn = !this.GodModOn;
-                if (this.GodModOn)
-                {
-                    Logger.LogInfo("上帝模式已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("上帝模式已关闭");
-                }
+                if (this.GodModOn) { Logger.LogInfo("上帝模式已开启"); }
+                else { Logger.LogInfo("上帝模式已关闭"); }
             }
+
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                //F7：无限弹药
-                this.infiniteAmmoOn = !this.infiniteAmmoOn;
-                if (this.infiniteAmmoOn)
-                {
-                    Logger.LogInfo("无限弹药已开启");
-                }
-                else
-                {
-                    Logger.LogInfo("无限弹药已关闭");
-                }
+                //F7：锁定弹药
+                this.LockAmmoOn = !this.LockAmmoOn;
+                if (this.LockAmmoOn) { Logger.LogInfo("锁定弹药已开启"); }
+                else { Logger.LogInfo("锁定弹药已关闭"); }
             }
-         /*   if (Input.GetKeyDown(KeyCode.F8))
+
+            if (Input.GetKeyDown(KeyCode.F8))
             {
-                //F8：增加500金币
-                Logger.LogInfo("增加500金币");
-                //PlayerObjectPatch.POinstance.Coin += 500;
-            }*/
+                //F8：增加弹药
+                Logger.LogInfo("增加弹药");
+                BroBasePatch.BBinstance.SpecialAmmo += 1;
+            }
         }
     }
 
@@ -113,39 +96,27 @@ namespace BroforcePlugin
                 if (__instance.Lives < 3) { __instance.AddLife(); }
             }
 
-            if (PluginTest.PTinstance.GodModOn)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (PluginTest.PTinstance.GodModOn) { return false; }
+            else { return true; }
         }
     }
 
-    class HeroControllerPatch
+    class BroBasePatch
     {
-        public static HeroController HCinstance;
+        public static BroBase BBinstance;
 
-        [HarmonyPrefix, HarmonyPatch(typeof(HeroController), "Awake")]
-        public static void getPinstance(HeroController __instance)
+        [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "Awake")]
+        public static void getPinstance(BroBase __instance)
         {
-            HCinstance = __instance;
-            Debug.Log("HeroController的实例获取方法已调用");
+            BBinstance = __instance;
+            Debug.Log("BroBase的实例获取方法已调用");
         }
 
-        [HarmonyPrefix, HarmonyPatch(typeof(HeroController), "SetSpecialAmmo")]
-        public static bool SetSpecialAmmoPrefix(HeroController __instance)
+        [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "SpecialAmmo", MethodType.Setter)]
+        public static bool SpecialAmmoPrefix(BroBase __instance)
         {
-            if (PluginTest.PTinstance.infiniteAmmoOn)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            if (PluginTest.PTinstance.LockAmmoOn) { return false; }
+            else { return true; }
         }
     }
 }

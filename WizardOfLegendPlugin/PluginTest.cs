@@ -8,14 +8,12 @@ namespace WizardOfLegendPlugin
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest PTinstance;
-
         private bool UpdateFirstOn;
 
         void Awake()
         {
             Logger.LogInfo("Hello World！！！");
             Logger.LogInfo("插件的Awake()方法被调用了");
-
             PTinstance = this;
             this.UpdateFirstOn = true;
         }
