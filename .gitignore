@@ -1,9 +1,9 @@
 
-JuicyRealmPlugin/bin
-JuicyRealmPlugin/obj
+/JuicyRealmPlugin/bin
+/JuicyRealmPlugin/obj
 
-WizardOfLegendPlugin/bin
-WizardOfLegendPlugin/obj
+/WizardOfLegendPlugin/bin
+/WizardOfLegendPlugin/obj
 
-BroforcePlugin/bin
-BroforcePlugin/obj
+/BroforcePlugin/bin
+/BroforcePlugin/obj
