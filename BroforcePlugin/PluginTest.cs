@@ -11,8 +11,7 @@ namespace BroforcePlugin
         public static PluginTest PTinstance;
         private bool UpdateFirstOn;
 
-        public bool infiniteLiveOn;
-        public bool GodModOn;
+        public bool LockLiveOn;
         public bool LockAmmoOn;
 
         void Awake()
@@ -22,8 +21,7 @@ namespace BroforcePlugin
             PTinstance = this;
             this.UpdateFirstOn = true;
 
-            this.infiniteLiveOn = false;
-            this.GodModOn = false;
+            this.LockLiveOn = false;
             this.LockAmmoOn = false;
         }
 
@@ -45,18 +43,17 @@ namespace BroforcePlugin
 
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                //F5：无限生命
-                this.infiniteLiveOn = !this.infiniteLiveOn;
-                if (this.infiniteLiveOn) { Logger.LogInfo("无限生命已开启"); }
-                else { Logger.LogInfo("无限生命已关闭"); }
+                //F5：锁定生命
+                this.LockLiveOn = !this.LockLiveOn;
+                if (this.LockLiveOn) { Logger.LogInfo("锁定生命已开启"); }
+                else { Logger.LogInfo("锁定生命已关闭"); }
             }
 
             if (Input.GetKeyDown(KeyCode.F6))
             {
-                //F6：上帝模式
-                this.GodModOn = !this.GodModOn;
-                if (this.GodModOn) { Logger.LogInfo("上帝模式已开启"); }
-                else { Logger.LogInfo("上帝模式已关闭"); }
+                //F6：增加生命
+                Logger.LogInfo("增加生命");
+                PlayerPatch.Pinstance.AddLife();
             }
 
             if (Input.GetKeyDown(KeyCode.F7))
@@ -90,13 +87,7 @@ namespace BroforcePlugin
         [HarmonyPrefix, HarmonyPatch(typeof(Player), "RemoveLife")]
         public static bool RemoveLifePrefix(Player __instance)
         {
-            if (PluginTest.PTinstance.infiniteLiveOn)
-            {
-                __instance.AddLife();
-                if (__instance.Lives < 3) { __instance.AddLife(); }
-            }
-
-            if (PluginTest.PTinstance.GodModOn) { return false; }
+            if (PluginTest.PTinstance.LockLiveOn) { return false; }
             else { return true; }
         }
     }
