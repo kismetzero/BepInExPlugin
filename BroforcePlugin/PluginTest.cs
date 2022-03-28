@@ -11,18 +11,12 @@ namespace BroforcePlugin
         public static PluginTest PTinstance;
         private bool UpdateFirstOn;
 
-        public bool LockLiveOn;
-        public bool LockAmmoOn;
-
         void Awake()
         {
             Logger.LogInfo("Hello World！！！");
             Logger.LogInfo("插件的Awake()方法被调用了");
             PTinstance = this;
             this.UpdateFirstOn = true;
-
-            this.LockLiveOn = false;
-            this.LockAmmoOn = false;
         }
 
         void Start()
@@ -41,32 +35,28 @@ namespace BroforcePlugin
                 this.UpdateFirstOn = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.F5))
+            if (Input.GetKeyDown(KeyCode.Keypad1))
             {
-                //F5：锁定生命
-                this.LockLiveOn = !this.LockLiveOn;
-                if (this.LockLiveOn) { Logger.LogInfo("锁定生命已开启"); }
-                else { Logger.LogInfo("锁定生命已关闭"); }
+                //num1：锁定生命
+                FlagControl.LockLive.SwitchFlag();
             }
 
-            if (Input.GetKeyDown(KeyCode.F6))
+            if (Input.GetKeyDown(KeyCode.Keypad4))
             {
-                //F6：增加生命
+                //num4：增加生命
                 Logger.LogInfo("增加生命");
                 PlayerPatch.Pinstance.AddLife();
             }
 
-            if (Input.GetKeyDown(KeyCode.F7))
+            if (Input.GetKeyDown(KeyCode.Keypad2))
             {
-                //F7：锁定弹药
-                this.LockAmmoOn = !this.LockAmmoOn;
-                if (this.LockAmmoOn) { Logger.LogInfo("锁定弹药已开启"); }
-                else { Logger.LogInfo("锁定弹药已关闭"); }
+                //num2：无限弹药
+                FlagControl.infiniteAmmo.SwitchFlag();
             }
 
-            if (Input.GetKeyDown(KeyCode.F8))
+            if (Input.GetKeyDown(KeyCode.Keypad5))
             {
-                //F8：增加弹药
+                //num5：增加弹药
                 Logger.LogInfo("增加弹药");
                 BroBasePatch.BBinstance.SpecialAmmo += 1;
             }
@@ -84,10 +74,11 @@ namespace BroforcePlugin
             Debug.Log("Player的实例获取方法已调用");
         }
 
+        //移除生命
         [HarmonyPrefix, HarmonyPatch(typeof(Player), "RemoveLife")]
         public static bool RemoveLifePrefix(Player __instance)
         {
-            if (PluginTest.PTinstance.LockLiveOn) { return false; }
+            if (FlagControl.LockLive.value) { return false; }
             else { return true; }
         }
     }
@@ -97,17 +88,23 @@ namespace BroforcePlugin
         public static BroBase BBinstance;
 
         [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "Awake")]
-        public static void getPinstance(BroBase __instance)
+        public static void getBBinstance(BroBase __instance)
         {
             BBinstance = __instance;
             Debug.Log("BroBase的实例获取方法已调用");
         }
 
+        //特殊弹药
         [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "SpecialAmmo", MethodType.Setter)]
-        public static bool SpecialAmmoPrefix(BroBase __instance)
+        public static void SpecialAmmoPrefix(ref int value)
         {
-            if (PluginTest.PTinstance.LockAmmoOn) { return false; }
-            else { return true; }
+            //Debug.Log("value的值为：" + value);
+            if (FlagControl.infiniteAmmo.value)
+            {
+                if (value < 2) { value = 5; }
+            }
+
+            //return true;
         }
     }
 }
