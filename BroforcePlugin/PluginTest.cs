@@ -2,6 +2,7 @@
 using BepInEx;
 using UnityEngine;
 using HarmonyLib;
+using BroforcePlugin.PatchPack;
 
 namespace BroforcePlugin
 {
@@ -60,51 +61,6 @@ namespace BroforcePlugin
                 Logger.LogInfo("增加弹药");
                 BroBasePatch.BBinstance.SpecialAmmo += 1;
             }
-        }
-    }
-
-    class PlayerPatch
-    {
-        public static Player Pinstance;
-
-        [HarmonyPrefix, HarmonyPatch(typeof(Player), "Awake")]
-        public static void getPinstance(Player __instance)
-        {
-            Pinstance = __instance;
-            Debug.Log("Player的实例获取方法已调用");
-        }
-
-        //移除生命
-        [HarmonyPrefix, HarmonyPatch(typeof(Player), "RemoveLife")]
-        public static bool RemoveLifePrefix(Player __instance)
-        {
-            if (FlagControl.LockLive.value) { return false; }
-            else { return true; }
-        }
-    }
-
-    class BroBasePatch
-    {
-        public static BroBase BBinstance;
-
-        [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "Awake")]
-        public static void getBBinstance(BroBase __instance)
-        {
-            BBinstance = __instance;
-            Debug.Log("BroBase的实例获取方法已调用");
-        }
-
-        //特殊弹药
-        [HarmonyPrefix, HarmonyPatch(typeof(BroBase), "SpecialAmmo", MethodType.Setter)]
-        public static void SpecialAmmoPrefix(ref int value)
-        {
-            //Debug.Log("value的值为：" + value);
-            if (FlagControl.infiniteAmmo.value)
-            {
-                if (value < 2) { value = 5; }
-            }
-
-            //return true;
         }
     }
 }

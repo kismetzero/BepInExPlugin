@@ -30,7 +30,7 @@ namespace WizardOfLegendPlugin
                 Logger.LogInfo("插件的Update()方法被调用了");
                 this.UpdateFirstOn = false;
             }
-            
+
             if (Input.GetKeyDown(KeyCode.F5))
             {
                 DebugMenu.Instance.Toggle();
