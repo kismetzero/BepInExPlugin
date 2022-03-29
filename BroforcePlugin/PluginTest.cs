@@ -11,6 +11,7 @@ namespace BroforcePlugin
     {
         public static PluginTest PTinstance;
         private bool UpdateFirstOn;
+        public int HeroINT;
 
         void Awake()
         {
@@ -18,6 +19,7 @@ namespace BroforcePlugin
             Logger.LogInfo("插件的Awake()方法被调用了");
             PTinstance = this;
             this.UpdateFirstOn = true;
+            this.HeroINT = 0;
         }
 
         void Start()
@@ -25,6 +27,7 @@ namespace BroforcePlugin
             Logger.LogInfo("插件的Start()方法被调用了");
             Harmony.CreateAndPatchAll(typeof(PlayerPatch));
             Harmony.CreateAndPatchAll(typeof(BroBasePatch));
+            Harmony.CreateAndPatchAll(typeof(HeroControllerPatch));
             Logger.LogInfo("Harmony补丁已开启");
         }
 
@@ -36,30 +39,39 @@ namespace BroforcePlugin
                 this.UpdateFirstOn = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Keypad1))
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                //num1：锁定生命
+                //1：锁定生命
                 FlagControl.LockLive.SwitchFlag();
             }
 
-            if (Input.GetKeyDown(KeyCode.Keypad4))
+            if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                //num4：增加生命
+                //2：增加生命
                 Logger.LogInfo("增加生命");
                 PlayerPatch.Pinstance.AddLife();
             }
 
-            if (Input.GetKeyDown(KeyCode.Keypad2))
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                //num2：无限弹药
+                //3：无限弹药
                 FlagControl.infiniteAmmo.SwitchFlag();
             }
 
-            if (Input.GetKeyDown(KeyCode.Keypad5))
+            if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                //num5：增加弹药
+                //4：增加弹药
                 Logger.LogInfo("增加弹药");
                 BroBasePatch.BBinstance.SpecialAmmo += 1;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                //5：增加
+                Logger.LogInfo("增加");
+                this.HeroINT++;
+                if (HeroINT > 46) { HeroINT = 0; }
+                Logger.LogInfo(HeroINT);
             }
         }
     }
