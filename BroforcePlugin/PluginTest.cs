@@ -12,6 +12,9 @@ namespace BroforcePlugin
         public static PluginTest PTinstance;
         private bool UpdateFirstOn;
         public int HeroINT;
+        private String TmpHeroIntStr;
+        private bool WindowsDisplayOn;
+        private int TmpHeroINT;
 
         void Awake()
         {
@@ -20,6 +23,9 @@ namespace BroforcePlugin
             PTinstance = this;
             this.UpdateFirstOn = true;
             this.HeroINT = 0;
+            this.WindowsDisplayOn = false;
+            this.TmpHeroIntStr = "0";
+            this.TmpHeroINT = HeroINT;
         }
 
         void Start()
@@ -67,14 +73,59 @@ namespace BroforcePlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                //5：增加
-                Logger.LogInfo("增加");
-                this.HeroINT++;
-                if (HeroINT > 46) { HeroINT = 0; }
+                //5：选角色
+                Logger.LogInfo("选择");
+                WindowsDisplayOn = !WindowsDisplayOn;
+                if(WindowsDisplayOn)
+                {
+                    Logger.LogInfo("选择窗口已打开");
+                    Cursor.visible = true;
+                }
+                else
+                {
+                    Logger.LogInfo("选择窗口已关闭");
+                    HeroINT = int.Parse(TmpHeroIntStr);
+                    Cursor.visible = true;
+                }
                 Logger.LogInfo(HeroINT);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                if (HeroINT == 0)
+                {
+                    HeroINT = TmpHeroINT;
+                }
+                else
+                {
+                    TmpHeroINT = HeroINT;
+                    HeroINT = 0;
+                }
             }
         }
 
-        
+        void OnGUI()
+        {
+            if (WindowsDisplayOn)
+            {
+                // 定义窗口位置 x y 宽 高
+                Rect windowRect = new Rect(100, 100, 200, 200);
+                // 创建一个新窗口
+                // 注意：第一个参数(20210218)为窗口ID，ID尽量设置的与众不同，若与其他Mod的窗口ID相同，将会导致窗口冲突
+                windowRect = GUI.Window(114514, windowRect, DoMyWindow, "我的一个窗口");
+            }
+        }
+
+        void DoMyWindow(int winId)
+        {
+            GUILayout.BeginArea(new Rect(10, 20, 190, 100));
+            // 这里的大括号是可选的，我个人为了代码的阅读性,习惯性的进行了添加
+            // 建议大家也使用大括号这样包裹起来，让代码看起来不那么的乱
+            {
+                GUILayout.Label("请输入0-45选择角色");
+                TmpHeroIntStr = GUILayout.TextField(TmpHeroIntStr,8);
+            }
+            GUILayout.EndArea();
+        }
     }
 }
