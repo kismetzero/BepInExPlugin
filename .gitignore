@@ -1,9 +1,12 @@
 
 JuicyRealmPlugin/bin
 JuicyRealmPlugin/obj
+JuicyRealmPlugin/JuicyRealmPlugin.csproj
 
 WizardOfLegendPlugin/bin
 WizardOfLegendPlugin/obj
+WizardOfLegendPlugin/WizardOfLegendPlugin.csproj
 
 BroforcePlugin/bin
 BroforcePlugin/obj
+BroforcePlugin/BroforcePlugin.csproj
