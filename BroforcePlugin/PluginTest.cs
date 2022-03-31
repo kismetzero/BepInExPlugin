@@ -80,13 +80,15 @@ namespace BroforcePlugin
                 if(WindowsDisplayOn)
                 {
                     Logger.LogInfo("选择窗口已打开");
-                    Cursor.visible = true;
+                    //Cursor.visible = true;
+                    //ShowMouseController.ShowMouse = true;
                 }
                 else
                 {
                     Logger.LogInfo("选择窗口已关闭");
                     HeroINT = int.Parse(TmpHeroIntStr);
-                    Cursor.visible = false;
+                    //Cursor.visible = false;
+                    //ShowMouseController.ShowMouse = true;
                 }
                 Logger.LogInfo(HeroINT);
             }
@@ -110,6 +112,7 @@ namespace BroforcePlugin
         {
             if (WindowsDisplayOn)
             {
+                Cursor.visible = true;
                 // 定义窗口位置 x y 宽 高
                 Rect windowRect = new Rect(100, 100, 200, 200);
                 // 创建一个新窗口
