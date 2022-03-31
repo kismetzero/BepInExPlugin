@@ -30,6 +30,11 @@ namespace BroforcePlugin
             }
         }
 
+        public String Status()
+        {
+            return this.name + "的状态：" + this.value;
+        }
+
         //上帝模式
         private static FlagControl GodModOn = null;
         public static FlagControl GodMod
