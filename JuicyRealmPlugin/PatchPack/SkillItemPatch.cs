@@ -16,10 +16,14 @@ namespace JuicyRealmPlugin.PatchPack
             Debug.Log("SkillItem的实例获取方法已调用");
         }
 
+        //技能能否用
         [HarmonyPrefix, HarmonyPatch(typeof(SkillItem), "CanUse")]
         public static void CanUsePrefix(SkillItem __instance)
         {
-            __instance.timer = __instance.cd;
+            if (FlagControl.infiniteSkill.value)
+            {
+                __instance.timer = __instance.cd;
+            }
         }
     }
 }
