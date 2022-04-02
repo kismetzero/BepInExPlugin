@@ -115,8 +115,9 @@ namespace BroforcePlugin
                 Cursor.visible = true;
                 // 定义窗口位置 x y 宽 高
                 Rect windowRect = new Rect(100, 100, 200, 200);
-                // 创建一个新窗口
-                // 注意：第一个参数(20210218)为窗口ID，ID尽量设置的与众不同，若与其他Mod的窗口ID相同，将会导致窗口冲突
+                /* 创建一个新窗口
+                       注意：第一个参数(20210218)为窗口ID，ID尽量设置的与众不同，
+                       若与其他Mod的窗口ID相同，将会导致窗口冲突  */
                 windowRect = GUI.Window(114514, windowRect, DoMyWindow, "修改器窗口");
             }
         }
@@ -124,8 +125,8 @@ namespace BroforcePlugin
         void DoMyWindow(int winId)
         {
             GUILayout.BeginArea(new Rect(10, 20, 180, 160));
-            // 这里的大括号是可选的，我个人为了代码的阅读性,习惯性的进行了添加
-            // 建议大家也使用大括号这样包裹起来，让代码看起来不那么的乱
+            /* 这里的大括号是可选的，我个人为了代码的阅读性,习惯性的进行了添加
+               建议大家也使用大括号这样包裹起来，让代码看起来不那么的乱 */
             {
                 GUILayout.Label("请输入0-45选择角色");
                 TmpHeroIntStr = GUILayout.TextField(TmpHeroIntStr);

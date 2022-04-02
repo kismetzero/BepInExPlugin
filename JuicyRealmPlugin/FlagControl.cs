@@ -132,5 +132,20 @@ namespace JuicyRealmPlugin
                 return infiniteSkillOn;
             }
         }
+
+        //功能窗口
+        private static FlagControl WindowsDisplayOn = null;
+        public static FlagControl WindowsDisplay
+        {
+            get
+            {
+                if (WindowsDisplayOn == null)
+                {
+                    WindowsDisplayOn = new FlagControl("功能窗口");
+                }
+                return WindowsDisplayOn;
+            }
+        }
+
     }
 }
