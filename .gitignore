@@ -1,13 +1,13 @@
-#BepInEx/
+BepInEx/
 
 JuicyRealmPlugin/bin
 JuicyRealmPlugin/obj
-#JuicyRealmPlugin/JuicyRealmPlugin.csproj
+JuicyRealmPlugin/JuicyRealmPlugin.csproj
 
 WizardOfLegendPlugin/bin
 WizardOfLegendPlugin/obj
-#WizardOfLegendPlugin/WizardOfLegendPlugin.csproj
+WizardOfLegendPlugin/WizardOfLegendPlugin.csproj
 
 BroforcePlugin/bin
 BroforcePlugin/obj
-#BroforcePlugin/BroforcePlugin.csproj
+BroforcePlugin/BroforcePlugin.csproj
