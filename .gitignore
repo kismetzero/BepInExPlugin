@@ -11,3 +11,7 @@
 /BroforcePlugin/bin
 /BroforcePlugin/obj
 /BroforcePlugin/BroforcePlugin.csproj
+
+/StreetsOfRoguePlugin/bin
+/StreetsOfRoguePlugin/obj
+/StreetsOfRoguePlugin/BroforcePlugin.csproj
