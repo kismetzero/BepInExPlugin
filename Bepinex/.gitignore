@@ -1,0 +1,31 @@
+# ========================
+# .NET / C# 构建产物
+# ========================
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+# [Ll]ib/
+# *.dll
+*.pdb
+*.cache
+*.tmp
+*.user
+*.suo
+*.ncb
+*.sdf
+*.opensdf
+*.log
+*.nupkg
+*.snupkg
+
+# ========================
+# IDE 与编辑器配置
+# ========================
+.vs/
+.idea/
+*.csproj.user
+*.sln.docstates
+Recovery/
+Backup*/
+
