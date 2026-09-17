@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroforcePlugin", "BroforcePlugin\BroforcePlugin.csproj", "{3F4F1F6C-C9EF-4CD5-82A7-7073D24D779F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterTheGungeonPlugin", "EnterTheGungeonPlugin\EnterTheGungeonPlugin.csproj", "{7B99003F-76DE-4E71-9A39-26C8741AC683}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3F4F1F6C-C9EF-4CD5-82A7-7073D24D779F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F4F1F6C-C9EF-4CD5-82A7-7073D24D779F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F4F1F6C-C9EF-4CD5-82A7-7073D24D779F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
