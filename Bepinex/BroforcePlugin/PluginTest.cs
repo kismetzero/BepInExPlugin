@@ -1,7 +1,5 @@
 ﻿using BepInEx;
 using HarmonyLib;
-using System;
-using System.Reflection.Emit;
 using UnityEngine;
 
 namespace BroforcePlugin
@@ -11,6 +9,7 @@ namespace BroforcePlugin
     {
         public static PluginTest _instance;
         public bool UpdateFirstOn = true;
+        public CheatFunc cfi;
 
         public int pNum = 0;
         public HeroType hType = HeroType.IndianaBrones;
