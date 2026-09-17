@@ -1,9 +1,21 @@
 ## 武装原型 Broforce
 
-### ~.
+### 实现
 
 ```csharp
+HeroController.players[playerNum].character.invulnerable = true;
 
+HeroController.AddLife(playerNum);
+
+HeroController.ChangeBro(playerNum, HeroType.None);
+
+var broBase = HeroController.players[playerNum].character as BroBase;
+broBase.SpecialAmmo += 1;
+```
+
+### ~. 参考
+
+```csharp
 public class Unit : NetworkedUnit {
     public virtual bool invulnerable;
 }
@@ -27,14 +39,5 @@ public class HeroController : NetworkObject, ISerializationCallbackReceiver {
     public static void AddLife(int playerNum);
     public static void ChangeBro(int playerNum, HeroType newHeroType);
 }
-
-HeroController.players[playerNum].character.invulnerable = true;
-
-HeroController.AddLife(playerNum);
-
-HeroController.ChangeBro(playerNum, HeroType.None);
-
-var broBase = HeroController.players[playerNum].character as BroBase;
-broBase.SpecialAmmo += 1;
 
 ```
