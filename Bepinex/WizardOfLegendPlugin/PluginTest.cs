@@ -9,29 +9,16 @@ namespace WizardOfLegendPlugin
     {
         public static PluginTest _instance;
         public bool UpdateFirstOn = true;
+
         void Awake()
         {
             Logger.LogInfo("Awake()");
             _instance = this;
         }
-        void OnDestroy()
-        {
-            Logger.LogInfo("OnDestroy()");
-        }
-        void OnEnable()
-        {
-            Logger.LogInfo("OnEnable()");
-        }
-        void OnDisable()
-        {
-            Logger.LogInfo("OnDisable()");
-        }
-
-        void Start()
-        {
-            Logger.LogInfo("Start()");
-        }
-
+        void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
+        void OnEnable() { Logger.LogInfo("OnEnable()"); }
+        void OnDisable() { Logger.LogInfo("OnDisable()"); }
+        void Start() { Logger.LogInfo("Start()"); }
         void Update()
         {
             if (this.UpdateFirstOn)

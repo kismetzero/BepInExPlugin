@@ -20,24 +20,10 @@ namespace BroforcePlugin
             _instance = this;
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
-        void OnDestroy()
-        {
-            Logger.LogInfo("OnDestroy()");
-        }
-        void OnEnable()
-        {
-            Logger.LogInfo("OnEnable()");
-        }
-        void OnDisable()
-        {
-            Logger.LogInfo("OnDisable()");
-        }
-
-        void Start()
-        {
-            Logger.LogInfo("Start()");
-        }
-
+        void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
+        void OnEnable() { Logger.LogInfo("OnEnable()"); }
+        void OnDisable() { Logger.LogInfo("OnDisable()"); }
+        void Start() { Logger.LogInfo("Start()"); }
         void Update()
         {
             if (this.UpdateFirstOn)
@@ -48,23 +34,23 @@ namespace BroforcePlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                CheatFunc.a_addLife(pNum);
+                CheatFunc.A_AddLife(pNum);
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                CheatFunc.a_addAmmo(pNum);
+                CheatFunc.A_AddAmmo(pNum);
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                CheatFunc.a_changeBro(pNum, hType);
+                CheatFunc.A_ChangeBro(pNum, hType);
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                CheatFunc.a_godMode(pNum);
+                CheatFunc.A_GodMode(pNum);
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                CheatFunc.a_infAmmo();
+                CheatFunc.A_InfAmmo();
             }
         }
 

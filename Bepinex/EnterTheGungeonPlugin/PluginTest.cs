@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using HarmonyLib;
+using System;
 using UnityEngine;
 
 namespace EnterTheGungeonPlugin
@@ -9,29 +10,17 @@ namespace EnterTheGungeonPlugin
     {
         public static PluginTest _instance;
         public bool UpdateFirstOn = true;
+
         void Awake()
         {
             Logger.LogInfo("Awake()");
             _instance = this;
+            Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
-        void OnDestroy()
-        {
-            Logger.LogInfo("OnDestroy()");
-        }
-        void OnEnable()
-        {
-            Logger.LogInfo("OnEnable()");
-        }
-        void OnDisable()
-        {
-            Logger.LogInfo("OnDisable()");
-        }
-
-        void Start()
-        {
-            Logger.LogInfo("Start()");
-        }
-
+        void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
+        void OnEnable() { Logger.LogInfo("OnEnable()"); }
+        void OnDisable() { Logger.LogInfo("OnDisable()"); }
+        void Start() { Logger.LogInfo("Start()"); }
         void Update()
         {
             if (this.UpdateFirstOn)
@@ -39,6 +28,12 @@ namespace EnterTheGungeonPlugin
                 Logger.LogInfo("First Update()");
                 this.UpdateFirstOn = false;
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                CheatFunc.A_AddCurrency(100);
+            }
+
         }
     }
 }
