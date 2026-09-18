@@ -11,9 +11,6 @@ namespace BroforcePlugin
         public bool UpdateFirstOn = true;
         public CheatFunc cfi;
 
-        public int pNum = 0;
-        public HeroType hType = HeroType.IndianaBrones;
-
         void Awake()
         {
             Logger.LogInfo("Awake()");
@@ -34,23 +31,23 @@ namespace BroforcePlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                CheatFunc.A_AddLife(pNum);
+                CheatFunc.A_AddLife();
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                CheatFunc.A_AddAmmo(pNum);
+                CheatFunc.A_Ammo += 1;
             }
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                CheatFunc.A_ChangeBro(pNum, hType);
+                CheatFunc.A_InfAmmo = !CheatFunc.A_InfAmmo;
             }
             if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                CheatFunc.A_GodMode(pNum);
+                CheatFunc.A_GodMode = !CheatFunc.A_GodMode;
             }
             if (Input.GetKeyDown(KeyCode.Alpha5))
             {
-                CheatFunc.A_InfAmmo();
+                CheatFunc.A_HeroType = HeroType.IndianaBrones;
             }
         }
 

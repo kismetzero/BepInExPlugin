@@ -29,11 +29,10 @@ namespace EnterTheGungeonPlugin
                 this.UpdateFirstOn = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Alpha1))
+            if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                CheatFunc.A_AddCurrency(100);
+                
             }
-
         }
     }
 }
