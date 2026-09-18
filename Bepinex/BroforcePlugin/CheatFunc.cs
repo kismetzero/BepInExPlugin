@@ -4,55 +4,89 @@ namespace BroforcePlugin
 {
     public class CheatFunc
     {
-        public static int pNum = 0;
-        public static HeroType hType = HeroType.IndianaBrones;
+        public static int A_PlayerNum = 0;
 
-        public static bool infiniteAmmo = false;
-        public static int sAmmoMin = 2;
-        public static int sAmmoMax = 5;
+        public static bool A_InfAmmo = false;
+        public static int A_InfAmmoMin = 2;
+        public static int A_InfAmmoMax = 5;
 
-        public static void A_AddLife(int playerNum)
+        // public static HeroController C_HeroCtrl { get { return HeroController.Instance; } }
+        public static HeroController B_HeroCtrl => HeroController.Instance;
+        public static Player B_Player
         {
-            if (HeroController.Instance == null) { return; }
-            HeroController.AddLife(playerNum);
-        }
-        public static void A_ChangeBro(int playerNum, HeroType newHeroType)
-        {
-            if (HeroController.Instance == null) { return; }
-            HeroController.ChangeBro(playerNum, newHeroType);
-        }
-        public static void A_AddAmmo(int playerNum)
-        {
-            if (HeroController.Instance == null) { return; }
-            var broBase = HeroController.players[playerNum].character as BroBase;
-            broBase.SpecialAmmo += 1;
-        }
-        public static void A_GodMode(int playerNum)
-        {
-            if (HeroController.Instance == null) { return; }
-            bool isGod = HeroController.players[playerNum].character.invulnerable;
-            if (isGod)
+            get
             {
-                HeroController.players[playerNum].character.invulnerable = false;
-            }
-            else
-            {
-                HeroController.players[playerNum].character.invulnerable = true;
+                if (HeroController.Instance == null) { return null; }
+                return HeroController.players[A_PlayerNum];
             }
         }
-        public static void A_InfAmmo()
+        public static int A_Life
+        {
+            get
+            {
+                if (HeroController.Instance == null) { return 0; }
+                Player player = B_Player; if (player == null) { return 0; }
+                return player.Lives;
+            }
+        }
+        public static bool A_GodMode
+        {
+            get
+            {
+                if (HeroController.Instance == null) { return false; }
+                Player player = B_Player; if (player == null) { return false; }
+                return player.character.invulnerable;
+            }
+            set
+            {
+                if (HeroController.Instance == null) { return; }
+                Player player = B_Player; if (player == null) { return; }
+                player.character.invulnerable = value;
+            }
+        }
+        public static int A_Ammo
+        {
+            get
+            {
+                if (HeroController.Instance == null) { return 0; }
+                Player player = B_Player; if (player == null) { return 0; }
+                var broBase = player.character as BroBase;
+                return broBase.SpecialAmmo;
+            }
+            set
+            {
+                if (HeroController.Instance == null) { return; }
+                Player player = B_Player; if (player == null) { return; }
+                var broBase = player.character as BroBase;
+                broBase.SpecialAmmo = value;
+            }
+        }
+        public static HeroType A_HeroType
+        {
+            get
+            {
+                if (HeroController.Instance == null) { return HeroType.None; }
+                Player player = B_Player; if (player == null) { return HeroType.None; }
+                return player.heroType;
+            }
+            set
+            {
+                if (HeroController.Instance == null) { return; }
+                HeroController.ChangeBro(A_PlayerNum, value);
+            }
+        }
+        public static void A_AddLife()
         {
             if (HeroController.Instance == null) { return; }
-            if (infiniteAmmo) { infiniteAmmo = false; }
-            else { infiniteAmmo = true;  }
+            HeroController.AddLife(A_PlayerNum);
         }
 
         [HarmonyPrefix, HarmonyPatch(typeof(BroBase), nameof(BroBase.SpecialAmmo), MethodType.Setter)]
         public static void BroBase_SpecialAmmo_Setter_Prefix(ref int value)
         {
-            if (infiniteAmmo)
+            if (A_InfAmmo)
             {
-                if (value < sAmmoMin) { value = sAmmoMax; }
+                if (value < A_InfAmmoMin) { value = A_InfAmmoMax; }
             }
         }
     }
