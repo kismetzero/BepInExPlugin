@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BroforcePlugin", "BroforceP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterTheGungeonPlugin", "EnterTheGungeonPlugin\EnterTheGungeonPlugin.csproj", "{7B99003F-76DE-4E71-9A39-26C8741AC683}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuicyRealmPlugin", "JuicyRealmPlugin\JuicyRealmPlugin.csproj", "{AAAEC0E1-4AA8-4A23-8E82-2C50057A91E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WizardOfLegendPlugin", "WizardOfLegendPlugin\WizardOfLegendPlugin.csproj", "{F17ACB63-A4E6-4530-9013-EFAE0E389AA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B99003F-76DE-4E71-9A39-26C8741AC683}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAAEC0E1-4AA8-4A23-8E82-2C50057A91E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAAEC0E1-4AA8-4A23-8E82-2C50057A91E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAAEC0E1-4AA8-4A23-8E82-2C50057A91E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAAEC0E1-4AA8-4A23-8E82-2C50057A91E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17ACB63-A4E6-4530-9013-EFAE0E389AA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17ACB63-A4E6-4530-9013-EFAE0E389AA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17ACB63-A4E6-4530-9013-EFAE0E389AA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17ACB63-A4E6-4530-9013-EFAE0E389AA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
