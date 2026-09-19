@@ -8,3 +8,4 @@ IDE: VS2019
 | Enter The Gungeon | 5.4.21.0 x64  | .Net40    |
 | Juicy Realm       | 5.4.21.0 x86  | .Net472   |
 | Wizard of Legend  | 5.4.21.0 x64  | .Net40    |
+| Streets of Rogue  | 5.4.21.0 x64  | .Net472   |

@@ -2,9 +2,9 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace WizardOfLegendPlugin
+namespace StreetsOfRoguePlugin
 {
-    [BepInPlugin("com.kisme.BepInEx.WizardOfLegend.PluginTest", "WizardOfLegendPluginTest", "1.0")]
+    [BepInPlugin("com.kisme.BepInEx.StreetsOfRogue.PluginTest", "StreetsOfRoguePluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest _instance;
