@@ -5,15 +5,15 @@ namespace EnterTheGungeonPlugin
 {
     public class CheatFunc
     {
-        public enum BlankModeType { Off, NoDecrease, Locked }
-        public static BlankModeType A_BlankMode = BlankModeType.Off;
-        public enum GodModeType { Off, IsVulnerablePrefix, IsVulnerablePostfix, IsVulnerableHook }
-        public static GodModeType A_GodMode = GodModeType.Off;
+        public static bool A_BlanksInf = false;
+        public static bool A_BlanksLock = false;
+        public static bool A_GodMode = false;
 
         public static PunchoutController PunchCtrl;
         public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
         public static PunchGodModeType A_PunchGodMode = PunchGodModeType.Off;
         public static bool A_PunchNoFat = false;
+        public static bool A_PunchTimerFreeze = false;
 
         // public static GameManager C_GM { get { return GameManager.Instance; } }
         public static GameManager C_GM => GameManager.Instance;
@@ -69,6 +69,36 @@ namespace EnterTheGungeonPlugin
                 HealthHaver hh = C_HealthHaver;
                 if (hh == null) { return; }
                 hh.IsVulnerable = value;
+            }
+        }
+        public static float A_Health
+        {
+            get
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return 0f; }
+                return hh.GetCurrentHealth();
+            }
+            set
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return; }
+                Traverse.Create(hh).Field("currentHealth").SetValue(value);
+            }
+        }
+        public static float A_HealthMax
+        {
+            get
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return 0f; }
+                return hh.GetMaxHealth();
+            }
+            set
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return; }
+                Traverse.Create(hh).Field("maximumHealth").SetValue(value);
             }
         }
         public static float A_Armor
@@ -174,34 +204,20 @@ namespace EnterTheGungeonPlugin
         [HarmonyPrefix, HarmonyPatch(typeof(PlayerController), nameof(PlayerController.Blanks), MethodType.Setter)]
         public static bool PlayerController_Blanks_Setter_Prefix(PlayerController __instance, ref int value)
         {
-            if (A_BlankMode == BlankModeType.Off) { return true; }
+            if (A_BlanksLock) { return false; }
+            if (!A_BlanksInf) { return true; }
             int currentBlanks = __instance.Blanks;
-            switch (A_BlankMode)
-            {
-                case BlankModeType.NoDecrease:
-                    if (value < currentBlanks) { value = currentBlanks; }
-                    return true;
-                case BlankModeType.Locked: return false;
-            }
+            if (value < currentBlanks) { return false; }
             return true;
-        }
-
-        [HarmonyPrefix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Setter)]
-        public static void HealthHaver_IsVulnerable_Setter_Prefix(HealthHaver __instance, ref bool value)
-        {
-            if (A_GodMode == GodModeType.Off) { return; }
-            PlayerController pc = __instance.GetComponent<PlayerController>();
-            if (pc == null) { return; }
-            if (A_GodMode == GodModeType.IsVulnerableHook || A_GodMode == GodModeType.IsVulnerablePrefix) { value = false; }
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Getter)]
         public static void HealthHaver_IsVulnerable_Getter_Postfix(HealthHaver __instance, ref bool __result)
         {
-            if (A_GodMode == GodModeType.Off) { return; }
+            if (!A_GodMode) { return; }
             PlayerController pc = __instance.GetComponent<PlayerController>();
             if (pc == null) { return; }
-            if (A_GodMode == GodModeType.IsVulnerableHook || A_GodMode == GodModeType.IsVulnerablePostfix) { __result = false; }
+            __result = false;
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Init))]
@@ -214,6 +230,15 @@ namespace EnterTheGungeonPlugin
         public static void PunchoutController_OnDestroy_Postfix()
         {
             PunchCtrl = null;
+        }
+
+        [HarmonyPrefix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Timer), MethodType.Setter)]
+        public static bool PunchoutController_Timer_Setter_Prefix(PunchoutController __instance, ref float value)
+        {
+            if (!A_PunchTimerFreeze) { return true; }
+            float currentTimer = __instance.Timer;
+            if (value < currentTimer) { return false; }
+            return true;
         }
 
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.Hit))]
