@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using UnityEngine;
 
 namespace EnterTheGungeonPlugin
 {
@@ -6,6 +7,8 @@ namespace EnterTheGungeonPlugin
     {
         public enum BlankModeType { Off, NoDecrease, Locked }
         public static BlankModeType A_BlankMode = BlankModeType.Off;
+        public enum GodModeType { Off, IsVulnerablePrefix, IsVulnerablePostfix, IsVulnerableHook }
+        public static GodModeType A_GodMode = GodModeType.Off;
 
         public static PunchoutController PunchCtrl;
         public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
@@ -23,13 +26,19 @@ namespace EnterTheGungeonPlugin
                 return gm.PrimaryPlayer;
             }
         }
-        public static PlayerConsumables C_CarriedConsumables
+        public static int A_Blanks
         {
             get
             {
                 PlayerController player = C_PlayerCtrl;
-                if (player == null) { return null; }
-                return player.carriedConsumables;
+                if (player == null) { return 0; }
+                return player.Blanks;
+            }
+            set
+            {
+                PlayerController player = C_PlayerCtrl;
+                if (player == null) { return; }
+                player.Blanks = value;
             }
         }
         public static HealthHaver C_HealthHaver
@@ -39,6 +48,51 @@ namespace EnterTheGungeonPlugin
                 PlayerController player = C_PlayerCtrl;
                 if (player == null) { return null; }
                 return player.healthHaver;
+            }
+        }
+        public static void A_FullHeal()
+        {
+            HealthHaver hh = C_HealthHaver;
+            if (hh == null) { return; }
+            hh.FullHeal();
+        }
+        public static bool A_IsVulnerable
+        {
+            get
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return false; }
+                return hh.IsVulnerable;
+            }
+            set
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return; }
+                hh.IsVulnerable = value;
+            }
+        }
+        public static float A_Armor
+        {
+            get
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return 0f; }
+                return hh.Armor;
+            }
+            set
+            {
+                HealthHaver hh = C_HealthHaver;
+                if (hh == null) { return; }
+                hh.Armor = value;
+            }
+        }
+        public static PlayerConsumables C_CarriedConsumables
+        {
+            get
+            {
+                PlayerController player = C_PlayerCtrl;
+                if (player == null) { return null; }
+                return player.carriedConsumables;
             }
         }
         public static int B_Currency
@@ -86,57 +140,6 @@ namespace EnterTheGungeonPlugin
                 cc.ResourcefulRatKeys = value;
             }
         }
-        public static int A_Blanks
-        {
-            get
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return 0; }
-                return player.Blanks;
-            }
-            set
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return; }
-                player.Blanks = value;
-            }
-        }
-        public static void A_FullHeal()
-        {
-            HealthHaver hh = C_HealthHaver;
-            if (hh == null) { return; }
-            hh.FullHeal();
-        }
-        public static bool A_GodMode
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return false; }
-                return !hh.IsVulnerable;
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                hh.IsVulnerable = !value;
-            }
-        }
-        public static float A_Armor
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return 0f; }
-                return hh.Armor;
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                hh.Armor = value;
-            }
-        }
         public static float A_PunchTime
         {
             get
@@ -181,6 +184,24 @@ namespace EnterTheGungeonPlugin
                 case BlankModeType.Locked: return false;
             }
             return true;
+        }
+
+        [HarmonyPrefix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Setter)]
+        public static void HealthHaver_IsVulnerable_Setter_Prefix(HealthHaver __instance, ref bool value)
+        {
+            if (A_GodMode == GodModeType.Off) { return; }
+            PlayerController pc = __instance.GetComponent<PlayerController>();
+            if (pc == null) { return; }
+            if (A_GodMode == GodModeType.IsVulnerableHook || A_GodMode == GodModeType.IsVulnerablePrefix) { value = false; }
+        }
+
+        [HarmonyPostfix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Getter)]
+        public static void HealthHaver_IsVulnerable_Getter_Postfix(HealthHaver __instance, ref bool __result)
+        {
+            if (A_GodMode == GodModeType.Off) { return; }
+            PlayerController pc = __instance.GetComponent<PlayerController>();
+            if (pc == null) { return; }
+            if (A_GodMode == GodModeType.IsVulnerableHook || A_GodMode == GodModeType.IsVulnerablePostfix) { __result = false; }
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Init))]
