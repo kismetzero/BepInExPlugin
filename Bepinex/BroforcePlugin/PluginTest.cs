@@ -31,7 +31,7 @@ namespace BroforcePlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                CheatFunc.A_AddLife();
+                CheatFunc.A_Lives += 1;
             }
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {

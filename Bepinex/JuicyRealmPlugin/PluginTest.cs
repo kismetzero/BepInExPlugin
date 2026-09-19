@@ -14,6 +14,7 @@ namespace JuicyRealmPlugin
         {
             Logger.LogInfo("Awake()");
             _instance = this;
+            Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
         void OnEnable() { Logger.LogInfo("OnEnable()"); }
@@ -25,6 +26,11 @@ namespace JuicyRealmPlugin
             {
                 Logger.LogInfo("First Update()");
                 this.UpdateFirstOn = false;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                CheatFunc.SpawnBossChest();
             }
         }
     }
