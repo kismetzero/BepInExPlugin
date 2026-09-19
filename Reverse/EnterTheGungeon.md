@@ -12,7 +12,6 @@
 PlayerController playerCtrl = GameManager.Instance.PrimaryPlayer;
 
 playerCtrl.Blanks = 5; // 空响弹
-
 playerCtrl.SetIsFlying(true, "debug_flight", true, false);   // 飞行
 
 HealthHaver hh = playerCtrl.healthHaver;
@@ -51,15 +50,14 @@ public abstract class GameActor : DungeonPlaceableBehaviour, IAutoAimTarget {
     public void SetIsFlying(bool value, string reason, bool adjustShadow = true, bool modifyPathing = false);
 }
 
-public class DungeonPlaceableBehaviour : BraveBehaviour, IHasDwarfConfigurables {
-
-}
+public class DungeonPlaceableBehaviour : BraveBehaviour, IHasDwarfConfigurables { }
 
 public class BraveBehaviour : MonoBehaviour {
     public HealthHaver healthHaver;
 }
 
 public class HealthHaver : BraveBehaviour {
+    public bool IsVulnerable;
     protected float AdjustedMaxHealth;
     public float Armor;
     protected float currentArmor;
