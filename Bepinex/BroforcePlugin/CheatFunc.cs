@@ -4,11 +4,10 @@ namespace BroforcePlugin
 {
     public class CheatFunc
     {
-        public static int A_PlayerNum = 0;
-
-        public static bool A_InfAmmo = false;
-        public static int A_InfAmmoMin = 2;
-        public static int A_InfAmmoMax = 5;
+        public static int A_PlayerNum { get; set; } = 0;
+        public static bool A_InfAmmo { get; set; } = false;
+        public static int A_InfAmmoMin { get; set; } = 2;
+        public static int A_InfAmmoMax { get; set; } = 5;
 
         // public static HeroController C_HeroCtrl { get { return HeroController.Instance; } }
         public static HeroController B_HeroCtrl => HeroController.Instance;

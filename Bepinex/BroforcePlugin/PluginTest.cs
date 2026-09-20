@@ -7,14 +7,13 @@ namespace BroforcePlugin
     [BepInPlugin("com.kisme.BepInEx.Broforce.PluginTest", "BroforcePluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
-        public static PluginTest _instance;
-        public bool UpdateFirstOn = true;
-        public CheatFunc cfi;
+        public static PluginTest Instance { get; set; }
+        public bool UpdateFirstOn { get; set; } = true;
 
         void Awake()
         {
             Logger.LogInfo("Awake()");
-            _instance = this;
+            Instance = this;
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }

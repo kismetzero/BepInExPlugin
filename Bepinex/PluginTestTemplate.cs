@@ -2,9 +2,9 @@
 using HarmonyLib;
 using UnityEngine;
 
-namespace EnterTheGungeonPlugin
+namespace GamePlugin
 {
-    [BepInPlugin("com.kisme.BepInEx.EnterTheGungeon.PluginTest", "EnterTheGungeonPluginTest", "1.0")]
+    [BepInPlugin("com.kisme.BepInEx.Game.PluginTest", "GamePluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest Instance { get; set; }
@@ -14,7 +14,6 @@ namespace EnterTheGungeonPlugin
         {
             Logger.LogInfo("Awake()");
             Instance = this;
-            Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
         void OnEnable() { Logger.LogInfo("OnEnable()"); }
@@ -30,7 +29,7 @@ namespace EnterTheGungeonPlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                
+                Logger.LogInfo("Alpha0");
             }
         }
     }

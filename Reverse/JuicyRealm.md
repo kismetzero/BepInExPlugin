@@ -4,13 +4,16 @@
 
 ```csharp
 // 生成 Boss 箱
-LootManager lm = GameManager.GetManager<LootManager>();
-GameObject gobj = lm.GenerateChest(ChestType.Pro, 0, 0, 0);
-lm.ShowChest(gobj, null);
+LootManager loot = GameManager.GetManager<LootManager>();
+GameObject gobj = loot.GenerateChest(ChestType.Pro, 0, 0, 0);
+loot.ShowChest(gobj, null);
 
 
-DataManager dm = GameManager.GetManager<DataManager>();
-dm.Core = 100;  // 果核
+DataManager data = GameManager.GetManager<DataManager>();
+data.Core = 100;  // 果核
+
+LogicManager logic = GameManager.GetManager<LogicManager>();
+List<SCPlayer> players = logic.GetPlayers();
 
 ```
 
@@ -66,13 +69,16 @@ public class GameManager : MonoBehaviour {
 
 public class DataManager : IManager {
     public int Core  { get; set; }
+    public Config config;
 }
 
-public class LootManager : IManager {
-    public GameObject GenerateBossWeapon(LevelCategory level);
-    public GameObject GenerateChest(ChestType chestType = ChestType.Nice, int offsetLevelMin = 0, int offsetLevelMax = 0, int coreCount = 0, int addID = 0);
-    public GameObject GenerateWeaponLoot(int offsetLevelMin, int offsetLevelMax, int addID);
-    public GameObject GenerateLevelWeapon(int minOffsetLevel, int maxOffsetLevel, int extraId = 0);
+public class Config {
+    public List<PlayerDefine> Player = new List<PlayerDefine>();
+    public List<EnemyDefine> Enemy = new List<EnemyDefine>();
+    public List<ItemDefine> Item = new List<ItemDefine>();
+    public List<WeaponDefine> Weapon = new List<WeaponDefine>();
+    public List<WeaponBuffDefine> WeaponBuff = new List<WeaponBuffDefine>();
+    public List<PetDefine> Pet = new List<PetDefine>();
 }
 
 public class LogicManager : IManager {
@@ -81,6 +87,19 @@ public class LogicManager : IManager {
 
 public class SCPlayer {
     public PlayerObject creature;
+}
+
+public class LootManager : IManager {
+    public GameObject GenerateBossWeapon(LevelCategory level);
+    public GameObject GenerateChest(ChestType chestType = ChestType.Nice, int offsetLevelMin = 0, int offsetLevelMax = 0, int coreCount = 0, int addID = 0);
+    public GameObject GenerateItem(int lootId);
+    public GameObject GenerateItem(string prefabName, bool isLoot = true);
+    public GameObject GenerateChestPet(bool isLoot = true);
+    public GameObject GenerateChestPet(string key, bool isLoot = true);
+    public GameObject GenerateChestWeaponBuffItem();
+    public GameObject GenerateChestWeaponBuffItem(string key);
+    public GameObject GenerateWeaponLoot(int offsetLevelMin, int offsetLevelMax, int addID);
+    public GameObject GenerateLevelWeapon(int minOffsetLevel, int maxOffsetLevel, int extraId = 0);
 }
 
 

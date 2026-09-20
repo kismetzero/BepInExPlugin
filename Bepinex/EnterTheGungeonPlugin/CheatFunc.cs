@@ -1,19 +1,17 @@
 ﻿using HarmonyLib;
-using UnityEngine;
 
 namespace EnterTheGungeonPlugin
 {
     public class CheatFunc
     {
-        public static bool A_BlanksInf = false;
-        public static bool A_BlanksLock = false;
-        public static bool A_GodMode = false;
-
-        public static PunchoutController PunchCtrl;
+        public static bool A_BlanksInf { get; set; } = false;
+        public static bool A_BlanksLock { get; set; } = false;
+        public static bool A_GodMode { get; set; } = false;
+        public static PunchoutController PunchCtrl { get; set; }
         public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
-        public static PunchGodModeType A_PunchGodMode = PunchGodModeType.Off;
-        public static bool A_PunchNoFat = false;
-        public static bool A_PunchTimerFreeze = false;
+        public static PunchGodModeType A_PunchGodMode { get; set; } = PunchGodModeType.Off;
+        public static bool A_PunchNoFat { get; set; } = false;
+        public static bool A_PunchTimerFreeze { get; set; } = false;
 
         // public static GameManager C_GM { get { return GameManager.Instance; } }
         public static GameManager C_GM => GameManager.Instance;
