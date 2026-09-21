@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using static NeckBeard.OceanEngine.Server.Config;
 
 namespace BroforcePlugin
 {
@@ -16,6 +17,7 @@ namespace BroforcePlugin
             get
             {
                 if (HeroController.Instance == null) { return null; }
+                if (A_PlayerNum < 0 || A_PlayerNum > 4) { return null; }
                 return HeroController.players[A_PlayerNum];
             }
         }
@@ -23,12 +25,14 @@ namespace BroforcePlugin
         {
             get
             {
-                Player player = B_Player; if (player == null) { return 0; }
+                Player player = B_Player;
+                if (player == null) { return 0; }
                 return player.Lives;
             }
             set
             {
-                Player player = B_Player; if (player == null) { return; }
+                Player player = B_Player;
+                if (player == null) { return; }
                 player.Lives = value;
             }
         }
@@ -36,12 +40,14 @@ namespace BroforcePlugin
         {
             get
             {
-                Player player = B_Player; if (player == null) { return false; }
+                Player player = B_Player;
+                if (player == null) { return false; }
                 return player.character.invulnerable;
             }
             set
             {
-                Player player = B_Player; if (player == null) { return; }
+                Player player = B_Player;
+                if (player == null) { return; }
                 player.character.invulnerable = value;
             }
         }
@@ -49,13 +55,15 @@ namespace BroforcePlugin
         {
             get
             {
-                Player player = B_Player; if (player == null) { return 0; }
+                Player player = B_Player;
+                if (player == null) { return 0; }
                 var broBase = player.character as BroBase;
                 return broBase.SpecialAmmo;
             }
             set
             {
-                Player player = B_Player; if (player == null) { return; }
+                Player player = B_Player;
+                if (player == null) { return; }
                 var broBase = player.character as BroBase;
                 broBase.SpecialAmmo = value;
             }
@@ -64,12 +72,15 @@ namespace BroforcePlugin
         {
             get
             {
-                Player player = B_Player; if (player == null) { return HeroType.None; }
+                Player player = B_Player;
+                if (player == null) { return HeroType.None; }
                 return player.heroType;
             }
             set
             {
-                Player player = B_Player; if (player == null) { return; }
+                Player player = B_Player;
+                if (player == null) { return; }
+                if (A_PlayerNum < 0 || A_PlayerNum > 4) { return; }
                 HeroController.ChangeBro(A_PlayerNum, value);
             }
         }

@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheatFunc.cs" />
+    <Compile Include="DumpDataTools.cs" />
     <Compile Include="PluginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

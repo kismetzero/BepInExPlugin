@@ -30,7 +30,7 @@ namespace JuicyRealmPlugin
 
             if (Input.GetKeyDown(KeyCode.Minus))
             {
-                CheatFunc.SpawnBossChest();
+                
             }
         }
     }

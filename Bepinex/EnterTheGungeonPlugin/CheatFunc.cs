@@ -203,19 +203,18 @@ namespace EnterTheGungeonPlugin
         public static bool PlayerController_Blanks_Setter_Prefix(PlayerController __instance, ref int value)
         {
             if (A_BlanksLock) { return false; }
-            if (!A_BlanksInf) { return true; }
-            int currentBlanks = __instance.Blanks;
-            if (value < currentBlanks) { return false; }
+            if (A_BlanksInf)
+            {
+                int currentBlanks = __instance.Blanks;
+                if (value < currentBlanks) { return false; }
+            }
             return true;
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Getter)]
         public static void HealthHaver_IsVulnerable_Getter_Postfix(HealthHaver __instance, ref bool __result)
         {
-            if (!A_GodMode) { return; }
-            PlayerController pc = __instance.GetComponent<PlayerController>();
-            if (pc == null) { return; }
-            __result = false;
+            if (A_GodMode && __instance.GetComponent<PlayerController>() != null) { __result = false; }
         }
 
         [HarmonyPostfix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Init))]
@@ -233,23 +232,19 @@ namespace EnterTheGungeonPlugin
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Timer), MethodType.Setter)]
         public static bool PunchoutController_Timer_Setter_Prefix(PunchoutController __instance, ref float value)
         {
-            if (!A_PunchTimerFreeze) { return true; }
-            float currentTimer = __instance.Timer;
-            if (value < currentTimer) { return false; }
+            if (A_PunchTimerFreeze)
+            {
+                float currentTimer = __instance.Timer;
+                if (value < currentTimer) { return false; }
+            }
             return true;
         }
 
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.Hit))]
         public static bool PunchoutPlayerController_Hit_Prefix(ref float damage)
         {
-            switch (A_PunchGodMode)
-            {
-                case PunchGodModeType.Off: return true;
-                case PunchGodModeType.ZeroDamage:
-                    damage = 0f;
-                    return true;
-                case PunchGodModeType.SkipHit: return false;
-            }
+            if (A_PunchGodMode == PunchGodModeType.SkipHit) { return false; }
+            if (A_PunchGodMode == PunchGodModeType.ZeroDamage) { damage = 0f; }
             return true;
         }
 

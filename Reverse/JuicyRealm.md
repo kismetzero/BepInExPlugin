@@ -8,12 +8,20 @@ LootManager loot = GameManager.GetManager<LootManager>();
 GameObject gobj = loot.GenerateChest(ChestType.Pro, 0, 0, 0);
 loot.ShowChest(gobj, null);
 
-
 DataManager data = GameManager.GetManager<DataManager>();
 data.Core = 100;  // 果核
 
 LogicManager logic = GameManager.GetManager<LogicManager>();
 List<SCPlayer> players = logic.GetPlayers();
+PlayerObject player = players[player_num].creature;
+
+player.CurrentHp = 2f;      // 血量
+player.HpMax = 2f;          // 
+player.CurrentShield = 2f;  // 护盾
+player.ShieldMax = 2f;      // 
+player.currentEnergy = 2f;  // 能量
+player.energyMax = 2f;      // 
+player.Coin = 100;          // 金币
 
 ```
 
@@ -24,6 +32,11 @@ List<SCPlayer> players = logic.GetPlayers();
 ```csharp
 public class PlayerObject : HumanoidObject {
     public int Coin { get; set; }
+    public float currentEnergy;
+    public float energyMax;
+    public SkillItem currentSkill;
+    public override float ShieldMax { get; }
+    protected override void Hurt(DamageInfo damageInfo);
     public void LootCoin(int amount, bool isFromPlayer);
     public void LootCore(int amount);
     public bool UseCoin(int amount);
@@ -38,6 +51,9 @@ public class CreatureObject : NetworkBehaviour, IDamageable, IFaction, IPlayerCo
     public virtual float HpMax { get; set; }
     public virtual float CurrentShield { get; set; }
     public virtual float ShieldMax  { get; }
+    protected virtual void Hurt(DamageInfo damageInfo);
+    public virtual void OnDamage(DamageInfo damageInfo);
+    private MultiBool canNotHurt = new MultiBool();
 }
 
 public class ClientManager : NetworkBehaviour {

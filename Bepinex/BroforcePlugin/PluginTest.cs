@@ -1,6 +1,7 @@
 ﻿using BepInEx;
 using HarmonyLib;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BroforcePlugin
 {
@@ -15,6 +16,16 @@ namespace BroforcePlugin
             Logger.LogInfo("Awake()");
             Instance = this;
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (!this.gameObject.activeSelf)
+            {
+                Logger.LogInfo("OnSceneLoaded()");
+                this.gameObject.SetActive(true);
+            }
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
         void OnEnable() { Logger.LogInfo("OnEnable()"); }
