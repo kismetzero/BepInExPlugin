@@ -1,4 +1,4 @@
-## 传说中的法师 WizardOfLegend
+## 传说中的法师 Wizard Of Legend
 
 ### 实现
 

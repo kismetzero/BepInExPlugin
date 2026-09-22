@@ -15,12 +15,12 @@ LogicManager logic = GameManager.GetManager<LogicManager>();
 List<SCPlayer> players = logic.GetPlayers();
 PlayerObject player = players[player_num].creature;
 
-player.CurrentHp = 2f;      // 血量
-player.HpMax = 2f;          // 
-player.CurrentShield = 2f;  // 护盾
-player.ShieldMax = 2f;      // 
-player.currentEnergy = 2f;  // 能量
-player.energyMax = 2f;      // 
+player.CurrentHp = 2f;      // HP
+player.HpMax = 2f;          // HP上限
+player.CurrentShield = 2f;  // 护盾值
+player.ShieldMax = 2f;      // 护盾上限
+player.currentEnergy = 2f;  // 能量值
+player.energyMax = 2f;      // 能量上限
 player.Coin = 100;          // 金币
 
 ```
