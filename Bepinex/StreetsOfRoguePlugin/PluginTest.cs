@@ -14,6 +14,7 @@ namespace StreetsOfRoguePlugin
         {
             Logger.LogInfo("Awake()");
             Instance = this;
+            Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
         void OnEnable() { Logger.LogInfo("OnEnable()"); }
@@ -29,7 +30,7 @@ namespace StreetsOfRoguePlugin
 
             if (Input.GetKeyDown(KeyCode.Alpha0))
             {
-                CheatFun.A_AddMoney(50);
+                CheatFunc.A_AddMoney(50);
                 Logger.LogInfo("Alpha0");
             }
         }
