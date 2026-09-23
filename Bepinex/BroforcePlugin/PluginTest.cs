@@ -72,7 +72,7 @@ namespace BroforcePlugin
         {
             if (WindowsDisplay)
             {
-                Cursor.visible = true;
+                // if (!Cursor.visible) { Cursor.visible = true; }
                 /* 创建一个新窗口
                        注意：第一个参数(114514)为窗口ID，ID尽量设置的与众不同，
                        若与其他Mod的窗口ID相同，将会导致窗口冲突  */
