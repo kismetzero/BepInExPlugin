@@ -5,8 +5,8 @@
 [Oo]bj/
 [Dd]ebug/
 [Rr]elease/
-# [Ll]ib/
-# *.dll
+[Ll]ib/
+*.dll
 *.pdb
 *.cache
 *.tmp
