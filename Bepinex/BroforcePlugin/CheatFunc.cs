@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using static NeckBeard.OceanEngine.Server.Config;
 
 namespace BroforcePlugin
 {

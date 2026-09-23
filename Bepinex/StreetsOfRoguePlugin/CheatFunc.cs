@@ -1,7 +1,6 @@
 ﻿
 using HarmonyLib;
 using System;
-using UnityEngine;
 
 namespace StreetsOfRoguePlugin
 {
