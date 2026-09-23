@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <Import Project="Directory.Build.props.local" Condition="Exists('Directory.Build.props.local')" />
+  <!-- Directory.Build.props.local 模板 -->
+  <!-- 
+  <Project>
+    <PropertyGroup>
+      <GameRootDir>C:\Steam\steamapps\common</GameRootDir>
+    </PropertyGroup>
+  </Project>
+  -->
+  <PropertyGroup>
+    <GameRootDir Condition="'$(GameRootDir)' == ''">C:\Steam\steamapps\common</GameRootDir>
+  </PropertyGroup>
+</Project>

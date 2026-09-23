@@ -28,4 +28,4 @@
 *.sln.docstates
 Recovery/
 Backup*/
-
+Directory.Build.props.local
