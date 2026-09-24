@@ -14,6 +14,7 @@ namespace BroforcePlugin
         {
             Logger.LogInfo("Awake()");
             Instance = this;
+            Harmony.CreateAndPatchAll(typeof(PluginTest));
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
 
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -82,6 +83,13 @@ namespace BroforcePlugin
         public void WindowFunc(int id)
         {
             GUILayout.Label($"窗口id = {id}");
+            GUILayout.Label($"Cursor.visible = {Cursor.visible}");
+        }
+
+        [HarmonyPrefix, HarmonyPatch(typeof(Cursor), nameof(Cursor.visible), MethodType.Setter)]
+        public static void Cursor_visible_Setter_Prefix(ref bool value)
+        {
+            if (PluginTest.Instance.WindowsDisplay) { value = true; }
         }
     }
 }

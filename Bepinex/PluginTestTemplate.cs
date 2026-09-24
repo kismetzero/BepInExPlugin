@@ -62,6 +62,13 @@ namespace GamePlugin
         public void WindowFunc(int id)
         {
             GUILayout.Label($"窗口id = {id}");
+            GUILayout.Label($"Cursor.visible = {Cursor.visible}");
+        }
+
+        [HarmonyPrefix, HarmonyPatch(typeof(Cursor), nameof(Cursor.visible), MethodType.Setter)]
+        public static void Cursor_visible_Setter_Prefix(ref bool value)
+        {
+            if (PluginTest.Instance.WindowsDisplay) { value = true; }
         }
 
         [HarmonyPrefix, HarmonyPatch(typeof(PluginTest), "WindowFunc", new Type[] { typeof(int) })]

@@ -1,13 +1,12 @@
 ## 挺进地牢 Enter The Gungeon
 
 ### 第三方api
-
 > Mod the Gungeon API
 > - Thunderstore: https://thunderstore.io/c/enter-the-gungeon/p/MtG_API/Mod_the_Gungeon_API/
 > - GitHub: https://github.com/SpecialAPI/ModTheGungeonAPI
 
-### 实现
 
+### 实现
 ```csharp
 PlayerController player = GameManager.Instance.PrimaryPlayer;
 
@@ -31,10 +30,9 @@ punchPlayer.CurrentExhaust = 0f // 打拳玩家疲劳值
 
 ```
 
+
 ### 参考
-
 ~. 
-
 ```csharp
 public class GameManager : BraveBehaviour {
     public static GameManager Instance { get; }

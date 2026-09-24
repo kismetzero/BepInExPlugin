@@ -2,6 +2,13 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <_GameMainDir>$(GameRootDir)\Enter the Gungeon</_GameMainDir>
+    <_GameBepInExDir>$(_GameMainDir)\BepInEx</_GameBepInExDir>
+    <_GamePluginDir>$(_GameBepInExDir)\plugins</_GamePluginDir>
+    <_GameManagedDir>$(_GameMainDir)\EtG_Data\Managed</_GameManagedDir>
+    <_GameAvailable Condition="Exists('$(_GameBepInExDir)\core\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable >
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7B99003F-76DE-4E71-9A39-26C8741AC683}</ProjectGuid>
@@ -30,17 +37,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(_GameAvailable)' == 'true' ">
     <Reference Include="0Harmony">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>$(_GameBepInExDir)\core\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\EtG_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>$(_GameManagedDir)\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>$(_GameBepInExDir)\core\BepInEx.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -51,22 +58,35 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\EtG_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>$(_GameManagedDir)\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\EtG_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>$(_GameManagedDir)\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>$(GameRootDir)\Enter the Gungeon\EtG_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>$(_GameManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
+  <ItemGroup Condition=" '$(_GameAvailable)' == 'true' ">
     <Compile Include="CheatFunc.cs" />
     <Compile Include="PluginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="CopyToPlugin" AfterTargets="Build">
+    <Message Condition=" '$(_GameAvailable)' != 'true' " Text="$(TargetName) 构建失败！游戏或BepInEx不存在。" Importance="High" />
+    <Copy
+      Condition=" '$(_GameAvailable)' == 'true' "
+      SourceFiles="$(TargetPath)"
+      DestinationFolder="$(_GamePluginDir)"
+      SkipUnchangedFiles="true"
+      OverwriteReadOnlyFiles="true"
+      Retries="3"
+      RetryDelayMilliseconds="1000"
+    />
+    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -> $(_GamePluginDir)" Importance="High" />
+    </Target>
 </Project>

@@ -1,7 +1,6 @@
 ## 地痞街区 Streets Of Rogue
 
 ### 实现
-
 ```csharp
 GameController gc = GameController.gameController;
 gc.unlocks.AddNuggets(50);      // 增加鸡块
@@ -26,10 +25,9 @@ player.inventory.AddItem(invItem);
 
 ```
 
+
 ### 参考
-
 ~. 
-
 ```csharp
 public class GameController : MonoBehaviour {
     public static GameController gameController;

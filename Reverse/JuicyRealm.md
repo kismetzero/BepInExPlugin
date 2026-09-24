@@ -1,7 +1,6 @@
 ## 恶果之地 Juicy Realm
 
 ### 实现
-
 ```csharp
 // 生成 Boss 箱
 LootManager loot = GameManager.GetManager<LootManager>();
@@ -25,10 +24,9 @@ player.Coin = 100;          // 金币
 
 ```
 
+
 ### 参考
-
 ~.
-
 ```csharp
 public class PlayerObject : HumanoidObject {
     public int Coin { get; set; }
@@ -76,8 +74,8 @@ public class ItemObject : NetworkBehaviour {}
 
 ```
 
-SpaceCan
 
+SpaceCan
 ```csharp
 public class GameManager : MonoBehaviour {
     public static T GetManager<T>() where T : class

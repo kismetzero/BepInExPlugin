@@ -1,7 +1,6 @@
 ## 武装原型 Broforce
 
 ### 实现
-
 ```csharp
 HeroController.AddLife(playerNum);  // 增加生命
 HeroController.ChangeBro(playerNum, HeroType.None); // 切换英雄
@@ -13,10 +12,9 @@ var broBase = player.character as BroBase;
 broBase.SpecialAmmo += 1;   // 增加特殊弹药
 ```
 
+
 ### 参考
-
 ~. 
-
 ```csharp
 public class HeroController : NetworkObject, ISerializationCallbackReceiver {
     public static HeroController Instance { get;}
