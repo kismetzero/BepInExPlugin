@@ -4,9 +4,10 @@
   <PropertyGroup>
     <_GameMainDir>$(GameRootDir)\Streets of Rogue</_GameMainDir>
     <_GameBepInExDir>$(_GameMainDir)\BepInEx</_GameBepInExDir>
-    <_GamePluginDir>$(_GameBepInExDir)\plugins</_GamePluginDir>
+    <_GameBepInExCoreDir>$(_GameBepInExDir)\core</_GameBepInExCoreDir>
+    <_GameBepInExPluginDir>$(_GameBepInExDir)\plugins</_GameBepInExPluginDir>
     <_GameManagedDir>$(_GameMainDir)\StreetsOfRogue_Data\Managed</_GameManagedDir>
-    <_GameAvailable Condition="Exists('$(_GameBepInExDir)\core\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable >
+    <_GameAvailable Condition="Exists('$(_GameBepInExCoreDir)\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable >
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -39,7 +40,7 @@
   </PropertyGroup>
   <ItemGroup Condition=" '$(_GameAvailable)' == 'true' ">
     <Reference Include="0Harmony">
-      <HintPath>$(_GameBepInExDir)\core\0Harmony.dll</HintPath>
+      <HintPath>$(_GameBepInExCoreDir)\0Harmony.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -47,7 +48,7 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>$(_GameBepInExDir)\core\BepInEx.dll</HintPath>
+      <HintPath>$(_GameBepInExCoreDir)\BepInEx.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -86,12 +87,12 @@
     <Copy
       Condition=" '$(_GameAvailable)' == 'true' "
       SourceFiles="$(TargetPath)"
-      DestinationFolder="$(_GamePluginDir)"
+      DestinationFolder="$(_GameBepInExPluginDir)"
       SkipUnchangedFiles="true"
       OverwriteReadOnlyFiles="true"
       Retries="3"
       RetryDelayMilliseconds="1000"
     />
-    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -> $(_GamePluginDir)" Importance="High" />
+    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -> $(_GameBepInExPluginDir)" Importance="High" />
     </Target>
 </Project>

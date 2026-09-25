@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <RootNamespace>BroforcePlugin</RootNamespace>
+    <AssemblyName>BroforcePlugin</AssemblyName>
+    <Deterministic>true</Deterministic>
+
+    <Version>1.0.0</Version>
+    <Authors>YourName</Authors>
+    <Description>Broforce BepInEx Plugin</Description>
+    <Company>YourStudio</Company>
+    <Copyright>Copyright © 2026 YourName</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_GameMainDir>$(GameRootDir)\Broforce</_GameMainDir>
+    <_GameBepInExDir>$(_GameMainDir)\BepInEx</_GameBepInExDir>
+    <_GameBepInExCoreDir>$(_GameBepInExDir)\core</_GameBepInExCoreDir>
+    <_GameBepInExPluginDir>$(_GameBepInExDir)\plugins</_GameBepInExPluginDir>
+    <_GameManagedDir>$(_GameMainDir)\Broforce_beta_Data\Managed</_GameManagedDir>
+    <_GameAvailable Condition="Exists('$(_GameBepInExCoreDir)\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(_GameAvailable)' == 'true' ">
+    <Reference Include="0Harmony">
+      <HintPath>$(_GameBepInExCoreDir)\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(_GameManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>$(_GameBepInExCoreDir)\BepInEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(_GameManagedDir)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(_GameManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(_GameManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_GameAvailable)' != 'true'">
+    <Compile Remove="**\*.cs" />
+  </ItemGroup>
+
+  <Target Name="CopyToPlugin" AfterTargets="Build">
+    <Message Condition=" '$(_GameAvailable)' != 'true' " Text="$(TargetName) 构建失败！游戏或BepInEx不存在。" Importance="High" />
+    <Copy
+      Condition=" '$(_GameAvailable)' == 'true' "
+      SourceFiles="$(TargetPath)"
+      DestinationFolder="$(_GameBepInExPluginDir)"
+      SkipUnchangedFiles="true"
+      OverwriteReadOnlyFiles="true"
+      Retries="3"
+      RetryDelayMilliseconds="1000"
+    />
+    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -> $(_GameBepInExPluginDir)" Importance="High" />
+  </Target>
+
+</Project>
