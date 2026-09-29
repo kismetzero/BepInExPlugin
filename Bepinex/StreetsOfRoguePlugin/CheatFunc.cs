@@ -39,6 +39,17 @@ namespace StreetsOfRoguePlugin
             player.inventory.AddItem(invItem);
         }
 
+        public static void A_AddItem(string name)
+        {
+            Agent player = C_Player;
+            if (player == null) { return; }
+            InvItem invItem = new InvItem();
+            invItem.invItemName = name;
+            invItem.ItemSetup(true);
+            invItem.invItemCount = invItem.rewardCount;
+            player.inventory.AddItem(invItem);
+        }
+
         [HarmonyPrefix, HarmonyPatch(typeof(StatusEffects), nameof(StatusEffects.ChangeHealth),
             new Type[]
             {

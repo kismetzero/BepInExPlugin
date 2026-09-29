@@ -23,6 +23,15 @@ invItem.invItemCount = num;
 invItem.ItemSetup(true);
 player.inventory.AddItem(invItem);
 
+AmmoDespenser       // 弹药箱
+ATMMachine          // ATM
+AugmentationBooth   // 强化亭
+CapsuleMachine      // 奖励售卖机
+CloneMachine        // 克隆机
+LoadoutMachine      // 初始装备贩卖机
+PawnShopMachine     // 自动贩卖机
+SlotMachine         // 老虎机
+
 ```
 
 
@@ -102,5 +111,10 @@ public class StatusEffects : MonoBehaviour {
     public void AddStatusEffect(string statusEffectName, bool showText, Agent causingAgent, uint cameFromClient, bool dontPrevent, int specificTime);
     
 }
+
+public class CapsuleMachine : ObjectReal {
+    public void SpawnCapsuleItem();
+}
+
 
 ```
