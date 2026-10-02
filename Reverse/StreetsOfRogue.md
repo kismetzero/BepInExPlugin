@@ -84,6 +84,15 @@ public class InvItem : IComparable<InvItem> {
     public int invItemCount;
     public void ItemSetup(bool notNew);
     public void SetupDetails(bool notNew);
+    public string invItemDescription;
+    public string invItemRealName;
+    public string itemType;
+    public void UseItem();
+    public ItemFunctions itemFunctions = new ItemFunctions();
+}
+
+public class ItemFunctions {
+    public void UseItem(InvItem item, Agent agent);
 }
 
 public class Unlocks : MonoBehaviour {

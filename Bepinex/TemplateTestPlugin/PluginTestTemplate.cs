@@ -1,19 +1,22 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace GamePlugin
 {
-    [BepInPlugin("com.kisme.BepInEx.Game.PluginTest", "GamePluginTest", "1.0")]
+    [BepInPlugin("com.kismetzero.BepInEx.GamePlugin", "GamePluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest Instance { get; set; }
+        public ConfigEntry<KeyCode> windowsHotkey;
 
         void Awake()
         {
             Logger.LogInfo("Awake()");
             Instance = this;
+            windowsHotkey = Config.Bind<KeyCode>("Config", "windowsHotkey", KeyCode.Equals, "窗口快捷键");
             SceneManager.sceneLoaded += OnSceneLoaded;
             Harmony.CreateAndPatchAll(typeof(PluginTest));
         }
@@ -39,15 +42,15 @@ namespace GamePlugin
                 this.UpdateFirst = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Equals))
+            if (Input.GetKeyDown(windowsHotkey.Value))
             {
-                Logger.LogInfo("KeyCode.Equals");
+                Logger.LogInfo("Windows Toggle");
                 WindowsDisplay = !WindowsDisplay;
             }
         }
 
         public bool WindowsDisplay { get; set; }
-        public Rect windowRect = new Rect(100, 100, 200, 200); // 定义窗口位置 x y 宽 高
+        public Rect windowRect = new Rect(100f, 100f, 200f, 200f); // 定义窗口位置 x y 宽 高
         void OnGUI()
         {
             if (WindowsDisplay)
@@ -61,8 +64,11 @@ namespace GamePlugin
         }
         public void WindowFunc(int id)
         {
+            GUILayout.BeginHorizontal();
             GUILayout.Label($"窗口id = {id}");
             GUILayout.Label($"Cursor.visible = {Cursor.visible}");
+            GUILayout.EndHorizontal();
+            GUI.DragWindow();
         }
 
         [HarmonyPrefix, HarmonyPatch(typeof(Cursor), nameof(Cursor.visible), MethodType.Setter)]

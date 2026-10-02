@@ -1,18 +1,21 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
 
 namespace StreetsOfRoguePlugin
 {
-    [BepInPlugin("com.kisme.BepInEx.StreetsOfRogue.PluginTest", "StreetsOfRoguePluginTest", "1.0")]
+    [BepInPlugin("com.kismetzero.BepInEx.StreetsOfRoguePlugin", "StreetsOfRoguePluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest Instance { get; set; }
+        public ConfigEntry<KeyCode> windowsHotkey;
 
         void Awake()
         {
             Logger.LogInfo("Awake()");
             Instance = this;
+            windowsHotkey = Config.Bind<KeyCode>("Config", "windowsHotkey", KeyCode.Equals, "窗口快捷键");
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
@@ -29,15 +32,19 @@ namespace StreetsOfRoguePlugin
                 this.UpdateFirst = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Equals))
+            if (Input.GetKeyDown(windowsHotkey.Value))
             {
-                Logger.LogInfo("KeyCode.Equals");
+                Logger.LogInfo("Windows Toggle");
                 WindowsDisplay = !WindowsDisplay;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha0))
+            {
+                CheatFunc.A_invisible = !CheatFunc.A_invisible;
             }
         }
 
         public bool WindowsDisplay { get; set; }
-        public Rect windowRect = new Rect(100, 100, 200, 200); // 定义窗口位置 x y 宽 高
+        public Rect windowRect = new Rect(100f, 100f, 200f, 200f); // 定义窗口位置 x y 宽 高
         void OnGUI()
         {
             if (WindowsDisplay)
@@ -52,6 +59,29 @@ namespace StreetsOfRoguePlugin
         public void WindowFunc(int id)
         {
             GUILayout.Label($"窗口id = {id}");
+
+            GUILayout.BeginHorizontal();
+            CheatFunc.C_Player.ghost = GUILayout.Toggle(CheatFunc.C_Player.ghost, "幽灵");
+            CheatFunc.C_Player.invisible = GUILayout.Toggle(CheatFunc.C_Player.invisible, "隐身");
+            CheatFunc.C_Player.dontHate = GUILayout.Toggle(CheatFunc.C_Player.dontHate, "不恨");
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            CheatFunc.C_Player.copsDontCare = GUILayout.Toggle(CheatFunc.C_Player.copsDontCare, "警察无视");
+            CheatFunc.C_Player.aboveTheLaw = GUILayout.Toggle(CheatFunc.C_Player.aboveTheLaw, "法外狂徒");
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            CheatFunc.C_Player.resurrect = GUILayout.Toggle(CheatFunc.C_Player.resurrect, "复活");
+            CheatFunc.C_Player.quickResurrect = GUILayout.Toggle(CheatFunc.C_Player.quickResurrect, "快速复活");
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("获得道具传送器")) { CheatFunc.A_AddItem("ItemTeleporter"); }
+            if (GUILayout.Button("获得500")) { CheatFunc.A_AddMoney(500); }
+            GUILayout.EndHorizontal();
+
+            GUI.DragWindow();
         }
     }
 }

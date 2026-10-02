@@ -28,6 +28,32 @@ namespace StreetsOfRoguePlugin
             }
         }
 
+        public static InvDatabase C_inventory
+        {
+            get
+            {
+                Agent player = C_Player;
+                if (player == null) { return null; }
+                return player.inventory;
+            }
+        }
+
+        public static bool A_invisible
+        {
+            get
+            {
+                Agent player = C_Player;
+                if (player == null) { return false; }
+                return player.invisible;
+            }
+            set
+            {
+                Agent player = C_Player;
+                if (player == null) { return; }
+                player.invisible = value;
+            }
+        }
+
         public static void A_AddMoney(int num)
         {
             Agent player = C_Player;

@@ -1,18 +1,21 @@
 ﻿using BepInEx;
+using BepInEx.Configuration;
 using HarmonyLib;
 using UnityEngine;
 
 namespace EnterTheGungeonPlugin
 {
-    [BepInPlugin("com.kisme.BepInEx.EnterTheGungeon.PluginTest", "EnterTheGungeonPluginTest", "1.0")]
+    [BepInPlugin("com.kismetzero.BepInEx.EnterTheGungeonPlugin", "EnterTheGungeonPluginTest", "1.0")]
     public class PluginTest : BaseUnityPlugin
     {
         public static PluginTest Instance { get; set; }
+        public ConfigEntry<KeyCode> windowsHotkey;
 
         void Awake()
         {
             Logger.LogInfo("Awake()");
             Instance = this;
+            windowsHotkey = Config.Bind<KeyCode>("Config", "windowsHotkey", KeyCode.Equals, "窗口快捷键");
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
         }
         void OnDestroy() { Logger.LogInfo("OnDestroy()"); }
@@ -29,15 +32,15 @@ namespace EnterTheGungeonPlugin
                 this.UpdateFirst = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Equals))
+            if (Input.GetKeyDown(windowsHotkey.Value))
             {
-                Logger.LogInfo("KeyCode.Equals");
+                Logger.LogInfo("Windows Toggle");
                 WindowsDisplay = !WindowsDisplay;
             }
         }
 
         public bool WindowsDisplay { get; set; }
-        public Rect windowRect = new Rect(100, 100, 200, 200); // 定义窗口位置 x y 宽 高
+        public Rect windowRect = new Rect(100f, 100f, 200f, 200f); // 定义窗口位置 x y 宽 高
         void OnGUI()
         {
             if (WindowsDisplay)
@@ -51,7 +54,11 @@ namespace EnterTheGungeonPlugin
         }
         public void WindowFunc(int id)
         {
+            GUILayout.BeginHorizontal();
             GUILayout.Label($"窗口id = {id}");
+            GUILayout.Label($"Cursor.visible = {Cursor.visible}");
+            GUILayout.EndHorizontal();
+            GUI.DragWindow();
         }
     }
 }
