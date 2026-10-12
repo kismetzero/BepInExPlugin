@@ -5,6 +5,9 @@
 GameController gc = GameController.gameController;
 gc.unlocks.AddNuggets(50);      // 增加鸡块
 
+gc.challenges.Add("InfiniteAmmo");                  // 添加突变
+gc.challenges.Add("InfiniteAmmoNormalWeapons");     // 添加突变
+
 Agent player = gc.playerAgent
 player.health = 80f;            // hp
 player.healthMax = 80f;         // hp上限
@@ -15,6 +18,16 @@ player.copsDontCare = true;     // 警察无视
 player.aboveTheLaw = true       // 法外狂徒
 player.resurrect = true         // 复活
 player.quickResurrect = true    // 快速复活
+
+player.statusEffects.AddStatusEffect("Invincible");     // 添加状态 无敌 15秒
+player.statusEffects.AddStatusEffect("Invincible", 0);  // 添加状态 无敌
+player.statusEffects.AddStatusEffect("Invisible");      // 添加状态 隐身 15秒
+player.statusEffects.AddStatusEffect("Invisible", 0);   // 添加状态 隐身
+player.statusEffects.AddStatusEffect("Resurrection");   // 添加状态 复活
+
+player.statusEffects.AddStatusEffect("AboveTheLaw");    // 添加状态 践踏法律
+
+player.statusEffects.AddTrait("IdentifyScience");       // 添加特性 用药指南
 
 // 添加金币
 InvItem invItem = new InvItem();
@@ -62,6 +75,7 @@ public class Agent : PlayfieldObject {
     public bool aboveTheLaw;
     public bool resurrect;
     public bool quickResurrect;
+    public void SetupAgentStats(string transformationType);
 }
 
 public class PlayfieldObject : MonoBehaviour {
@@ -109,6 +123,9 @@ public class Unlocks : MonoBehaviour {
 
 public class SessionDataBig : MonoBehaviour {
     public int nuggets;
+    public List<Unlock> challengeUnlocks;
+    public List<Unlock> itemUnlocks;
+    public List<Unlock> traitUnlocks;
 }
 
 public class SpawnerMain : MonoBehaviour { }
@@ -118,7 +135,8 @@ public class StatusEffects : MonoBehaviour {
     public bool ignoreInvincible;
     public void ChangeHealth(float healthNum, PlayfieldObject damagerObject, uint cameFromClient, float clientFinalHealthNum, string damagerObjectName, byte extraVar);
     public void AddStatusEffect(string statusEffectName, bool showText, Agent causingAgent, uint cameFromClient, bool dontPrevent, int specificTime);
-    
+    public List<Trait> TraitList = new List<Trait>();
+    public void AddTrait(string traitName);
 }
 
 public class CapsuleMachine : ObjectReal {

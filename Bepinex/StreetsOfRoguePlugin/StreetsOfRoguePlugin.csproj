@@ -7,7 +7,7 @@
     <_GameBepInExCoreDir>$(_GameBepInExDir)\core</_GameBepInExCoreDir>
     <_GameBepInExPluginDir>$(_GameBepInExDir)\plugins</_GameBepInExPluginDir>
     <_GameManagedDir>$(_GameMainDir)\StreetsOfRogue_Data\Managed</_GameManagedDir>
-    <_GameAvailable Condition="Exists('$(_GameBepInExCoreDir)\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable >
+    <_GameAvailable Condition="Exists('$(_GameBepInExCoreDir)\BepInEx.dll') AND Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -81,18 +81,13 @@
     <Compile Include="PluginTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DumpDataTools.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="CopyToPlugin" AfterTargets="Build">
     <Message Condition=" '$(_GameAvailable)' != 'true' " Text="$(TargetName) 构建失败！游戏或BepInEx不存在。" Importance="High" />
-    <Copy
-      Condition=" '$(_GameAvailable)' == 'true' "
-      SourceFiles="$(TargetPath)"
-      DestinationFolder="$(_GameBepInExPluginDir)"
-      SkipUnchangedFiles="true"
-      OverwriteReadOnlyFiles="true"
-      Retries="3"
-      RetryDelayMilliseconds="1000"
-    />
-    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -> $(_GameBepInExPluginDir)" Importance="High" />
-    </Target>
+    <Copy Condition=" '$(_GameAvailable)' == 'true' " SourceFiles="$(TargetPath)" DestinationFolder="$(_GameBepInExPluginDir)" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="1000" />
+    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -&gt; $(_GameBepInExPluginDir)" Importance="High" />
+  </Target>
 </Project>
