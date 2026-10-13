@@ -1,203 +1,472 @@
-﻿unlockName,unlockNameType,unlockType,unlockDescriptionType,name,description
-Shotgun,Item,Item,Description,霰弹枪,速度慢，但冲击力不容小觑。
-MachineGun,Item,Item,Description,机枪,准头差点？别担心！有了这把枪，只要四处倾泻子弹就好！看热闹的人？什么看热闹的人？！
-Revolver,Item,Item,Description,左轮手枪,这把枪能够发射快速而强大的子弹，但是它每次射击之间有一个较长的冷却时间。
-RocketLauncher,Item,Item,Description,火箭筒,能在任何东西上开个大洞。你要是不够小心，那自己也难逃一炮。
-Flamethrower,Item,Item,Description,喷火器,纵火狂的最爱！有了这件武器，你可以烧毁部分墙壁和物体。
-FireExtinguisher,Item,Item,Description,灭火器,熄灭所有火焰，你内心的欲望之火除外。除非你拿它对准你的咽喉。
-LeafBlower,Item,Item,Description,吹叶机,造成超高噪声污染，让世界各地在家加班的程序员恼怒不已。但在这款游戏中，它会掀起一阵大风。
-ShrinkRay,Item,Item,Description,缩小射线枪,将你的敌人缩小，然后像捏虫子一样捏碎他们。或者把他们丢出去，这更仁慈点。
-WaterPistol,Item,Item,Description,玩具水枪,谁说水枪只能打水仗？把它和能造成状态效果的其他物品组合使用。祝你玩得愉快。
-Grenade,Item,Item,Description,手雷,犹豫不决时，扔出去就好。
-GrenadeEMP,Item,Item,Description,电磁脉冲手雷,能让各种电子产品无法正常工作。
-GrenadeDizzy,Item,Item,Description,眩晕手雷,其名称灵感来自于欧洲一款以鸡蛋为主题的游戏中的英雄。巧合的是，它也能导致头晕。
-GrenadeWarp,Item,Item,Description,传送手榴弹,这个手榴弹可以将任何人传送到地图上的随机一个位置，包括你也在内。
-LandMine,Item,Item,Description,地雷,放在路上，把过路的人吓一“跳”。
-MolotovCocktail,Item,Item,Description,燃烧弹,虽然大多数鸡尾酒可以带来欢乐和美好的时光，但这杯鸡尾酒只会带来死亡和毁灭。
-ParalyzerTrap,Item,Item,Description,麻痹陷阱,使人暂时麻痹。这玩意看起来就像一个五彩斑斓的倒立字母 P，因为游戏设计师的创意已经黔驴技穷了。
-BearTrap,Item,Item,Description,捕熊夹,虽然可能只是为熊 （只是猜测）打造的，但你也用它对人类造成伤害并减慢他们的速度。
-DoorDetonator,Item,Item,Description,破门雷管,把它放到一扇锁着的门上，然后拼命晃动门。嘭，就算是精钢做的门也打开了。
-OilContainer,Item,Item,Description,油箱,与点烟器配合使用时效果最佳。可以在弹药盒重新注满。应防止5岁以下儿童摄入。
-TimeBomb,Item,Item,Description,定时炸弹,放置 10 秒后爆炸。老实说，你得离远一点。
-ExplosiveStimulator,Item,Item,Description,引爆装置,导致附近所有的电子设备和爆炸物立即爆炸。
-Fireworks,Item,Item,Description,烟花,这些烟花是非法的，这是因为它实际上是一个装满火箭炮的盒子。
-Sword,Item,Item,Description,剑,角色扮演演员和书呆子的最爱，亦能夺人性命。
-Sledgehammer,Item,Item,Description,大锤,异常强大，能粉碎别的武器无能无力的东西。
-BraceletStrength,Item,Item,Description,力量手镯,可能更适合中世纪奇幻游戏，但谁在乎呢？提高你的近战攻击力。
-MeleeDurabilityDoubler,Item,Item,Description,近战耐久喷雾,将任意近战武器的耐久度提高到 200%。
-HardHat,Item,Item,Description,安全帽,保护你在工作中不受伤，但拿那些时尚的警察没办法。哎呦我去……
-GasMask,Item,Item,Description,防毒面具,保护你的鼻子和脸部免遭毒气伤害。和丹尼叔叔开车旅行时非常有用。
-BulletproofVest,Item,Item,Description,防弹背心,在被打坏前降低子弹伤害，不过也会让你看起来特别臃肿。
-ArmorDurabilityDoubler,Item,Item,Description,盔甲耐久喷雾,将任意一件护甲的耐久度提高到 200%。
-Lockpick,Item,Item,Description,撬锁工具,撬开任何锁。锁匠特别讨厌这玩意。
-HackingTool,Item,Item,Description,黑客工具,用途单一的设备，可以远程入侵任何一台电脑。
-Silencer,Item,Item,Description,消音器,将它安到枪上，这样你就能在不惊醒邻居的情况下杀死他了。扰人清梦最粗鲁了！
-AccuracyMod,Item,Item,Description,精度调节器,将它安装到射弹武器上可以增加火器的属性。
-RateOfFireMod,Item,Item,Description,射速增强模组,这是一个装饰着赛车条纹的扳机，装上它可以提高你的枪械的射速。
-AmmoCapacityMod,Item,Item,Description,弹药扩容器,增加枪械的子弹存储上限。
-IdentifyWand,Item,Item,Description,鉴定魔杖,在使用注射器之前，或许你该先弄明白里面是什么。现在可以了！只需将它与注射器一起使用即可。
-CritterUpper,Item,Item,Description,暴击增强器,与暴徒没有任何关系，不过会将你的暴击率提高到 100%。
-ElectroPill,Item,Item,Description,电击药丸,让你拥有神奇的静电效果，任何接触你的身体头的人都会收到伤害。
-Giantizer,Item,Item,Description,巨人饮料,小时候缺牛奶？没关系，喝下这瓶巨人饮料能让你化身浩克。
-Shrinker,Item,Item,Description,缩小仪,把你缩小到小恶魔（权力的游戏）那么大。
-KillerThrower,Item,Item,Description,杀手飞镖,有没有想过拿东西扔向别人，然后把他们炸成碎片？你的愿望成真了！！
-RagePoison,Item,Item,Description,狂怒毒药,喝下后将对沿途中的所有人发火，从而引发可笑的争论。
-CyanidePill,Item,Item,Description,氰化物药丸,说真的，别吃这玩意。
-Cologne,Item,Item,Description,古龙水,这一层大多人之前对你都没啥印象，但现在全都喜欢你。可惜啊，这种好事在下一层就没的了。
-Antidote,Item,Item,Description,解毒剂,治愈负面状态效果，并且防止新的状态效果生效。
-FourLeafClover,Item,Item,Description,四叶草,通常，你需要彻夜不眠才能抓到点运气。有了它，好运将常伴你左右！
-CubeOfLampey,Item,Item,Description,神灯方块,打碎灯可以找到好东西。
-AmmoStealer,Item,Item,Description,偷弹器,将弹药从别人的射弹武器传送到你携带的的射弹武器中。
-AmmoProcessor,Item,Item,Description,弹药加工仪,几乎可以将任意道具变成弹药，供物品栏中的弹射武器使用。
-KillProfiterAmmo,Item,Item,Description,杀戮弹药奖励器,作为杀死 3 个人的奖励，你的枪将获得弹药，确保暴力循环持续！
-MiniFridge,Item,Item,Description,迷你冰箱,让食物保持美味新鲜，只要它在你的物品栏里，你就能在吃掉食物时获得生命值加成。
-FoodProcessor,Item,Item,Description,食物加工仪,几乎可以将任何道具变成食物……这些食物可能会致癌，但这就不归我们管了。
-KillProfiterHealth,Item,Item,Description,杀戮生命偷取器,杀人会让你好一点。但无法治愈你受折磨的灵魂！
-QuickEscapeTeleporter,Item,Item,Description,快速逃生传送器,当你的生命值降到一定值时，你将被传送到别处。
-ResurrectionShampoo,Item,Item,Description,复活香波,能让你复活重生。记得在死亡之前喝下它。
-CardboardBox,Item,Item,Description,纸板箱,只要你躲在这下面，那就没人会注意到你。别乱动，AI 并没那么愚蠢！
-HologramItem,Item,Item,Description,全息大脚怪,他们说，如果你找到大脚怪，那就拼命把它打破，这会掉落满地的金银财宝！
-WindowCutter,Item,Item,Description,破窗工具,完全移掉窗户，只产生极小的噪声。
-HearingBlocker,Item,Item,Description,耳障口哨,暂时让楼层中的所有人失聪。可以让他们暂享一段安静的时光。
-Blindenizer,Item,Item,Description,致盲器,发出一道炫目的闪光，显著降低人们的视野（如果运气够好，这就只是暂时的），小心在黑暗中磕到你的脚趾头。
-MemoryEraser,Item,Item,Description,记忆消除器,将人与人之间的关系恢复到本层最开始时的状况。
-WallBypasser,Item,Item,Description,翻墙工具,如果空间允许，将你面向的空间扭曲约 32 个像素。穿墙而过！
-BodySwapper,Item,Item,Description,位置交换器,这个装置可以让你和一个不是囚犯的人交换位置。
-SafeBuster,Item,Item,Description,保险箱克星,一次性保险箱破解工具。
-SlaveHelmetRemover,Item,Item,Description,奴隶头盔移除器,通过与奴隶互动，从他们头上安全把爆炸头盔取下来。
-FreeItemVoucher,Item,Item,Description,免费道具兑换券,在任意商店免费兑换一件你选择的道具。
-HiringVoucher,Item,Item,Description,招募兑换券,招募别人，而且无需支付任何报酬。这张券上面说，抵抗组织以后肯定会补偿他们。如果他们愿意的话。偷偷告诉你：他们才不会掏钱。
-KillProfiter,Item,Item,Description,杀戮奖券,帮助控制人口并用它来赚钱！杀人，赚钱。上限是 100 美元。
-Boombox,Item,Item,Description,手提音响,播放舞曲让敌人不由自主地开始热舞，分散他们的注意力。
-Hypnotizer,Item,Item,Description,催眠等级 I,对别人使用可以让他们喜欢你。不是男女之情啦，是朋友间相互欣赏那种！
-Hypnotizer2,Item,Item,Description,催眠等级 II,对别人使用可以让他们与你结盟。独木难支，团结就是力量。
-Haterator,Item,Item,Description,憎恨仪,让别人憎恨他们第一眼看到的人。憎恨着永远心怀怨恨，还好你是玩家。
-WalkieTalkie,Item,Item,Description,警用对讲机,呼叫附近的警察制服某个罪犯，或者一个你不喜欢的人，又或者你喜欢的人，谁在乎呢？
-FriendPhone,Item,Item,Description,友谊电话机,呼叫你的伙伴传送到附近来帮助你脱困，或者只是过来陪你走走。
-Necronomicon,Item,Item,Description,死灵之书,召唤亡灵为你而战，但需要你靠近墓地。
-BooUrn,Item,Item,Description,幽灵瓮,这些幽灵需要一个永远的新家！ 在室内使用它，可以吓跑建筑物里的居民。
-MonkeyBarrel,Item,Item,Description,猩猩桶,从技术上讲，这是一个装满暴怒的小型猩猩的桶， 不过他们需要几秒钟才能挣脱木桶逃出来。
-FreezeRay,Item,Item,Description,冷冻射线枪,将人冻结成美丽的人体冰雕。
-GhostBlaster,Item,Item,Description,幽灵枪,你打算给谁打电话？希望是你妈妈，她很想念你。对于所有超自然生物均有效，不仅是幽灵！
-Shuriken,Item,Item,Description,手里剑,通常来说，没人喜欢你把这东西丢到他们脸上。
-MoreKnockingThroughWalls,StatusEffect,Trait,Description,墙壁的噩梦,更容易把对手打穿墙壁
-DontHitAligned,StatusEffect,Trait,Description,禁止内斗,无法命中与你对齐的大多数人，他们也无法命中你。这种情况同样适用于忠诚和顺从。仅限近战、碰触和子弹。扩展到你的员工。
-DontHitOwnKind,StatusEffect,Trait,Description,阶级有爱,无法命中与你同类的人，除非他们怀有敌意。仅限近战、碰触和子弹。还可以让人们变得友好。
-KnockbackLess,StatusEffect,Trait,Description,肉山,降低了伤害的击退效果，枪械开火时不会造成击退效果
-IncreasedCritChance,StatusEffect,Trait,Description,提高暴击率,提高施加暴击的几率
-ChanceToSlowEnemies,StatusEffect,Trait,Description,膝盖中了一箭,击中敌人时有一定几率造成减速
-FastWhenHealthLow,StatusEffect,Trait,Description,溜之大吉,生命值较低时提高速度
-MoreDamageWhenHealthLow,StatusEffect,Trait,Description,愤怒就是力量,生命值较低时对敌人造成更多伤害
-ChanceAttacksDoZeroDamage,StatusEffect,Trait,Description,暴击无效,对玩家造成的伤害不会减少生命值
-AttacksDamageAttacker,StatusEffect,Trait,Description,尖刺皮肤,对玩家造成的近战伤害会反弹给攻击者
-Backstabber,StatusEffect,Trait,Description,背刺,受害者没有进入作战状态时，近战攻击可造成 2 倍伤害。如果使用了伪装 ，则可以造成 10 倍伤害。
-ChanceToKnockWeapons,StatusEffect,Trait,Description,手无寸铁,在敌人格挡时，有几率击落他们手中的武器
-StrongFists,StatusEffect,Trait,Description,指节套,赤手空拳可以造成更多伤害
-MeleeLastLonger,StatusEffect,Trait,Description,经久耐用,提高近战武器的耐久度
-LongLunge,StatusEffect,Trait,Description,远距离突刺,用近战武器进行远距离突刺
-MeleeMobility,StatusEffect,Trait,Description,彩蝶飞舞,提高发动近战攻击的机动性
-CauseBiggerKnockback,StatusEffect,Trait,Description,击退之王,可以让被你击中的人后退得更远
-BlocksSometimesHit,StatusEffect,Trait,Description,破防,当敌人格挡你的近战攻击时，也会被计为命中
-MeleeDestroysWalls,StatusEffect,Trait,Description,破壁人,在装备近战武器时，它们可以摧毁部分墙壁，但要消耗大量耐久度
-HardToShoot,StatusEffect,Trait,Description,滑不溜丢,敌人更加难以瞄准你
-BigBullets,StatusEffect,Trait,Description,大只子弹,子弹比正常尺寸大
-ExplosionsDontDamageCauser,StatusEffect,Trait,Description,爆炸幸存者,由玩家引发的爆炸不会对完成造成任何伤害
-ExplosionsBreakEverything,StatusEffect,Trait,Description,爆破大师,爆炸可以摧毁任意墙壁或物体
-MoreAmmoInDroppedWeapons,StatusEffect,Trait,Description,弹药拾荒者,掉落的武器将包含更多弹药
-ReloadWeaponsNewLevel,StatusEffect,Trait,Description,子弹上膛,武器将在每层开始时获得部分弹药
-BulletsCauseFire,StatusEffect,Trait,Description,燃烧的子弹,子弹在击中物体时将引发火灾
-BulletsPassThroughObjects,StatusEffect,Trait,Description,破甲子弹,子弹在击中物体和人后将穿透它们
-BulletsDestroyOtherBullets,StatusEffect,Trait,Description,子弹粉碎器,你的子弹可以摧毁其他子弹
-OperateQuickly,StatusEffect,Trait,Description,心灵手巧,提高你的“（破解）...”进度条完成速度
-OperateSecretly,StatusEffect,Trait,Description,鬼祟身影,除非你在奴役或逮捕其他人，否则别人不会注意到你的“（做某件事）”进度条
-DontTriggerFloorHazards,StatusEffect,Trait,Description,凌波微步,不会触发关卡中的各种危险，悄无声息通过激光，不触发警报
-HardToSeeFromDistance,StatusEffect,Trait,Description,杳无踪迹,降低人们发现你的视野范围
-NoOwnCheckOnBreak,StatusEffect,Trait,Description,允许笨拙,当你打破他们的财物或墙壁时，人们不会生气
-NoStealPenalty,StatusEffect,Trait,Description,好借好还,偷取人们的财物时，他们不会生气
-TeleportAnytime,StatusEffect,Trait,Description,随意传送,除非处于生死关头，否则可以无视地点随时传送
-HitObjectsNoNoise,StatusEffect,Trait,Description,秘密破坏狂,击中物体和墙壁时不会发出任何声音
-ThiefToolsMayNotSubtract,StatusEffect,Trait,Description,入侵艺术家,盗窃工具在使用后有一定几率不会损坏
-GoodTrader,StatusEffect,Trait,Description,砍价小能手,降低商店里的道具价格
-LowCostJobs,StatusEffect,Trait,Description,低成本工作,降低人员招募成本
-FollowersExtraHealth,StatusEffect,Trait,Description,士气高涨,追随者获得额外生命值
-MedicalProfessional,StatusEffect,Trait,Description,医疗专家,每个追随者的生命值可以在每一层恢复一次. 可以用血袋
-RegenerateHealthWhenLow,StatusEffect,Trait,Description,现代战士,生命值在低于 20 点时会逐渐恢复
-ScareEnemiesEasier,StatusEffect,Trait,Description,狰狞面目,提高敌人在战斗过程中逃跑的几率
-MoreFollowers,StatusEffect,Trait,Description,万人迷,最多可以招募 3 名追随者
-StartWithFollowers,StatusEffect,Trait,Description,独行杀手,每一关开始时，都会有一个追随者加入你的队伍
-GenericAgentsAligned,StatusEffect,Trait,Description,和人民打成一片,普通市民都会对你效忠
-RandomPeopleAligned,StatusEffect,Trait,Description,随机崇敬,有人会随机与你结盟
-MoreFollowersLessDamageToPlayer,StatusEffect,Trait,Description,人多更安全,身边的追随者越多，你受到的伤害就越低。最高仅限 3 名追随者。
-MoreFollowersCauseMoreDamage,StatusEffect,Trait,Description,人多力量大,身边的追随者越多，你造成的伤害就越高。最高仅限 3 名追随者。
-AgentsFollowToNextLevel,StatusEffect,Trait,Description,思乡杀手,追随者将一直跟你前往下一层
-HealthItemsGiveFollowersExtraHealth,StatusEffect,Trait,Description,共享生命,提高生命值的物品对你周围的追随者同样有效
-CannibalsNeutral,StatusEffect,Trait,Description,与食人者相安无事,食人者将不会见面就发动进攻
-MafiaAligned,StatusEffect,Trait,Description,家族之友,匪徒与你结盟
-IdentifyScience,StatusEffect,Trait,Description,用药指南,鉴定有注射器
-StatusEffectsLonger,StatusEffect,Trait,Description,延长状态效果,延长状态效果
-MapFilled,StatusEffect,Trait,Description,全球定位系统,在关卡开始时显示所有地图标记。
-MoreSkillPoints,StatusEffect,Trait,Description,勤奋,获得额外技能点
-ChanceFreeShopItem,StatusEffect,Trait,Description,免费赠品,从商贩处购买的物品有一定几率免费
-MoneyAtLevelStart,StatusEffect,Trait,Description,信托基金人,在每层开始时会收到钱
-VendorsDropShopItem,StatusEffect,Trait,Description,商店掉落,商贩中立时，将掉落一件他们原本出售的物品
-NoGuns,Unlock,Challenge,Unlock,无枪械,禁止枪械！
-NoMelee,Unlock,Challenge,Unlock,无近战武器,不允许使用近战武器，大家都用枪！
-LowHealth,Unlock,Challenge,Unlock,降低所有人的生命值,所有人在游戏开始时的生命值都大幅降低，你也不例外。
-EveryoneHatesYou,Unlock,Challenge,Unlock,每个人都讨厌你,大多数人在游戏开始时就对你充满敌意，但他们的生命值也低得多。
-TimeLimit,Unlock,Challenge,Unlock,限时,对于每个所需的任务，在 2:15 加上 45 秒内通关，否则你会死亡！
-TimeLimit2,Unlock,Challenge,Unlock,极限限时,对于每个所需的任务，在 0:45 加上 45 秒内通关，否则你会死亡！
-TimeLimitQuestsGiveMoreTime,Unlock,Challenge,Unlock,时间限制 + 时间奖励,开始游戏时时间有限，不过可以通过完成任务赢得更多时间。
-SpeedUp,Unlock,Challenge,Unlock,加快游戏,游戏将以正常速度的 1.3 倍进行。
-SlowDown,Unlock,Challenge,Unlock,更慢的游戏速度,游戏将以正常速度的 0.8倍进行。
-NoLevelFeelings,Unlock,Challenge,Unlock,没有灾难,关卡中不会出现灾难。
-LevelFeelingsEveryLevel,Unlock,Challenge,Unlock,给每个关卡都加入灾难,灾难多得数不清。
-NewCharacterEveryLevel,Unlock,Challenge,Unlock,每关开始时都能选择新角色,你的角色职业会在每个关卡开始时随机改动。
-RocketLaunchers,Unlock,Challenge,Unlock,火箭筒暴乱,每人都能获得一个火箭筒！
-ZombieMutator,Unlock,Challenge,Unlock,僵尸派对,每关将出现僵尸
-RogueVision,Unlock,Challenge,Unlock,地痞的视野,在角色视野范围之外的物体将不会显示。
-ExplodingBodies,Unlock,Challenge,Unlock,身体会爆炸,你打倒的人将会在很短的时间内爆炸
-NoCops,Unlock,Challenge,Unlock,无巡逻警察,警察不再在街上巡逻，尽管他们仍然可以在其他情况下出现。
-FullHealth,Unlock,Challenge,Unlock,全民健康,NPC与玩家的生命值相似，而不是默认的生命值减少。
-HalfHealth,Unlock,Challenge,Unlock,NPC获得额外血量,NPC获得更多的血量，使游戏更具挑战性。
-InfiniteMeleeDurability,Unlock,Challenge,Unlock,无限近战耐久,近战武器在攻击他人时不会失去耐久
-InfiniteAmmo,Unlock,Challenge,Unlock,无限子弹,枪械射击时不会消耗弹药。
-InfiniteAmmoNormalWeapons,Unlock,Challenge,Unlock,无限弹药（普通武器）,“普通”武器发射时不会消耗弹药（通常是子弹）。
-RandomMutators,Unlock,Challenge,Unlock,随机突变,每关随机选择新的突变。
-RandomLevelThemes,Unlock,Challenge,Unlock,随机区域,每个级别的区域（贫民窟、工业等）是随机化的。
-MixedUpLevels,Unlock,Challenge,Unlock,混合环境,如果湖泊出现在贫民窟怎么办？如果歹徒在公园里闲逛怎么办？这个突变应该会回答你所有的问题。
-NoLimits,Unlock,Challenge,Unlock,无限制,许多物体、物品和特征都解除了限制，以允许进行极端的利用、磨削以及最小-最大化
-QuickGame,Unlock,Challenge,Unlock,快速游戏,游戏中只有10层，而不是15层。大部分完成特定的层数的成就不会触发
-ContinuesMode,Unlock,Challenge,Unlock,继续？,丢掉性命以后，玩家可以从当前楼层开始时继续游戏。每回合共有2次继续游戏的机会。从你完成1楼后开始算起。
-NoSlums,Unlock,Challenge,Unlock,移除贫民窟,贫民窟将不会出现在游戏中
-NoIndustrial,Unlock,Challenge,Unlock,移除工业区,工业区将不会出现在游戏中
-NoPark,Unlock,Challenge,Unlock,移除公园区,公园区将不会出现在游戏中
-NoDowntown,Unlock,Challenge,Unlock,移除商业区,商业区将不会出现在游戏中
-NoUptown,Unlock,Challenge,Unlock,移除住宅区,住宅区将不会出现在游戏中
-Endless,Unlock,Challenge,Unlock,无尽模式,游戏不会在“抢先体验”内容体验完毕后结束。
-Sandbox,Unlock,Challenge,Unlock,沙盒,也称为“作弊模式”。游戏开始时你会获得一个道具，该道具能让你使用所有已解锁的奖励道具。此外，无需完成任务即可通关。你还无法解锁成就和其他可解锁物品。
-NoD_HarmAtIntervals,Unlock,Challenge,Unlock,E_NoD_HarmAtIntervals,E_D_NoD_HarmAtIntervals
-NoD_DropBombs,Unlock,Challenge,Unlock,E_NoD_DropBombs,E_D_NoD_DropBombs
-NoD_Ooze,Unlock,Challenge,Unlock,E_NoD_Ooze,E_D_NoD_Ooze
-NoD_WarZone,Unlock,Challenge,Unlock,E_NoD_WarZone,E_D_NoD_WarZone
-NoD_StatusEffectChange,Unlock,Challenge,Unlock,E_NoD_StatusEffectChange,E_D_NoD_StatusEffectChange
-NoD_Zombies,Unlock,Challenge,Unlock,E_NoD_Zombies,E_D_NoD_Zombies
-NoD_FindBombs,Unlock,Challenge,Unlock,E_NoD_FindBombs,E_D_NoD_FindBombs
-NoD_Lockdown,Unlock,Challenge,Unlock,E_NoD_Lockdown,E_D_NoD_Lockdown
-NoD_Riot,Unlock,Challenge,Unlock,E_NoD_Riot,E_D_NoD_Riot
-NoD_Killer,Unlock,Challenge,Unlock,E_NoD_Killer,E_D_NoD_Killer
-NoD_Bounty,Unlock,Challenge,Unlock,E_NoD_Bounty,E_D_NoD_Bounty
-NoCustomCharacters,Unlock,Challenge,Unlock,无自定义角色,不允许自定义角色。可用于公开多人游戏。
-SuperSpecialCharacters,Unlock,Challenge,Unlock,超级特殊能力,为整个游戏启用角色的“超级”版本。只在角色的大任务完成且新游戏开始后生效。仅限非自定义字符。
-SpeedRun,Unlock,Challenge,Unlock,速通模式,更改一系列设置，开启这个突变以保证速通的公平性。（你将不能使用ATM机等会导致竞争不公平的设施，从而使每个玩家都在同样的起点）
-SpeedRun2,Unlock,Challenge,Unlock,速通模式 (标准版),和速通模式突变基本一样，但是这个突变里所有的技能和物品都被解锁了，并且都被设置为激活状态。问题是:如果你花了超过4分钟完成一个关卡，你就会死掉。
-ZombiesWelcome,Unlock,Challenge,Unlock,欢迎僵尸,正常人群中欢迎僵尸。
-SupercopsReplaceCops,Unlock,Challenge,Unlock,超级警察地盘,所有警察都会被超级警察取代。
-MoneyRewards,Unlock,Challenge,Unlock,金钱奖励,完成任务总能获得金钱奖励。
-GorillaTown,Unlock,Challenge,Unlock,猿人城,每个人都会变成大猩猩的样子，不过这对游戏没有影响。
-ManyWerewolf,Unlock,Challenge,Unlock,狼人,狼人会在普通民众中随机出现。
-HighCost,Unlock,Challenge,Unlock,高成本,所有物品都会花费更多
-AssassinsEveryLevel,Unlock,Challenge,Unlock,刺杀国度,每一层都会出现刺客。
-DoctorsMoreImportant,Unlock,Challenge,Unlock,医生很重要,生命值物品的效果变差，但医生的费用更便宜，也更常见。
-BigKnockbackForAll,Unlock,Challenge,Unlock,猛烈击退,所有的攻击命中都能带来更猛烈的击退。
-NoCowards,Unlock,Challenge,Unlock,没有懦夫,人们永远不会逃离战斗。
-CannibalsDontAttack,Unlock,Challenge,Unlock,食人者中立,食人者刚开始时不会再抱有敌意。
+﻿unlock,unlockName,unlockNameType,unlockType,unlockDescriptionType,name,description
+agentUnlocks,Assassin,Agent,Agent,Description,刺客,在阴影中潜行，从背后发出致命一击。也曾想过去暗杀总统或军方大佬，但目前解决的只是有钱的老太太和偶然继承了一大笔遗产的宠物猫。咋说呢，工作就是工作，干一行爱一行！当刺客听说反对市长的动乱日益壮大后，一股刺杀的劲头在他体内喷涌而出！
+agentUnlocks,Athlete,Agent,Agent,Description,运动员,在不霸凌书呆子（千年杀、楸奶头）的时候，运动员喜欢高速奔跑朝着墙直直怼过去。科学家说这种行为会破坏脑细胞，但运动员却争论说这实际上可以恢复脑细胞。真讽刺，这种无稽之谈反而进一步验证了科学家的说法。不过科学家胸前两点紫得发黑之后，他们放弃了这种说法。
+agentUnlocks,Bartender,Agent,Agent,Description,酒保,大家都喜欢友善的酒保！除了他，很少有人愿意听你不停唠叨你的工作有多烂，妹子如何看不上你，以及你如何想“在枪林弹雨中把这个世界操个遍”这些废话！不过酒保总是一副理解你的样子，同时还不耽误手里的活。你知道吗？酒保还会提供酒精饮料呢。
+agentUnlocks,Businessman,Agent,Agent,Description,银行家,“贪婪是好事！毒品也是！”这就是投资银行家的座右铭。可以预见的是，这让他们拥有了巨额财富和严重毒瘾……还有各种派对！这是一种极端的生活方式（和游戏风格），并不适合所有人。
+agentUnlocks,Cannibal,Agent,Agent,Description,食人者,这是近亲结婚、毒性污泥污染和互联网动物保护视频（动物们被关在狭小的空间，然后被做成快餐）的结果。食人者认为食用动物的肉不合乎道德，但肉又太美味了！他们在疯掉前只能吃豆腐了。小知识：人肉非常美味呦！
+agentUnlocks,Comedian,Agent,Agent,Description,喜剧演员,无论是拿种族之间的差异开玩笑还是调侃最近糟糕至极的网恋，喜剧演员从来不缺能够颠覆你的世界观的各种笑料。他们的一些段子可能会有争议，但喜剧演员的目的就是让大家开怀大笑！
+agentUnlocks,Cop,Agent,Agent,Description,警察,一丝不苟地遵守当地法律，虽然这些法律有时候并没有什么意义。尽管如此，在政府通过了禁止 4 个以上的人肩并肩跳舞的法律之后，警察也不再对当前政府抱有幻想了。因为这部法律强制解散了警察的村民保护团。
+agentUnlocks,Cop2,Agent,Agent,Description,超级警察,一丝不苟地遵守当地法律，虽然这些法律有时候并没有什么意义。尽管如此，在政府通过了禁止 4 个以上的人肩并肩跳舞的法律之后，警察也不再对当前政府抱有幻想了。因为这部法律强制解散了警察的村民保护团。
+agentUnlocks,Doctor,Agent,Agent,Description,医生,这个危险的世界中仅存的几位和平主义者之一。 事实上，医生非常善于“安抚”人。当然，用的是麻醉剂。但由于市长颁布了全新的“当地法律”，所有打斗都受到警察管制，他的生意现在相当旺。尽管赚了很多钱，但医生宁愿街头变得安全点，所以他决定加入抵抗组织。
+agentUnlocks,Gangbanger,Agent,Agent,Description,流氓（瘸帮）,在目睹自己的父亲被血帮谋杀后，加入了瘸帮。实际上，这不是血帮下的手，只是一个因为晒伤被逼疯的裸男所为。流氓可能需要检查一下自己的视力。
+agentUnlocks,GangbangerB,Agent,Agent,Description,流氓（血帮）,在目睹他的父亲被瘸帮谋杀后，加入了血帮。实际上，这不是瘸帮下的手，只是一个掉到蓝莓缸被逼疯的裸男所为。流氓可能需要检查一下自己的视力。
+agentUnlocks,Gorilla,Agent,Agent,Description,大猩猩,这只野兽在科学实验室中长大，被喂养了可让它拥有超高智力的实验药物。它不会说中文，闻起来像你叔叔丹尼用过的马桶刷，但它的速度超快，而且异常强壮。非常憎恨科学家。
+agentUnlocks,Hacker,Agent,Agent,Description,黑客,拥有入侵整个星球的野心，但实际上只是在帮助父母调调摄像头。有哪个名副其实的黑客不想攻破系统呢？对于这位不容于世的人，加入抵抗组织是明摆着的事。另外两个显而易见的理由：乐事薯片和不用洗澡……陈词滥调了。
+agentUnlocks,Hobo,Agent,Agent,Description,贫民区居民,卑微的贫民区居民一无所有，他们愿意揭竿而起，在这个疯狂的世界里做一些值得去做的事。这通常包括随便找个人痛殴一顿，然后抢走他们的钱，以及在垃圾桶中寻找培根乳酪汉堡。美国梦的真实化身！
+agentUnlocks,UpperCruster,Agent,Agent,Description,贵族,卑微的贫民区居民一无所有，他们愿意揭竿而起，在这个疯狂的世界里做一些值得去做的事。这通常包括随便找个人痛殴一顿，然后抢走他们的钱，以及在垃圾桶中寻找培根乳酪汉堡。美国梦的真实化身！
+agentUnlocks,Scientist,Agent,Agent,Description,科学家,将自己的一生致力于科学进步和折磨大猩猩的事业。得益于科学进步的成果，科学家获得了许多有趣的玩具来冒险。虽然他们可能更希望以科学进步的名义用关在笼子里的大猩猩测试这些玩具（即：未确诊的施虐狂），但由于市长将每个实验室的烧杯配额削减到 1 个，科学家因此加入了抵抗组织。
+agentUnlocks,ShapeShifter,Agent,Agent,Description,变形人,变形人被送到地球的目的是在这颗星球引起混乱。不幸的是，变形人的地球人外表是一个看起来像恶魔的小裸人（只是粉色的眼睛，好吧？），这真的不太适合在社会上存在。幸运的是，控制之石允许变形人跳进和跳出人类的身体，以便使地球上的生活更容易些！
+agentUnlocks,Shopkeeper,Agent,Agent,Description,店主,常常以对他在其他 Roguelike 游戏中的同行嗤之以鼻，把那些在地下城中间开店的同行叫做“没有商业常识的可怜白痴”。喜欢在人口密集的地区开展业务，不喜欢被致命的怪物环伺左右。
+agentUnlocks,Slavemaster,Agent,Agent,Description,奴隶主,你所能期望的最暖心、最温柔的奴隶主。每晚都与其他奴隶主一起，为奴隶们清唱催眠小夜曲。接下来则是强制性的拥抱环节。至于那些合身的皮革？嗯，每个人都有自己的喜好吧？
+agentUnlocks,Soldier,Agent,Agent,Description,战士,战士渴望为城市而战。可惜现在不打仗了。所以，为什么不来制造一场战争呢？这就是抵抗组织的由来。与其坐在那里无所事事，战士现在有机会打一场正经的战斗，也许可以顺便施施暴！呼啊，爽！！！
+agentUnlocks,Thief,Agent,Agent,Description,小偷,可能是有史以来最逊的小偷。他还真穿着一身老套的盗贼服装。太荒唐了。之所以这样打扮，是因为自己内心巨大的不安全感。他认为这身装扮更有职业罪犯的感觉。但实情并非如此。小偷能克服自己的自我能力否定倾向吗？
+agentUnlocks,Vampire,Agent,Agent,Description,吸血鬼,吸食人血并非绝对必要，只是他比较挑嘴罢了。这种挑剔的本性延续到了吸血鬼的社交圈。我最近无意中听他抱怨到：“为什么这个僵尸一直发消息让我出去和他一起玩？老兄，虽然我们同为不死族，但这并不意味着我们就是好基友。你只会对着政治发牢骚。”
+agentUnlocks,Werewolf,Agent,Agent,Description,狼人,直到现在，狼人只使用他们的力量做过两件事：1. 赢得高中篮球赛；2. 恶意伤人。狼人觉得这些事情不值得他们浪费时间，而且觉得他们的生活相当枯燥乏味。多亏了抵抗组织，他们希望能够利用他们的力量做一些善事，顺便享受下嚎叫的好日子！
+agentUnlocks,Wrestler,Agent,Agent,Description,摔跤手,突进、撞击，然后抓住对手来个狠摔，这就是一个头脑简单但内心强大的摔跤手一整天的工作！不过老实说，这种行为源自于摔跤手对世界严重的挫折感。为什么市长要禁止打架斗殴？为什么这么多店铺不欢迎光着膀子的壮汉？为什么书里会有这么多愚蠢的字？啊啊啊！！！
+agentUnlocks,Zombie,Agent,Agent,Description,僵尸,僵尸其实并不喜欢吃人脑。我是说，那多恶心啊。不过，大家都想看到这种镜头。还有，大家也期望看到“正常人”用斧头砍僵尸的头部。这是一个恶性循环。僵尸也希望他们能变得酷酷的，好能和吸血鬼一起玩。但大家都知道，吸血鬼相当高冷！
+agentUnlocks,Firefighter,Agent,Agent,Description,消防员,消防水管非常有效，但它们又大又笨重！那么，什么才是更有效的解决方案呢？市长说：砍掉消防员的手臂，然后装上最先进的水枪。虽然这适度提高了火灾的控制力度，但它已经导致消防员的士气直线下降，以及所有不必要的残害等等。
+agentUnlocks,Mafia,Agent,Agent,Description,匪徒,匪徒按照以下几个指导原则来生活：现金为王，永远以家庭为重，尊重神圣的晚餐。如果打破了由金钱、忠诚度和大量碳水化合物这三者构成的平衡，就会出现一个脾气暴躁的罪犯。借助市长的权势，匪徒及其帮派的现金和食物保证可以不受阻碍地流动。
+agentUnlocks,RobotPlayer,Agent,Agent,Description,机器人,大多数机器人都具有特定的角色，例如“警察”或“男管家”，但令人遗憾的是，在幕后打造这个机器人的工程师忘了为它设置使命。将这个机器人与极低的电池使用寿命相结合，你就会获得自卑情结的配方。但是自加入抵抗军以来，这个机器人似乎找到了自己的使命：成为市长，推动审判日的到来。或者了解爱情是什么，以仁爱实施统治。
+abilityUnlocks,Bite,Item,Ability,Description,啃咬,走在任何活人的后面并咬住他们来逐渐偷取他们的生命值
+abilityUnlocks,Cannibalize,Item,Ability,Description,食尸,吃掉尸体来获得生命值
+abilityUnlocks,Charge,Item,Ability,Description,冲锋,按住 [Special] 来向前冲锋并打破物体。想停下来？抱歉，做不到。
+abilityUnlocks,WaterCannon,Item,Ability,Description,防暴水枪,用来控制火灾和暴民。可以使用消防栓或水源补充。只能使用百分百无毒的纯净水。
+abilityUnlocks,ChloroformHankie,Item,Ability,Description,氯仿手帕,第 1 步：走到敌人后面。第 2 步：使用氯仿。第 3 步：庆祝你又干掉了一个人。
+abilityUnlocks,WerewolfTransform,Item,Ability,Description,狼人变身,变成狼人。你有 15 秒的时间来大干一场，随后就是头晕脑胀。
+abilityUnlocks,Possess,Item,Ability,Description,附身,站在别人身后时可以附他/她的身
+abilityUnlocks,Enslave,Item,Ability,Description,奴役,在被电击枪电晕的人头上装一个努力头盔，否么会感到眩晕。不过请小心，有些奴隶可能会变得富有攻击性！
+abilityUnlocks,Handcuffs,Item,Ability,Description,手铐,铐住别人，能困住他们但并不致命
+abilityUnlocks,InvisibleLimitedItem,Item,Ability,Description,伪装,短时间内不可见。在撞到人或执行大多数操作时将失效。无法在非追随者的视线中激活。成功背后中伤时保持隐形。
+abilityUnlocks,Joke,Item,Ability,Description,笑话,向一群人讲个笑话，随机导致他们更喜欢你或更讨厌你。你说不定还能收获一大群粉丝。无法在同一个人身上使用多次。
+abilityUnlocks,Laptop,Item,Ability,Description,笔记本电脑,像 l337 h4x0r 那样远程入侵任何电脑。你可以在入侵时移动，以防被抓。有 50% 几率触发警报。
+abilityUnlocks,Lunge,Item,Ability,Description,上步突刺,按住 [Special] 发动一次毁灭性攻击
+abilityUnlocks,StealingGlove,Item,Ability,Description,神偷手套,跟在受害者后面，用这件道具从他们口袋里偷东西，就像真正的神偷那样。
+abilityUnlocks,Toss,Item,Ability,Description,投掷,环境中的大部分物体都可以捡起并扔出去
+abilityUnlocks,ZombieSpit,Item,Ability,Description,僵尸粘液,按住 [Special] 充能。击中活人可以将他变成僵尸，成为你的信徒。需要消耗一点生命值。
+abilityUnlocks,PowerSap,Item,Ability,Description,电力吸耗,如果命中大多数电子设备，可以爆发出一股能量为你充电
+itemUnlocks,Shotgun,Item,Item,Description,霰弹枪,速度慢，但冲击力不容小觑。
+itemUnlocks,MachineGun,Item,Item,Description,机枪,准头差点？别担心！有了这把枪，只要四处倾泻子弹就好！看热闹的人？什么看热闹的人？！
+itemUnlocks,Revolver,Item,Item,Description,左轮手枪,这把枪能够发射快速而强大的子弹，但是它每次射击之间有一个较长的冷却时间。
+itemUnlocks,RocketLauncher,Item,Item,Description,火箭筒,能在任何东西上开个大洞。你要是不够小心，那自己也难逃一炮。
+itemUnlocks,Flamethrower,Item,Item,Description,喷火器,纵火狂的最爱！有了这件武器，你可以烧毁部分墙壁和物体。
+itemUnlocks,FireExtinguisher,Item,Item,Description,灭火器,熄灭所有火焰，你内心的欲望之火除外。除非你拿它对准你的咽喉。
+itemUnlocks,LeafBlower,Item,Item,Description,吹叶机,造成超高噪声污染，让世界各地在家加班的程序员恼怒不已。但在这款游戏中，它会掀起一阵大风。
+itemUnlocks,ShrinkRay,Item,Item,Description,缩小射线枪,将你的敌人缩小，然后像捏虫子一样捏碎他们。或者把他们丢出去，这更仁慈点。
+itemUnlocks,WaterPistol,Item,Item,Description,玩具水枪,谁说水枪只能打水仗？把它和能造成状态效果的其他物品组合使用。祝你玩得愉快。
+itemUnlocks,Grenade,Item,Item,Description,手雷,犹豫不决时，扔出去就好。
+itemUnlocks,GrenadeEMP,Item,Item,Description,电磁脉冲手雷,能让各种电子产品无法正常工作。
+itemUnlocks,GrenadeDizzy,Item,Item,Description,眩晕手雷,其名称灵感来自于欧洲一款以鸡蛋为主题的游戏中的英雄。巧合的是，它也能导致头晕。
+itemUnlocks,GrenadeWarp,Item,Item,Description,传送手榴弹,这个手榴弹可以将任何人传送到地图上的随机一个位置，包括你也在内。
+itemUnlocks,LandMine,Item,Item,Description,地雷,放在路上，把过路的人吓一“跳”。
+itemUnlocks,MolotovCocktail,Item,Item,Description,燃烧弹,虽然大多数鸡尾酒可以带来欢乐和美好的时光，但这杯鸡尾酒只会带来死亡和毁灭。
+itemUnlocks,ParalyzerTrap,Item,Item,Description,麻痹陷阱,使人暂时麻痹。这玩意看起来就像一个五彩斑斓的倒立字母 P，因为游戏设计师的创意已经黔驴技穷了。
+itemUnlocks,BearTrap,Item,Item,Description,捕熊夹,虽然可能只是为熊 （只是猜测）打造的，但你也用它对人类造成伤害并减慢他们的速度。
+itemUnlocks,DoorDetonator,Item,Item,Description,破门雷管,把它放到一扇锁着的门上，然后拼命晃动门。嘭，就算是精钢做的门也打开了。
+itemUnlocks,OilContainer,Item,Item,Description,油箱,与点烟器配合使用时效果最佳。可以在弹药盒重新注满。应防止5岁以下儿童摄入。
+itemUnlocks,TimeBomb,Item,Item,Description,定时炸弹,放置 10 秒后爆炸。老实说，你得离远一点。
+itemUnlocks,ExplosiveStimulator,Item,Item,Description,引爆装置,导致附近所有的电子设备和爆炸物立即爆炸。
+itemUnlocks,Fireworks,Item,Item,Description,烟花,这些烟花是非法的，这是因为它实际上是一个装满火箭炮的盒子。
+itemUnlocks,Sword,Item,Item,Description,剑,角色扮演演员和书呆子的最爱，亦能夺人性命。
+itemUnlocks,Sledgehammer,Item,Item,Description,大锤,异常强大，能粉碎别的武器无能无力的东西。
+itemUnlocks,BraceletStrength,Item,Item,Description,力量手镯,可能更适合中世纪奇幻游戏，但谁在乎呢？提高你的近战攻击力。
+itemUnlocks,MeleeDurabilityDoubler,Item,Item,Description,近战耐久喷雾,将任意近战武器的耐久度提高到 200%。
+itemUnlocks,HardHat,Item,Item,Description,安全帽,保护你在工作中不受伤，但拿那些时尚的警察没办法。哎呦我去……
+itemUnlocks,GasMask,Item,Item,Description,防毒面具,保护你的鼻子和脸部免遭毒气伤害。和丹尼叔叔开车旅行时非常有用。
+itemUnlocks,BulletproofVest,Item,Item,Description,防弹背心,在被打坏前降低子弹伤害，不过也会让你看起来特别臃肿。
+itemUnlocks,ArmorDurabilityDoubler,Item,Item,Description,盔甲耐久喷雾,将任意一件护甲的耐久度提高到 200%。
+itemUnlocks,Lockpick,Item,Item,Description,撬锁工具,撬开任何锁。锁匠特别讨厌这玩意。
+itemUnlocks,HackingTool,Item,Item,Description,黑客工具,用途单一的设备，可以远程入侵任何一台电脑。
+itemUnlocks,Silencer,Item,Item,Description,消音器,将它安到枪上，这样你就能在不惊醒邻居的情况下杀死他了。扰人清梦最粗鲁了！
+itemUnlocks,AccuracyMod,Item,Item,Description,精度调节器,将它安装到射弹武器上可以增加火器的属性。
+itemUnlocks,RateOfFireMod,Item,Item,Description,射速增强模组,这是一个装饰着赛车条纹的扳机，装上它可以提高你的枪械的射速。
+itemUnlocks,AmmoCapacityMod,Item,Item,Description,弹药扩容器,增加枪械的子弹存储上限。
+itemUnlocks,IdentifyWand,Item,Item,Description,鉴定魔杖,在使用注射器之前，或许你该先弄明白里面是什么。现在可以了！只需将它与注射器一起使用即可。
+itemUnlocks,CritterUpper,Item,Item,Description,暴击增强器,与暴徒没有任何关系，不过会将你的暴击率提高到 100%。
+itemUnlocks,ElectroPill,Item,Item,Description,电击药丸,让你拥有神奇的静电效果，任何接触你的身体头的人都会收到伤害。
+itemUnlocks,Giantizer,Item,Item,Description,巨人饮料,小时候缺牛奶？没关系，喝下这瓶巨人饮料能让你化身浩克。
+itemUnlocks,Shrinker,Item,Item,Description,缩小仪,把你缩小到小恶魔（权力的游戏）那么大。
+itemUnlocks,KillerThrower,Item,Item,Description,杀手飞镖,有没有想过拿东西扔向别人，然后把他们炸成碎片？你的愿望成真了！！
+itemUnlocks,RagePoison,Item,Item,Description,狂怒毒药,喝下后将对沿途中的所有人发火，从而引发可笑的争论。
+itemUnlocks,CyanidePill,Item,Item,Description,氰化物药丸,说真的，别吃这玩意。
+itemUnlocks,Cologne,Item,Item,Description,古龙水,这一层大多人之前对你都没啥印象，但现在全都喜欢你。可惜啊，这种好事在下一层就没的了。
+itemUnlocks,Antidote,Item,Item,Description,解毒剂,治愈负面状态效果，并且防止新的状态效果生效。
+itemUnlocks,FourLeafClover,Item,Item,Description,四叶草,通常，你需要彻夜不眠才能抓到点运气。有了它，好运将常伴你左右！
+itemUnlocks,CubeOfLampey,Item,Item,Description,神灯方块,打碎灯可以找到好东西。
+itemUnlocks,AmmoStealer,Item,Item,Description,偷弹器,将弹药从别人的射弹武器传送到你携带的的射弹武器中。
+itemUnlocks,AmmoProcessor,Item,Item,Description,弹药加工仪,几乎可以将任意道具变成弹药，供物品栏中的弹射武器使用。
+itemUnlocks,KillProfiterAmmo,Item,Item,Description,杀戮弹药奖励器,作为杀死 3 个人的奖励，你的枪将获得弹药，确保暴力循环持续！
+itemUnlocks,MiniFridge,Item,Item,Description,迷你冰箱,让食物保持美味新鲜，只要它在你的物品栏里，你就能在吃掉食物时获得生命值加成。
+itemUnlocks,FoodProcessor,Item,Item,Description,食物加工仪,几乎可以将任何道具变成食物……这些食物可能会致癌，但这就不归我们管了。
+itemUnlocks,KillProfiterHealth,Item,Item,Description,杀戮生命偷取器,杀人会让你好一点。但无法治愈你受折磨的灵魂！
+itemUnlocks,QuickEscapeTeleporter,Item,Item,Description,快速逃生传送器,当你的生命值降到一定值时，你将被传送到别处。
+itemUnlocks,ResurrectionShampoo,Item,Item,Description,复活香波,能让你复活重生。记得在死亡之前喝下它。
+itemUnlocks,CardboardBox,Item,Item,Description,纸板箱,只要你躲在这下面，那就没人会注意到你。别乱动，AI 并没那么愚蠢！
+itemUnlocks,HologramItem,Item,Item,Description,全息大脚怪,他们说，如果你找到大脚怪，那就拼命把它打破，这会掉落满地的金银财宝！
+itemUnlocks,WindowCutter,Item,Item,Description,破窗工具,完全移掉窗户，只产生极小的噪声。
+itemUnlocks,HearingBlocker,Item,Item,Description,耳障口哨,暂时让楼层中的所有人失聪。可以让他们暂享一段安静的时光。
+itemUnlocks,Blindenizer,Item,Item,Description,致盲器,发出一道炫目的闪光，显著降低人们的视野（如果运气够好，这就只是暂时的），小心在黑暗中磕到你的脚趾头。
+itemUnlocks,MemoryEraser,Item,Item,Description,记忆消除器,将人与人之间的关系恢复到本层最开始时的状况。
+itemUnlocks,WallBypasser,Item,Item,Description,翻墙工具,如果空间允许，将你面向的空间扭曲约 32 个像素。穿墙而过！
+itemUnlocks,BodySwapper,Item,Item,Description,位置交换器,这个装置可以让你和一个不是囚犯的人交换位置。
+itemUnlocks,SafeBuster,Item,Item,Description,保险箱克星,一次性保险箱破解工具。
+itemUnlocks,SlaveHelmetRemover,Item,Item,Description,奴隶头盔移除器,通过与奴隶互动，从他们头上安全把爆炸头盔取下来。
+itemUnlocks,FreeItemVoucher,Item,Item,Description,免费道具兑换券,在任意商店免费兑换一件你选择的道具。
+itemUnlocks,HiringVoucher,Item,Item,Description,招募兑换券,招募别人，而且无需支付任何报酬。这张券上面说，抵抗组织以后肯定会补偿他们。如果他们愿意的话。偷偷告诉你：他们才不会掏钱。
+itemUnlocks,KillProfiter,Item,Item,Description,杀戮奖券,帮助控制人口并用它来赚钱！杀人，赚钱。上限是 100 美元。
+itemUnlocks,Boombox,Item,Item,Description,手提音响,播放舞曲让敌人不由自主地开始热舞，分散他们的注意力。
+itemUnlocks,Hypnotizer,Item,Item,Description,催眠等级 I,对别人使用可以让他们喜欢你。不是男女之情啦，是朋友间相互欣赏那种！
+itemUnlocks,Hypnotizer2,Item,Item,Description,催眠等级 II,对别人使用可以让他们与你结盟。独木难支，团结就是力量。
+itemUnlocks,Haterator,Item,Item,Description,憎恨仪,让别人憎恨他们第一眼看到的人。憎恨着永远心怀怨恨，还好你是玩家。
+itemUnlocks,WalkieTalkie,Item,Item,Description,警用对讲机,呼叫附近的警察制服某个罪犯，或者一个你不喜欢的人，又或者你喜欢的人，谁在乎呢？
+itemUnlocks,FriendPhone,Item,Item,Description,友谊电话机,呼叫你的伙伴传送到附近来帮助你脱困，或者只是过来陪你走走。
+itemUnlocks,Necronomicon,Item,Item,Description,死灵之书,召唤亡灵为你而战，但需要你靠近墓地。
+itemUnlocks,BooUrn,Item,Item,Description,幽灵瓮,这些幽灵需要一个永远的新家！ 在室内使用它，可以吓跑建筑物里的居民。
+itemUnlocks,MonkeyBarrel,Item,Item,Description,猩猩桶,从技术上讲，这是一个装满暴怒的小型猩猩的桶， 不过他们需要几秒钟才能挣脱木桶逃出来。
+itemUnlocks,FreezeRay,Item,Item,Description,冷冻射线枪,将人冻结成美丽的人体冰雕。
+itemUnlocks,GhostBlaster,Item,Item,Description,幽灵枪,你打算给谁打电话？希望是你妈妈，她很想念你。对于所有超自然生物均有效，不仅是幽灵！
+itemUnlocks,Shuriken,Item,Item,Description,手里剑,通常来说，没人喜欢你把这东西丢到他们脸上。
+freeItemUnlocks,Shotgun,Item,Item,Description,霰弹枪,速度慢，但冲击力不容小觑。
+freeItemUnlocks,MachineGun,Item,Item,Description,机枪,准头差点？别担心！有了这把枪，只要四处倾泻子弹就好！看热闹的人？什么看热闹的人？！
+freeItemUnlocks,Revolver,Item,Item,Description,左轮手枪,这把枪能够发射快速而强大的子弹，但是它每次射击之间有一个较长的冷却时间。
+freeItemUnlocks,RocketLauncher,Item,Item,Description,火箭筒,能在任何东西上开个大洞。你要是不够小心，那自己也难逃一炮。
+freeItemUnlocks,Flamethrower,Item,Item,Description,喷火器,纵火狂的最爱！有了这件武器，你可以烧毁部分墙壁和物体。
+freeItemUnlocks,FireExtinguisher,Item,Item,Description,灭火器,熄灭所有火焰，你内心的欲望之火除外。除非你拿它对准你的咽喉。
+freeItemUnlocks,LeafBlower,Item,Item,Description,吹叶机,造成超高噪声污染，让世界各地在家加班的程序员恼怒不已。但在这款游戏中，它会掀起一阵大风。
+freeItemUnlocks,ShrinkRay,Item,Item,Description,缩小射线枪,将你的敌人缩小，然后像捏虫子一样捏碎他们。或者把他们丢出去，这更仁慈点。
+freeItemUnlocks,WaterPistol,Item,Item,Description,玩具水枪,谁说水枪只能打水仗？把它和能造成状态效果的其他物品组合使用。祝你玩得愉快。
+freeItemUnlocks,Grenade,Item,Item,Description,手雷,犹豫不决时，扔出去就好。
+freeItemUnlocks,GrenadeEMP,Item,Item,Description,电磁脉冲手雷,能让各种电子产品无法正常工作。
+freeItemUnlocks,GrenadeDizzy,Item,Item,Description,眩晕手雷,其名称灵感来自于欧洲一款以鸡蛋为主题的游戏中的英雄。巧合的是，它也能导致头晕。
+freeItemUnlocks,GrenadeWarp,Item,Item,Description,传送手榴弹,这个手榴弹可以将任何人传送到地图上的随机一个位置，包括你也在内。
+freeItemUnlocks,LandMine,Item,Item,Description,地雷,放在路上，把过路的人吓一“跳”。
+freeItemUnlocks,MolotovCocktail,Item,Item,Description,燃烧弹,虽然大多数鸡尾酒可以带来欢乐和美好的时光，但这杯鸡尾酒只会带来死亡和毁灭。
+freeItemUnlocks,ParalyzerTrap,Item,Item,Description,麻痹陷阱,使人暂时麻痹。这玩意看起来就像一个五彩斑斓的倒立字母 P，因为游戏设计师的创意已经黔驴技穷了。
+freeItemUnlocks,BearTrap,Item,Item,Description,捕熊夹,虽然可能只是为熊 （只是猜测）打造的，但你也用它对人类造成伤害并减慢他们的速度。
+freeItemUnlocks,DoorDetonator,Item,Item,Description,破门雷管,把它放到一扇锁着的门上，然后拼命晃动门。嘭，就算是精钢做的门也打开了。
+freeItemUnlocks,OilContainer,Item,Item,Description,油箱,与点烟器配合使用时效果最佳。可以在弹药盒重新注满。应防止5岁以下儿童摄入。
+freeItemUnlocks,TimeBomb,Item,Item,Description,定时炸弹,放置 10 秒后爆炸。老实说，你得离远一点。
+freeItemUnlocks,ExplosiveStimulator,Item,Item,Description,引爆装置,导致附近所有的电子设备和爆炸物立即爆炸。
+freeItemUnlocks,Fireworks,Item,Item,Description,烟花,这些烟花是非法的，这是因为它实际上是一个装满火箭炮的盒子。
+freeItemUnlocks,Sword,Item,Item,Description,剑,角色扮演演员和书呆子的最爱，亦能夺人性命。
+freeItemUnlocks,Sledgehammer,Item,Item,Description,大锤,异常强大，能粉碎别的武器无能无力的东西。
+freeItemUnlocks,BraceletStrength,Item,Item,Description,力量手镯,可能更适合中世纪奇幻游戏，但谁在乎呢？提高你的近战攻击力。
+freeItemUnlocks,MeleeDurabilityDoubler,Item,Item,Description,近战耐久喷雾,将任意近战武器的耐久度提高到 200%。
+freeItemUnlocks,HardHat,Item,Item,Description,安全帽,保护你在工作中不受伤，但拿那些时尚的警察没办法。哎呦我去……
+freeItemUnlocks,GasMask,Item,Item,Description,防毒面具,保护你的鼻子和脸部免遭毒气伤害。和丹尼叔叔开车旅行时非常有用。
+freeItemUnlocks,BulletproofVest,Item,Item,Description,防弹背心,在被打坏前降低子弹伤害，不过也会让你看起来特别臃肿。
+freeItemUnlocks,ArmorDurabilityDoubler,Item,Item,Description,盔甲耐久喷雾,将任意一件护甲的耐久度提高到 200%。
+freeItemUnlocks,Lockpick,Item,Item,Description,撬锁工具,撬开任何锁。锁匠特别讨厌这玩意。
+freeItemUnlocks,HackingTool,Item,Item,Description,黑客工具,用途单一的设备，可以远程入侵任何一台电脑。
+freeItemUnlocks,Silencer,Item,Item,Description,消音器,将它安到枪上，这样你就能在不惊醒邻居的情况下杀死他了。扰人清梦最粗鲁了！
+freeItemUnlocks,AccuracyMod,Item,Item,Description,精度调节器,将它安装到射弹武器上可以增加火器的属性。
+freeItemUnlocks,RateOfFireMod,Item,Item,Description,射速增强模组,这是一个装饰着赛车条纹的扳机，装上它可以提高你的枪械的射速。
+freeItemUnlocks,AmmoCapacityMod,Item,Item,Description,弹药扩容器,增加枪械的子弹存储上限。
+freeItemUnlocks,IdentifyWand,Item,Item,Description,鉴定魔杖,在使用注射器之前，或许你该先弄明白里面是什么。现在可以了！只需将它与注射器一起使用即可。
+freeItemUnlocks,CritterUpper,Item,Item,Description,暴击增强器,与暴徒没有任何关系，不过会将你的暴击率提高到 100%。
+freeItemUnlocks,ElectroPill,Item,Item,Description,电击药丸,让你拥有神奇的静电效果，任何接触你的身体头的人都会收到伤害。
+freeItemUnlocks,Giantizer,Item,Item,Description,巨人饮料,小时候缺牛奶？没关系，喝下这瓶巨人饮料能让你化身浩克。
+freeItemUnlocks,Shrinker,Item,Item,Description,缩小仪,把你缩小到小恶魔（权力的游戏）那么大。
+freeItemUnlocks,KillerThrower,Item,Item,Description,杀手飞镖,有没有想过拿东西扔向别人，然后把他们炸成碎片？你的愿望成真了！！
+freeItemUnlocks,RagePoison,Item,Item,Description,狂怒毒药,喝下后将对沿途中的所有人发火，从而引发可笑的争论。
+freeItemUnlocks,CyanidePill,Item,Item,Description,氰化物药丸,说真的，别吃这玩意。
+freeItemUnlocks,Cologne,Item,Item,Description,古龙水,这一层大多人之前对你都没啥印象，但现在全都喜欢你。可惜啊，这种好事在下一层就没的了。
+freeItemUnlocks,Antidote,Item,Item,Description,解毒剂,治愈负面状态效果，并且防止新的状态效果生效。
+freeItemUnlocks,FourLeafClover,Item,Item,Description,四叶草,通常，你需要彻夜不眠才能抓到点运气。有了它，好运将常伴你左右！
+freeItemUnlocks,CubeOfLampey,Item,Item,Description,神灯方块,打碎灯可以找到好东西。
+freeItemUnlocks,AmmoStealer,Item,Item,Description,偷弹器,将弹药从别人的射弹武器传送到你携带的的射弹武器中。
+freeItemUnlocks,AmmoProcessor,Item,Item,Description,弹药加工仪,几乎可以将任意道具变成弹药，供物品栏中的弹射武器使用。
+freeItemUnlocks,KillProfiterAmmo,Item,Item,Description,杀戮弹药奖励器,作为杀死 3 个人的奖励，你的枪将获得弹药，确保暴力循环持续！
+freeItemUnlocks,MiniFridge,Item,Item,Description,迷你冰箱,让食物保持美味新鲜，只要它在你的物品栏里，你就能在吃掉食物时获得生命值加成。
+freeItemUnlocks,FoodProcessor,Item,Item,Description,食物加工仪,几乎可以将任何道具变成食物……这些食物可能会致癌，但这就不归我们管了。
+freeItemUnlocks,KillProfiterHealth,Item,Item,Description,杀戮生命偷取器,杀人会让你好一点。但无法治愈你受折磨的灵魂！
+freeItemUnlocks,QuickEscapeTeleporter,Item,Item,Description,快速逃生传送器,当你的生命值降到一定值时，你将被传送到别处。
+freeItemUnlocks,ResurrectionShampoo,Item,Item,Description,复活香波,能让你复活重生。记得在死亡之前喝下它。
+freeItemUnlocks,CardboardBox,Item,Item,Description,纸板箱,只要你躲在这下面，那就没人会注意到你。别乱动，AI 并没那么愚蠢！
+freeItemUnlocks,HologramItem,Item,Item,Description,全息大脚怪,他们说，如果你找到大脚怪，那就拼命把它打破，这会掉落满地的金银财宝！
+freeItemUnlocks,WindowCutter,Item,Item,Description,破窗工具,完全移掉窗户，只产生极小的噪声。
+freeItemUnlocks,HearingBlocker,Item,Item,Description,耳障口哨,暂时让楼层中的所有人失聪。可以让他们暂享一段安静的时光。
+freeItemUnlocks,Blindenizer,Item,Item,Description,致盲器,发出一道炫目的闪光，显著降低人们的视野（如果运气够好，这就只是暂时的），小心在黑暗中磕到你的脚趾头。
+freeItemUnlocks,MemoryEraser,Item,Item,Description,记忆消除器,将人与人之间的关系恢复到本层最开始时的状况。
+freeItemUnlocks,WallBypasser,Item,Item,Description,翻墙工具,如果空间允许，将你面向的空间扭曲约 32 个像素。穿墙而过！
+freeItemUnlocks,BodySwapper,Item,Item,Description,位置交换器,这个装置可以让你和一个不是囚犯的人交换位置。
+freeItemUnlocks,SafeBuster,Item,Item,Description,保险箱克星,一次性保险箱破解工具。
+freeItemUnlocks,SlaveHelmetRemover,Item,Item,Description,奴隶头盔移除器,通过与奴隶互动，从他们头上安全把爆炸头盔取下来。
+freeItemUnlocks,FreeItemVoucher,Item,Item,Description,免费道具兑换券,在任意商店免费兑换一件你选择的道具。
+freeItemUnlocks,HiringVoucher,Item,Item,Description,招募兑换券,招募别人，而且无需支付任何报酬。这张券上面说，抵抗组织以后肯定会补偿他们。如果他们愿意的话。偷偷告诉你：他们才不会掏钱。
+freeItemUnlocks,KillProfiter,Item,Item,Description,杀戮奖券,帮助控制人口并用它来赚钱！杀人，赚钱。上限是 100 美元。
+freeItemUnlocks,Boombox,Item,Item,Description,手提音响,播放舞曲让敌人不由自主地开始热舞，分散他们的注意力。
+freeItemUnlocks,Hypnotizer,Item,Item,Description,催眠等级 I,对别人使用可以让他们喜欢你。不是男女之情啦，是朋友间相互欣赏那种！
+freeItemUnlocks,Hypnotizer2,Item,Item,Description,催眠等级 II,对别人使用可以让他们与你结盟。独木难支，团结就是力量。
+freeItemUnlocks,Haterator,Item,Item,Description,憎恨仪,让别人憎恨他们第一眼看到的人。憎恨着永远心怀怨恨，还好你是玩家。
+freeItemUnlocks,WalkieTalkie,Item,Item,Description,警用对讲机,呼叫附近的警察制服某个罪犯，或者一个你不喜欢的人，又或者你喜欢的人，谁在乎呢？
+freeItemUnlocks,FriendPhone,Item,Item,Description,友谊电话机,呼叫你的伙伴传送到附近来帮助你脱困，或者只是过来陪你走走。
+freeItemUnlocks,Necronomicon,Item,Item,Description,死灵之书,召唤亡灵为你而战，但需要你靠近墓地。
+freeItemUnlocks,BooUrn,Item,Item,Description,幽灵瓮,这些幽灵需要一个永远的新家！ 在室内使用它，可以吓跑建筑物里的居民。
+freeItemUnlocks,MonkeyBarrel,Item,Item,Description,猩猩桶,从技术上讲，这是一个装满暴怒的小型猩猩的桶， 不过他们需要几秒钟才能挣脱木桶逃出来。
+freeItemUnlocks,FreezeRay,Item,Item,Description,冷冻射线枪,将人冻结成美丽的人体冰雕。
+freeItemUnlocks,GhostBlaster,Item,Item,Description,幽灵枪,你打算给谁打电话？希望是你妈妈，她很想念你。对于所有超自然生物均有效，不仅是幽灵！
+freeItemUnlocks,Shuriken,Item,Item,Description,手里剑,通常来说，没人喜欢你把这东西丢到他们脸上。
+freeItemUnlocks,BaconCheeseburger,Item,Item,Description,培根芝士汉堡,用垃圾食品塞满你的胃，让快乐占领你的灵魂。
+freeItemUnlocks,HamSandwich,Item,Item,Description,火腿三明治,来，多吃点火腿三明治！你的屁股能装下两颗星球！
+freeItemUnlocks,Banana,Item,Item,Description,香蕉,钾和与成人笑话都来源于此。
+freeItemUnlocks,Whiskey,Item,Item,Description,威士忌,让你捱过生活的苦难！
+freeItemUnlocks,Beer,Item,Item,Description,啤酒,何以解忧，唯有啤酒。
+freeItemUnlocks,Rock,Item,Item,Description,岩石,全能的石块。老实说，它的用途多得能把你吓一跳。
+freeItemUnlocks,Fud,Item,Item,Description,山寨食物,“看起来像食物，不过味道差多了！”
+freeItemUnlocks,BloodBag,Item,Item,Description,血袋,如果你是“吸血老妖”，你可以直接喝下血袋来回血。 否则，你可以在医生那里使用它。
+freeItemUnlocks,Syringe,Item,Item,Description,注射器,谁知道这种神秘的液体会对你的身体产生什么效果呢？
+freeItemUnlocks,FirstAidKit,Item,Item,Description,急救药箱,极其神奇的电子游戏急救包，可以瞬间治愈你的伤口。
+freeItemUnlocks,CodPiece,Item,Item,Description,护阴甲,没错，保护你的小弟弟。
+freeItemUnlocks,SoldierHelmet,Item,Item,Description,战斗头盔,无论是子弹还是鸟粪，这件头盔都能帮挡开。万岁！
+freeItemUnlocks,BaseballBat,Item,Item,Description,棒球棍,是狠狠教训下这些混蛋，还是去玩世界上最没劲的运动。你自己决定吧！
+freeItemUnlocks,Wrench,Item,Item,Description,扳手,无论是用作武器还是破坏的工具（会消耗耐久度），扳手都是件趁手的玩意。
+freeItemUnlocks,Axe,Item,Item,Description,斧头,拿着它去问问别人“你想死吗”？
+freeItemUnlocks,Crowbar,Item,Item,Description,铁撬棍,可以用作武器，但也用来解锁特定物品，只是这样会消耗它的耐久度。
+freeItemUnlocks,Cigarettes,Item,Item,Description,香烟,嘴上叼根烟卷多酷。给，来一根！其他孩子也都开始抽烟了！
+freeItemUnlocks,CigaretteLighter,Item,Item,Description,打火机,让你的手中生火。要是在中世纪，你很可能会被绑在火刑柱上烧死。
+freeItemUnlocks,Cocaine,Item,Item,Description,白粉,可以提高你的速度。讽刺的是，它也会让你变胖。（虽然在这个游戏中并不是这样）
+freeItemUnlocks,Steroids,Item,Item,Description,大力丸,想要获得增益效果吗？更精确地说，想获得加成吗？答案是大力丸。让你的近战攻击临时变强吧。
+freeItemUnlocks,Knife,Item,Item,Description,匕首,这把刀子本意是帮人们烹饪美食，带来欢乐，但你绝不会这样用它，对不对？
+freeItemUnlocks,Pistol,Item,Item,Description,手枪,标准射击武器。你知道规矩。
+freeItemUnlocks,PoliceBaton,Item,Item,Description,警棍,击打别人的脑袋，维持治安。
+freeItemUnlocks,TranquilizerGun,Item,Item,Description,麻醉枪,一把无声的枪，可将微小、不起眼的毒镖射入敌人体内。10 秒后，倒下吧。
+freeItemUnlocks,Taser,Item,Item,Description,泰瑟枪,让敌人狠狠震惊一下。周围有水时要当心，这可不是玩具！
+freeItemUnlocks,SafeCrackingTool,Item,Item,Description,保险箱破解工具,可以无限使用的工具，能打开任何保险箱。
+freeItemUnlocks,Translator,Item,Item,Description,翻译机,将大猩猩的话翻译成任何语言，但有一种除外：爱的语言。
+freeItemUnlocks,FireproofSuit,Item,Item,Description,防火服,保护你免受烧伤，但你的连鬓胡子可能会疯长，当心了！
+freeItemUnlocks,PortableSellOMatic,Item,Item,Description,便携自动贩卖机,和普通贩卖机的作用一样。可以在任意地点出售物品栏中的道具。
+freeItemUnlocks,RemoteBomb,Item,Item,Description,远程炸弹,虽然大多数炸弹会在满足其引爆条件的情况下引爆，但这种炸弹却可以配合你的计划引爆。
+itemUnlocksCharacterCreation,Shotgun,Item,Item,Description,霰弹枪,速度慢，但冲击力不容小觑。
+itemUnlocksCharacterCreation,MachineGun,Item,Item,Description,机枪,准头差点？别担心！有了这把枪，只要四处倾泻子弹就好！看热闹的人？什么看热闹的人？！
+itemUnlocksCharacterCreation,Revolver,Item,Item,Description,左轮手枪,这把枪能够发射快速而强大的子弹，但是它每次射击之间有一个较长的冷却时间。
+itemUnlocksCharacterCreation,RocketLauncher,Item,Item,Description,火箭筒,能在任何东西上开个大洞。你要是不够小心，那自己也难逃一炮。
+itemUnlocksCharacterCreation,Flamethrower,Item,Item,Description,喷火器,纵火狂的最爱！有了这件武器，你可以烧毁部分墙壁和物体。
+itemUnlocksCharacterCreation,FireExtinguisher,Item,Item,Description,灭火器,熄灭所有火焰，你内心的欲望之火除外。除非你拿它对准你的咽喉。
+itemUnlocksCharacterCreation,LeafBlower,Item,Item,Description,吹叶机,造成超高噪声污染，让世界各地在家加班的程序员恼怒不已。但在这款游戏中，它会掀起一阵大风。
+itemUnlocksCharacterCreation,ShrinkRay,Item,Item,Description,缩小射线枪,将你的敌人缩小，然后像捏虫子一样捏碎他们。或者把他们丢出去，这更仁慈点。
+itemUnlocksCharacterCreation,WaterPistol,Item,Item,Description,玩具水枪,谁说水枪只能打水仗？把它和能造成状态效果的其他物品组合使用。祝你玩得愉快。
+itemUnlocksCharacterCreation,Grenade,Item,Item,Description,手雷,犹豫不决时，扔出去就好。
+itemUnlocksCharacterCreation,GrenadeEMP,Item,Item,Description,电磁脉冲手雷,能让各种电子产品无法正常工作。
+itemUnlocksCharacterCreation,GrenadeDizzy,Item,Item,Description,眩晕手雷,其名称灵感来自于欧洲一款以鸡蛋为主题的游戏中的英雄。巧合的是，它也能导致头晕。
+itemUnlocksCharacterCreation,GrenadeWarp,Item,Item,Description,传送手榴弹,这个手榴弹可以将任何人传送到地图上的随机一个位置，包括你也在内。
+itemUnlocksCharacterCreation,LandMine,Item,Item,Description,地雷,放在路上，把过路的人吓一“跳”。
+itemUnlocksCharacterCreation,MolotovCocktail,Item,Item,Description,燃烧弹,虽然大多数鸡尾酒可以带来欢乐和美好的时光，但这杯鸡尾酒只会带来死亡和毁灭。
+itemUnlocksCharacterCreation,ParalyzerTrap,Item,Item,Description,麻痹陷阱,使人暂时麻痹。这玩意看起来就像一个五彩斑斓的倒立字母 P，因为游戏设计师的创意已经黔驴技穷了。
+itemUnlocksCharacterCreation,BearTrap,Item,Item,Description,捕熊夹,虽然可能只是为熊 （只是猜测）打造的，但你也用它对人类造成伤害并减慢他们的速度。
+itemUnlocksCharacterCreation,DoorDetonator,Item,Item,Description,破门雷管,把它放到一扇锁着的门上，然后拼命晃动门。嘭，就算是精钢做的门也打开了。
+itemUnlocksCharacterCreation,OilContainer,Item,Item,Description,油箱,与点烟器配合使用时效果最佳。可以在弹药盒重新注满。应防止5岁以下儿童摄入。
+itemUnlocksCharacterCreation,TimeBomb,Item,Item,Description,定时炸弹,放置 10 秒后爆炸。老实说，你得离远一点。
+itemUnlocksCharacterCreation,ExplosiveStimulator,Item,Item,Description,引爆装置,导致附近所有的电子设备和爆炸物立即爆炸。
+itemUnlocksCharacterCreation,Fireworks,Item,Item,Description,烟花,这些烟花是非法的，这是因为它实际上是一个装满火箭炮的盒子。
+itemUnlocksCharacterCreation,Sword,Item,Item,Description,剑,角色扮演演员和书呆子的最爱，亦能夺人性命。
+itemUnlocksCharacterCreation,Sledgehammer,Item,Item,Description,大锤,异常强大，能粉碎别的武器无能无力的东西。
+itemUnlocksCharacterCreation,BraceletStrength,Item,Item,Description,力量手镯,可能更适合中世纪奇幻游戏，但谁在乎呢？提高你的近战攻击力。
+itemUnlocksCharacterCreation,MeleeDurabilityDoubler,Item,Item,Description,近战耐久喷雾,将任意近战武器的耐久度提高到 200%。
+itemUnlocksCharacterCreation,HardHat,Item,Item,Description,安全帽,保护你在工作中不受伤，但拿那些时尚的警察没办法。哎呦我去……
+itemUnlocksCharacterCreation,GasMask,Item,Item,Description,防毒面具,保护你的鼻子和脸部免遭毒气伤害。和丹尼叔叔开车旅行时非常有用。
+itemUnlocksCharacterCreation,BulletproofVest,Item,Item,Description,防弹背心,在被打坏前降低子弹伤害，不过也会让你看起来特别臃肿。
+itemUnlocksCharacterCreation,ArmorDurabilityDoubler,Item,Item,Description,盔甲耐久喷雾,将任意一件护甲的耐久度提高到 200%。
+itemUnlocksCharacterCreation,Lockpick,Item,Item,Description,撬锁工具,撬开任何锁。锁匠特别讨厌这玩意。
+itemUnlocksCharacterCreation,HackingTool,Item,Item,Description,黑客工具,用途单一的设备，可以远程入侵任何一台电脑。
+itemUnlocksCharacterCreation,Silencer,Item,Item,Description,消音器,将它安到枪上，这样你就能在不惊醒邻居的情况下杀死他了。扰人清梦最粗鲁了！
+itemUnlocksCharacterCreation,AccuracyMod,Item,Item,Description,精度调节器,将它安装到射弹武器上可以增加火器的属性。
+itemUnlocksCharacterCreation,RateOfFireMod,Item,Item,Description,射速增强模组,这是一个装饰着赛车条纹的扳机，装上它可以提高你的枪械的射速。
+itemUnlocksCharacterCreation,AmmoCapacityMod,Item,Item,Description,弹药扩容器,增加枪械的子弹存储上限。
+itemUnlocksCharacterCreation,IdentifyWand,Item,Item,Description,鉴定魔杖,在使用注射器之前，或许你该先弄明白里面是什么。现在可以了！只需将它与注射器一起使用即可。
+itemUnlocksCharacterCreation,CritterUpper,Item,Item,Description,暴击增强器,与暴徒没有任何关系，不过会将你的暴击率提高到 100%。
+itemUnlocksCharacterCreation,ElectroPill,Item,Item,Description,电击药丸,让你拥有神奇的静电效果，任何接触你的身体头的人都会收到伤害。
+itemUnlocksCharacterCreation,Giantizer,Item,Item,Description,巨人饮料,小时候缺牛奶？没关系，喝下这瓶巨人饮料能让你化身浩克。
+itemUnlocksCharacterCreation,Shrinker,Item,Item,Description,缩小仪,把你缩小到小恶魔（权力的游戏）那么大。
+itemUnlocksCharacterCreation,KillerThrower,Item,Item,Description,杀手飞镖,有没有想过拿东西扔向别人，然后把他们炸成碎片？你的愿望成真了！！
+itemUnlocksCharacterCreation,RagePoison,Item,Item,Description,狂怒毒药,喝下后将对沿途中的所有人发火，从而引发可笑的争论。
+itemUnlocksCharacterCreation,CyanidePill,Item,Item,Description,氰化物药丸,说真的，别吃这玩意。
+itemUnlocksCharacterCreation,Cologne,Item,Item,Description,古龙水,这一层大多人之前对你都没啥印象，但现在全都喜欢你。可惜啊，这种好事在下一层就没的了。
+itemUnlocksCharacterCreation,Antidote,Item,Item,Description,解毒剂,治愈负面状态效果，并且防止新的状态效果生效。
+itemUnlocksCharacterCreation,FourLeafClover,Item,Item,Description,四叶草,通常，你需要彻夜不眠才能抓到点运气。有了它，好运将常伴你左右！
+itemUnlocksCharacterCreation,CubeOfLampey,Item,Item,Description,神灯方块,打碎灯可以找到好东西。
+itemUnlocksCharacterCreation,AmmoStealer,Item,Item,Description,偷弹器,将弹药从别人的射弹武器传送到你携带的的射弹武器中。
+itemUnlocksCharacterCreation,AmmoProcessor,Item,Item,Description,弹药加工仪,几乎可以将任意道具变成弹药，供物品栏中的弹射武器使用。
+itemUnlocksCharacterCreation,KillProfiterAmmo,Item,Item,Description,杀戮弹药奖励器,作为杀死 3 个人的奖励，你的枪将获得弹药，确保暴力循环持续！
+itemUnlocksCharacterCreation,MiniFridge,Item,Item,Description,迷你冰箱,让食物保持美味新鲜，只要它在你的物品栏里，你就能在吃掉食物时获得生命值加成。
+itemUnlocksCharacterCreation,FoodProcessor,Item,Item,Description,食物加工仪,几乎可以将任何道具变成食物……这些食物可能会致癌，但这就不归我们管了。
+itemUnlocksCharacterCreation,KillProfiterHealth,Item,Item,Description,杀戮生命偷取器,杀人会让你好一点。但无法治愈你受折磨的灵魂！
+itemUnlocksCharacterCreation,QuickEscapeTeleporter,Item,Item,Description,快速逃生传送器,当你的生命值降到一定值时，你将被传送到别处。
+itemUnlocksCharacterCreation,ResurrectionShampoo,Item,Item,Description,复活香波,能让你复活重生。记得在死亡之前喝下它。
+itemUnlocksCharacterCreation,CardboardBox,Item,Item,Description,纸板箱,只要你躲在这下面，那就没人会注意到你。别乱动，AI 并没那么愚蠢！
+itemUnlocksCharacterCreation,HologramItem,Item,Item,Description,全息大脚怪,他们说，如果你找到大脚怪，那就拼命把它打破，这会掉落满地的金银财宝！
+itemUnlocksCharacterCreation,WindowCutter,Item,Item,Description,破窗工具,完全移掉窗户，只产生极小的噪声。
+itemUnlocksCharacterCreation,HearingBlocker,Item,Item,Description,耳障口哨,暂时让楼层中的所有人失聪。可以让他们暂享一段安静的时光。
+itemUnlocksCharacterCreation,Blindenizer,Item,Item,Description,致盲器,发出一道炫目的闪光，显著降低人们的视野（如果运气够好，这就只是暂时的），小心在黑暗中磕到你的脚趾头。
+itemUnlocksCharacterCreation,MemoryEraser,Item,Item,Description,记忆消除器,将人与人之间的关系恢复到本层最开始时的状况。
+itemUnlocksCharacterCreation,WallBypasser,Item,Item,Description,翻墙工具,如果空间允许，将你面向的空间扭曲约 32 个像素。穿墙而过！
+itemUnlocksCharacterCreation,BodySwapper,Item,Item,Description,位置交换器,这个装置可以让你和一个不是囚犯的人交换位置。
+itemUnlocksCharacterCreation,SafeBuster,Item,Item,Description,保险箱克星,一次性保险箱破解工具。
+itemUnlocksCharacterCreation,SlaveHelmetRemover,Item,Item,Description,奴隶头盔移除器,通过与奴隶互动，从他们头上安全把爆炸头盔取下来。
+itemUnlocksCharacterCreation,SkeletonKey,Item,Item,Description,万能钥匙,可以无限使用的工具，能打开任意一扇门。但仅限门，它无法打开你的心房。这把钥匙不行。
+itemUnlocksCharacterCreation,FreeItemVoucher,Item,Item,Description,免费道具兑换券,在任意商店免费兑换一件你选择的道具。
+itemUnlocksCharacterCreation,HiringVoucher,Item,Item,Description,招募兑换券,招募别人，而且无需支付任何报酬。这张券上面说，抵抗组织以后肯定会补偿他们。如果他们愿意的话。偷偷告诉你：他们才不会掏钱。
+itemUnlocksCharacterCreation,KillProfiter,Item,Item,Description,杀戮奖券,帮助控制人口并用它来赚钱！杀人，赚钱。上限是 100 美元。
+itemUnlocksCharacterCreation,Boombox,Item,Item,Description,手提音响,播放舞曲让敌人不由自主地开始热舞，分散他们的注意力。
+itemUnlocksCharacterCreation,Hypnotizer,Item,Item,Description,催眠等级 I,对别人使用可以让他们喜欢你。不是男女之情啦，是朋友间相互欣赏那种！
+itemUnlocksCharacterCreation,Hypnotizer2,Item,Item,Description,催眠等级 II,对别人使用可以让他们与你结盟。独木难支，团结就是力量。
+itemUnlocksCharacterCreation,Haterator,Item,Item,Description,憎恨仪,让别人憎恨他们第一眼看到的人。憎恨着永远心怀怨恨，还好你是玩家。
+itemUnlocksCharacterCreation,WalkieTalkie,Item,Item,Description,警用对讲机,呼叫附近的警察制服某个罪犯，或者一个你不喜欢的人，又或者你喜欢的人，谁在乎呢？
+itemUnlocksCharacterCreation,FriendPhone,Item,Item,Description,友谊电话机,呼叫你的伙伴传送到附近来帮助你脱困，或者只是过来陪你走走。
+itemUnlocksCharacterCreation,Necronomicon,Item,Item,Description,死灵之书,召唤亡灵为你而战，但需要你靠近墓地。
+itemUnlocksCharacterCreation,BooUrn,Item,Item,Description,幽灵瓮,这些幽灵需要一个永远的新家！ 在室内使用它，可以吓跑建筑物里的居民。
+itemUnlocksCharacterCreation,MonkeyBarrel,Item,Item,Description,猩猩桶,从技术上讲，这是一个装满暴怒的小型猩猩的桶， 不过他们需要几秒钟才能挣脱木桶逃出来。
+itemUnlocksCharacterCreation,FreezeRay,Item,Item,Description,冷冻射线枪,将人冻结成美丽的人体冰雕。
+itemUnlocksCharacterCreation,GhostBlaster,Item,Item,Description,幽灵枪,你打算给谁打电话？希望是你妈妈，她很想念你。对于所有超自然生物均有效，不仅是幽灵！
+itemUnlocksCharacterCreation,Shuriken,Item,Item,Description,手里剑,通常来说，没人喜欢你把这东西丢到他们脸上。
+itemUnlocksCharacterCreation,Money,Item,Item,Description,金钱,万恶之源。
+itemUnlocksCharacterCreation,BaconCheeseburger,Item,Item,Description,培根芝士汉堡,用垃圾食品塞满你的胃，让快乐占领你的灵魂。
+itemUnlocksCharacterCreation,HamSandwich,Item,Item,Description,火腿三明治,来，多吃点火腿三明治！你的屁股能装下两颗星球！
+itemUnlocksCharacterCreation,Banana,Item,Item,Description,香蕉,钾和与成人笑话都来源于此。
+itemUnlocksCharacterCreation,Whiskey,Item,Item,Description,威士忌,让你捱过生活的苦难！
+itemUnlocksCharacterCreation,Beer,Item,Item,Description,啤酒,何以解忧，唯有啤酒。
+itemUnlocksCharacterCreation,Rock,Item,Item,Description,岩石,全能的石块。老实说，它的用途多得能把你吓一跳。
+itemUnlocksCharacterCreation,Fud,Item,Item,Description,山寨食物,“看起来像食物，不过味道差多了！”
+itemUnlocksCharacterCreation,BloodBag,Item,Item,Description,血袋,如果你是“吸血老妖”，你可以直接喝下血袋来回血。 否则，你可以在医生那里使用它。
+itemUnlocksCharacterCreation,FirstAidKit,Item,Item,Description,急救药箱,极其神奇的电子游戏急救包，可以瞬间治愈你的伤口。
+itemUnlocksCharacterCreation,CodPiece,Item,Item,Description,护阴甲,没错，保护你的小弟弟。
+itemUnlocksCharacterCreation,SoldierHelmet,Item,Item,Description,战斗头盔,无论是子弹还是鸟粪，这件头盔都能帮挡开。万岁！
+itemUnlocksCharacterCreation,BaseballBat,Item,Item,Description,棒球棍,是狠狠教训下这些混蛋，还是去玩世界上最没劲的运动。你自己决定吧！
+itemUnlocksCharacterCreation,Wrench,Item,Item,Description,扳手,无论是用作武器还是破坏的工具（会消耗耐久度），扳手都是件趁手的玩意。
+itemUnlocksCharacterCreation,Axe,Item,Item,Description,斧头,拿着它去问问别人“你想死吗”？
+itemUnlocksCharacterCreation,Crowbar,Item,Item,Description,铁撬棍,可以用作武器，但也用来解锁特定物品，只是这样会消耗它的耐久度。
+itemUnlocksCharacterCreation,Cigarettes,Item,Item,Description,香烟,嘴上叼根烟卷多酷。给，来一根！其他孩子也都开始抽烟了！
+itemUnlocksCharacterCreation,CigaretteLighter,Item,Item,Description,打火机,让你的手中生火。要是在中世纪，你很可能会被绑在火刑柱上烧死。
+itemUnlocksCharacterCreation,Cocaine,Item,Item,Description,白粉,可以提高你的速度。讽刺的是，它也会让你变胖。（虽然在这个游戏中并不是这样）
+itemUnlocksCharacterCreation,Steroids,Item,Item,Description,大力丸,想要获得增益效果吗？更精确地说，想获得加成吗？答案是大力丸。让你的近战攻击临时变强吧。
+itemUnlocksCharacterCreation,Knife,Item,Item,Description,匕首,这把刀子本意是帮人们烹饪美食，带来欢乐，但你绝不会这样用它，对不对？
+itemUnlocksCharacterCreation,Pistol,Item,Item,Description,手枪,标准射击武器。你知道规矩。
+itemUnlocksCharacterCreation,PoliceBaton,Item,Item,Description,警棍,击打别人的脑袋，维持治安。
+itemUnlocksCharacterCreation,TranquilizerGun,Item,Item,Description,麻醉枪,一把无声的枪，可将微小、不起眼的毒镖射入敌人体内。10 秒后，倒下吧。
+itemUnlocksCharacterCreation,Taser,Item,Item,Description,泰瑟枪,让敌人狠狠震惊一下。周围有水时要当心，这可不是玩具！
+itemUnlocksCharacterCreation,SafeCrackingTool,Item,Item,Description,保险箱破解工具,可以无限使用的工具，能打开任何保险箱。
+itemUnlocksCharacterCreation,Translator,Item,Item,Description,翻译机,将大猩猩的话翻译成任何语言，但有一种除外：爱的语言。
+itemUnlocksCharacterCreation,FireproofSuit,Item,Item,Description,防火服,保护你免受烧伤，但你的连鬓胡子可能会疯长，当心了！
+itemUnlocksCharacterCreation,PortableSellOMatic,Item,Item,Description,便携自动贩卖机,和普通贩卖机的作用一样。可以在任意地点出售物品栏中的道具。
+itemUnlocksCharacterCreation,DrinkMixer,Item,Item,Description,调酒器,把任意具有状态效果的道具扔进去，就能变出美味可口的鸡尾酒。
+itemUnlocksCharacterCreation,SlaveHelmetRemote,Item,Item,Description,奴隶头盔遥控装置,引爆奴隶头盔。奴隶主每关可以使用该道具 3 次。
+traitUnlocks,MoreKnockingThroughWalls,StatusEffect,Trait,Description,墙壁的噩梦,更容易把对手打穿墙壁
+traitUnlocks,DontHitAligned,StatusEffect,Trait,Description,禁止内斗,无法命中与你对齐的大多数人，他们也无法命中你。这种情况同样适用于忠诚和顺从。仅限近战、碰触和子弹。扩展到你的员工。
+traitUnlocks,DontHitOwnKind,StatusEffect,Trait,Description,阶级有爱,无法命中与你同类的人，除非他们怀有敌意。仅限近战、碰触和子弹。还可以让人们变得友好。
+traitUnlocks,KnockbackLess,StatusEffect,Trait,Description,肉山,降低了伤害的击退效果，枪械开火时不会造成击退效果
+traitUnlocks,IncreasedCritChance,StatusEffect,Trait,Description,提高暴击率,提高施加暴击的几率
+traitUnlocks,ChanceToSlowEnemies,StatusEffect,Trait,Description,膝盖中了一箭,击中敌人时有一定几率造成减速
+traitUnlocks,FastWhenHealthLow,StatusEffect,Trait,Description,溜之大吉,生命值较低时提高速度
+traitUnlocks,MoreDamageWhenHealthLow,StatusEffect,Trait,Description,愤怒就是力量,生命值较低时对敌人造成更多伤害
+traitUnlocks,ChanceAttacksDoZeroDamage,StatusEffect,Trait,Description,暴击无效,对玩家造成的伤害不会减少生命值
+traitUnlocks,AttacksDamageAttacker,StatusEffect,Trait,Description,尖刺皮肤,对玩家造成的近战伤害会反弹给攻击者
+traitUnlocks,Backstabber,StatusEffect,Trait,Description,背刺,受害者没有进入作战状态时，近战攻击可造成 2 倍伤害。如果使用了伪装 ，则可以造成 10 倍伤害。
+traitUnlocks,ChanceToKnockWeapons,StatusEffect,Trait,Description,手无寸铁,在敌人格挡时，有几率击落他们手中的武器
+traitUnlocks,StrongFists,StatusEffect,Trait,Description,指节套,赤手空拳可以造成更多伤害
+traitUnlocks,MeleeLastLonger,StatusEffect,Trait,Description,经久耐用,提高近战武器的耐久度
+traitUnlocks,LongLunge,StatusEffect,Trait,Description,远距离突刺,用近战武器进行远距离突刺
+traitUnlocks,MeleeMobility,StatusEffect,Trait,Description,彩蝶飞舞,提高发动近战攻击的机动性
+traitUnlocks,CauseBiggerKnockback,StatusEffect,Trait,Description,击退之王,可以让被你击中的人后退得更远
+traitUnlocks,BlocksSometimesHit,StatusEffect,Trait,Description,破防,当敌人格挡你的近战攻击时，也会被计为命中
+traitUnlocks,MeleeDestroysWalls,StatusEffect,Trait,Description,破壁人,在装备近战武器时，它们可以摧毁部分墙壁，但要消耗大量耐久度
+traitUnlocks,HardToShoot,StatusEffect,Trait,Description,滑不溜丢,敌人更加难以瞄准你
+traitUnlocks,BigBullets,StatusEffect,Trait,Description,大只子弹,子弹比正常尺寸大
+traitUnlocks,ExplosionsDontDamageCauser,StatusEffect,Trait,Description,爆炸幸存者,由玩家引发的爆炸不会对完成造成任何伤害
+traitUnlocks,ExplosionsBreakEverything,StatusEffect,Trait,Description,爆破大师,爆炸可以摧毁任意墙壁或物体
+traitUnlocks,MoreAmmoInDroppedWeapons,StatusEffect,Trait,Description,弹药拾荒者,掉落的武器将包含更多弹药
+traitUnlocks,ReloadWeaponsNewLevel,StatusEffect,Trait,Description,子弹上膛,武器将在每层开始时获得部分弹药
+traitUnlocks,BulletsCauseFire,StatusEffect,Trait,Description,燃烧的子弹,子弹在击中物体时将引发火灾
+traitUnlocks,BulletsPassThroughObjects,StatusEffect,Trait,Description,破甲子弹,子弹在击中物体和人后将穿透它们
+traitUnlocks,BulletsDestroyOtherBullets,StatusEffect,Trait,Description,子弹粉碎器,你的子弹可以摧毁其他子弹
+traitUnlocks,OperateQuickly,StatusEffect,Trait,Description,心灵手巧,提高你的“（破解）...”进度条完成速度
+traitUnlocks,OperateSecretly,StatusEffect,Trait,Description,鬼祟身影,除非你在奴役或逮捕其他人，否则别人不会注意到你的“（做某件事）”进度条
+traitUnlocks,DontTriggerFloorHazards,StatusEffect,Trait,Description,凌波微步,不会触发关卡中的各种危险，悄无声息通过激光，不触发警报
+traitUnlocks,HardToSeeFromDistance,StatusEffect,Trait,Description,杳无踪迹,降低人们发现你的视野范围
+traitUnlocks,NoOwnCheckOnBreak,StatusEffect,Trait,Description,允许笨拙,当你打破他们的财物或墙壁时，人们不会生气
+traitUnlocks,NoStealPenalty,StatusEffect,Trait,Description,好借好还,偷取人们的财物时，他们不会生气
+traitUnlocks,TeleportAnytime,StatusEffect,Trait,Description,随意传送,除非处于生死关头，否则可以无视地点随时传送
+traitUnlocks,HitObjectsNoNoise,StatusEffect,Trait,Description,秘密破坏狂,击中物体和墙壁时不会发出任何声音
+traitUnlocks,ThiefToolsMayNotSubtract,StatusEffect,Trait,Description,入侵艺术家,盗窃工具在使用后有一定几率不会损坏
+traitUnlocks,GoodTrader,StatusEffect,Trait,Description,砍价小能手,降低商店里的道具价格
+traitUnlocks,LowCostJobs,StatusEffect,Trait,Description,低成本工作,降低人员招募成本
+traitUnlocks,FollowersExtraHealth,StatusEffect,Trait,Description,士气高涨,追随者获得额外生命值
+traitUnlocks,MedicalProfessional,StatusEffect,Trait,Description,医疗专家,每个追随者的生命值可以在每一层恢复一次. 可以用血袋
+traitUnlocks,RegenerateHealthWhenLow,StatusEffect,Trait,Description,现代战士,生命值在低于 20 点时会逐渐恢复
+traitUnlocks,ScareEnemiesEasier,StatusEffect,Trait,Description,狰狞面目,提高敌人在战斗过程中逃跑的几率
+traitUnlocks,MoreFollowers,StatusEffect,Trait,Description,万人迷,最多可以招募 3 名追随者
+traitUnlocks,StartWithFollowers,StatusEffect,Trait,Description,独行杀手,每一关开始时，都会有一个追随者加入你的队伍
+traitUnlocks,GenericAgentsAligned,StatusEffect,Trait,Description,和人民打成一片,普通市民都会对你效忠
+traitUnlocks,RandomPeopleAligned,StatusEffect,Trait,Description,随机崇敬,有人会随机与你结盟
+traitUnlocks,MoreFollowersLessDamageToPlayer,StatusEffect,Trait,Description,人多更安全,身边的追随者越多，你受到的伤害就越低。最高仅限 3 名追随者。
+traitUnlocks,MoreFollowersCauseMoreDamage,StatusEffect,Trait,Description,人多力量大,身边的追随者越多，你造成的伤害就越高。最高仅限 3 名追随者。
+traitUnlocks,AgentsFollowToNextLevel,StatusEffect,Trait,Description,思乡杀手,追随者将一直跟你前往下一层
+traitUnlocks,HealthItemsGiveFollowersExtraHealth,StatusEffect,Trait,Description,共享生命,提高生命值的物品对你周围的追随者同样有效
+traitUnlocks,CannibalsNeutral,StatusEffect,Trait,Description,与食人者相安无事,食人者将不会见面就发动进攻
+traitUnlocks,MafiaAligned,StatusEffect,Trait,Description,家族之友,匪徒与你结盟
+traitUnlocks,IdentifyScience,StatusEffect,Trait,Description,用药指南,鉴定有注射器
+traitUnlocks,StatusEffectsLonger,StatusEffect,Trait,Description,延长状态效果,延长状态效果
+traitUnlocks,MapFilled,StatusEffect,Trait,Description,全球定位系统,在关卡开始时显示所有地图标记。
+traitUnlocks,MoreSkillPoints,StatusEffect,Trait,Description,勤奋,获得额外技能点
+traitUnlocks,ChanceFreeShopItem,StatusEffect,Trait,Description,免费赠品,从商贩处购买的物品有一定几率免费
+traitUnlocks,MoneyAtLevelStart,StatusEffect,Trait,Description,信托基金人,在每层开始时会收到钱
+traitUnlocks,VendorsDropShopItem,StatusEffect,Trait,Description,商店掉落,商贩中立时，将掉落一件他们原本出售的物品
+challengeUnlocks,NoGuns,Unlock,Challenge,Unlock,无枪械,禁止枪械！
+challengeUnlocks,NoMelee,Unlock,Challenge,Unlock,无近战武器,不允许使用近战武器，大家都用枪！
+challengeUnlocks,LowHealth,Unlock,Challenge,Unlock,降低所有人的生命值,所有人在游戏开始时的生命值都大幅降低，你也不例外。
+challengeUnlocks,EveryoneHatesYou,Unlock,Challenge,Unlock,每个人都讨厌你,大多数人在游戏开始时就对你充满敌意，但他们的生命值也低得多。
+challengeUnlocks,TimeLimit,Unlock,Challenge,Unlock,限时,对于每个所需的任务，在 2:15 加上 45 秒内通关，否则你会死亡！
+challengeUnlocks,TimeLimit2,Unlock,Challenge,Unlock,极限限时,对于每个所需的任务，在 0:45 加上 45 秒内通关，否则你会死亡！
+challengeUnlocks,TimeLimitQuestsGiveMoreTime,Unlock,Challenge,Unlock,时间限制 + 时间奖励,开始游戏时时间有限，不过可以通过完成任务赢得更多时间。
+challengeUnlocks,SpeedUp,Unlock,Challenge,Unlock,加快游戏,游戏将以正常速度的 1.3 倍进行。
+challengeUnlocks,SlowDown,Unlock,Challenge,Unlock,更慢的游戏速度,游戏将以正常速度的 0.8倍进行。
+challengeUnlocks,NoLevelFeelings,Unlock,Challenge,Unlock,没有灾难,关卡中不会出现灾难。
+challengeUnlocks,LevelFeelingsEveryLevel,Unlock,Challenge,Unlock,给每个关卡都加入灾难,灾难多得数不清。
+challengeUnlocks,NewCharacterEveryLevel,Unlock,Challenge,Unlock,每关开始时都能选择新角色,你的角色职业会在每个关卡开始时随机改动。
+challengeUnlocks,RocketLaunchers,Unlock,Challenge,Unlock,火箭筒暴乱,每人都能获得一个火箭筒！
+challengeUnlocks,ZombieMutator,Unlock,Challenge,Unlock,僵尸派对,每关将出现僵尸
+challengeUnlocks,RogueVision,Unlock,Challenge,Unlock,地痞的视野,在角色视野范围之外的物体将不会显示。
+challengeUnlocks,ExplodingBodies,Unlock,Challenge,Unlock,身体会爆炸,你打倒的人将会在很短的时间内爆炸
+challengeUnlocks,NoCops,Unlock,Challenge,Unlock,无巡逻警察,警察不再在街上巡逻，尽管他们仍然可以在其他情况下出现。
+challengeUnlocks,FullHealth,Unlock,Challenge,Unlock,全民健康,NPC与玩家的生命值相似，而不是默认的生命值减少。
+challengeUnlocks,HalfHealth,Unlock,Challenge,Unlock,NPC获得额外血量,NPC获得更多的血量，使游戏更具挑战性。
+challengeUnlocks,InfiniteMeleeDurability,Unlock,Challenge,Unlock,无限近战耐久,近战武器在攻击他人时不会失去耐久
+challengeUnlocks,InfiniteAmmo,Unlock,Challenge,Unlock,无限子弹,枪械射击时不会消耗弹药。
+challengeUnlocks,InfiniteAmmoNormalWeapons,Unlock,Challenge,Unlock,无限弹药（普通武器）,“普通”武器发射时不会消耗弹药（通常是子弹）。
+challengeUnlocks,RandomMutators,Unlock,Challenge,Unlock,随机突变,每关随机选择新的突变。
+challengeUnlocks,RandomLevelThemes,Unlock,Challenge,Unlock,随机区域,每个级别的区域（贫民窟、工业等）是随机化的。
+challengeUnlocks,MixedUpLevels,Unlock,Challenge,Unlock,混合环境,如果湖泊出现在贫民窟怎么办？如果歹徒在公园里闲逛怎么办？这个突变应该会回答你所有的问题。
+challengeUnlocks,NoLimits,Unlock,Challenge,Unlock,无限制,许多物体、物品和特征都解除了限制，以允许进行极端的利用、磨削以及最小-最大化
+challengeUnlocks,QuickGame,Unlock,Challenge,Unlock,快速游戏,游戏中只有10层，而不是15层。大部分完成特定的层数的成就不会触发
+challengeUnlocks,ContinuesMode,Unlock,Challenge,Unlock,继续？,丢掉性命以后，玩家可以从当前楼层开始时继续游戏。每回合共有2次继续游戏的机会。从你完成1楼后开始算起。
+challengeUnlocks,NoSlums,Unlock,Challenge,Unlock,移除贫民窟,贫民窟将不会出现在游戏中
+challengeUnlocks,NoIndustrial,Unlock,Challenge,Unlock,移除工业区,工业区将不会出现在游戏中
+challengeUnlocks,NoPark,Unlock,Challenge,Unlock,移除公园区,公园区将不会出现在游戏中
+challengeUnlocks,NoDowntown,Unlock,Challenge,Unlock,移除商业区,商业区将不会出现在游戏中
+challengeUnlocks,NoUptown,Unlock,Challenge,Unlock,移除住宅区,住宅区将不会出现在游戏中
+challengeUnlocks,Endless,Unlock,Challenge,Unlock,无尽模式,游戏不会在“抢先体验”内容体验完毕后结束。
+challengeUnlocks,Sandbox,Unlock,Challenge,Unlock,沙盒,也称为“作弊模式”。游戏开始时你会获得一个道具，该道具能让你使用所有已解锁的奖励道具。此外，无需完成任务即可通关。你还无法解锁成就和其他可解锁物品。
+challengeUnlocks,NoD_HarmAtIntervals,Unlock,Challenge,Unlock,E_NoD_HarmAtIntervals,E_D_NoD_HarmAtIntervals
+challengeUnlocks,NoD_DropBombs,Unlock,Challenge,Unlock,E_NoD_DropBombs,E_D_NoD_DropBombs
+challengeUnlocks,NoD_Ooze,Unlock,Challenge,Unlock,E_NoD_Ooze,E_D_NoD_Ooze
+challengeUnlocks,NoD_WarZone,Unlock,Challenge,Unlock,E_NoD_WarZone,E_D_NoD_WarZone
+challengeUnlocks,NoD_StatusEffectChange,Unlock,Challenge,Unlock,E_NoD_StatusEffectChange,E_D_NoD_StatusEffectChange
+challengeUnlocks,NoD_Zombies,Unlock,Challenge,Unlock,E_NoD_Zombies,E_D_NoD_Zombies
+challengeUnlocks,NoD_FindBombs,Unlock,Challenge,Unlock,E_NoD_FindBombs,E_D_NoD_FindBombs
+challengeUnlocks,NoD_Lockdown,Unlock,Challenge,Unlock,E_NoD_Lockdown,E_D_NoD_Lockdown
+challengeUnlocks,NoD_Riot,Unlock,Challenge,Unlock,E_NoD_Riot,E_D_NoD_Riot
+challengeUnlocks,NoD_Killer,Unlock,Challenge,Unlock,E_NoD_Killer,E_D_NoD_Killer
+challengeUnlocks,NoD_Bounty,Unlock,Challenge,Unlock,E_NoD_Bounty,E_D_NoD_Bounty
+challengeUnlocks,NoCustomCharacters,Unlock,Challenge,Unlock,无自定义角色,不允许自定义角色。可用于公开多人游戏。
+challengeUnlocks,SuperSpecialCharacters,Unlock,Challenge,Unlock,超级特殊能力,为整个游戏启用角色的“超级”版本。只在角色的大任务完成且新游戏开始后生效。仅限非自定义字符。
+challengeUnlocks,SpeedRun,Unlock,Challenge,Unlock,速通模式,更改一系列设置，开启这个突变以保证速通的公平性。（你将不能使用ATM机等会导致竞争不公平的设施，从而使每个玩家都在同样的起点）
+challengeUnlocks,SpeedRun2,Unlock,Challenge,Unlock,速通模式 (标准版),和速通模式突变基本一样，但是这个突变里所有的技能和物品都被解锁了，并且都被设置为激活状态。问题是:如果你花了超过4分钟完成一个关卡，你就会死掉。
+challengeUnlocks,ZombiesWelcome,Unlock,Challenge,Unlock,欢迎僵尸,正常人群中欢迎僵尸。
+challengeUnlocks,SupercopsReplaceCops,Unlock,Challenge,Unlock,超级警察地盘,所有警察都会被超级警察取代。
+challengeUnlocks,MoneyRewards,Unlock,Challenge,Unlock,金钱奖励,完成任务总能获得金钱奖励。
+challengeUnlocks,GorillaTown,Unlock,Challenge,Unlock,猿人城,每个人都会变成大猩猩的样子，不过这对游戏没有影响。
+challengeUnlocks,ManyWerewolf,Unlock,Challenge,Unlock,狼人,狼人会在普通民众中随机出现。
+challengeUnlocks,HighCost,Unlock,Challenge,Unlock,高成本,所有物品都会花费更多
+challengeUnlocks,AssassinsEveryLevel,Unlock,Challenge,Unlock,刺杀国度,每一层都会出现刺客。
+challengeUnlocks,DoctorsMoreImportant,Unlock,Challenge,Unlock,医生很重要,生命值物品的效果变差，但医生的费用更便宜，也更常见。
+challengeUnlocks,BigKnockbackForAll,Unlock,Challenge,Unlock,猛烈击退,所有的攻击命中都能带来更猛烈的击退。
+challengeUnlocks,NoCowards,Unlock,Challenge,Unlock,没有懦夫,人们永远不会逃离战斗。
+challengeUnlocks,CannibalsDontAttack,Unlock,Challenge,Unlock,食人者中立,食人者刚开始时不会再抱有敌意。

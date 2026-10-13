@@ -21,24 +21,44 @@ namespace StreetsOfRoguePlugin
         {
             GameController gc = GameController.gameController;
             NameDB ndb = gc.nameDB;
+            List<Unlock> agentUnlocks = gc.sessionDataBig.agentUnlocks;
+            List<Unlock> abilityUnlocks = gc.sessionDataBig.abilityUnlocks;
             List<Unlock> itemUnlocks = gc.sessionDataBig.itemUnlocks;
+            List<Unlock> freeItemUnlocks = gc.sessionDataBig.freeItemUnlocks;
+            List<Unlock> itemUnlocksCharacterCreation = gc.sessionDataBig.itemUnlocksCharacterCreation;
             List<Unlock> traitUnlocks = gc.sessionDataBig.traitUnlocks;
             List<Unlock> challengeUnlocks = gc.sessionDataBig.challengeUnlocks;
 
             StringBuilder sb = new StringBuilder();
-            sb.AppendLine("unlockName,unlockNameType,unlockType,unlockDescriptionType,name,description");
+            sb.AppendLine("unlock,unlockName,unlockNameType,unlockType,unlockDescriptionType,name,description");
 
+            foreach (var i in agentUnlocks)
+            {
+                sb.AppendLine($"agentUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+            }
+            foreach (var i in abilityUnlocks)
+            {
+                sb.AppendLine($"abilityUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+            }
             foreach (var i in itemUnlocks)
             {
-                sb.AppendLine($"{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+                sb.AppendLine($"itemUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+            }
+            foreach (var i in freeItemUnlocks)
+            {
+                sb.AppendLine($"freeItemUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+            }
+            foreach (var i in itemUnlocksCharacterCreation)
+            {
+                sb.AppendLine($"itemUnlocksCharacterCreation,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
             }
             foreach (var i in traitUnlocks)
             {
-                sb.AppendLine($"{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
+                sb.AppendLine($"traitUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName(i.unlockName, i.unlockDescriptionType))}");
             }
             foreach (var i in challengeUnlocks)
             {
-                sb.AppendLine($"{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName("D_"+i.unlockName, i.unlockDescriptionType))}");
+                sb.AppendLine($"challengeUnlocks,{ConvComma(i.unlockName)},{ConvComma(i.unlockNameType)},{ConvComma(i.unlockType)},{ConvComma(i.unlockDescriptionType)},{ConvComma(ndb.GetName(i.unlockName, i.unlockNameType))},{ConvComma(ndb.GetName("D_"+i.unlockName, i.unlockDescriptionType))}");
             }
 
             SaveFiles(sb.ToString(), "../DumpData.csv");
