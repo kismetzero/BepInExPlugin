@@ -4,200 +4,19 @@ namespace EnterTheGungeonPlugin
 {
     public class CheatFunc
     {
-        public static bool A_BlanksInf { get; set; } = false;
-        public static bool A_BlanksLock { get; set; } = false;
-        public static bool A_GodMode { get; set; } = false;
-        public static PunchoutController PunchCtrl { get; set; }
-        public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
-        public static PunchGodModeType A_PunchGodMode { get; set; } = PunchGodModeType.Off;
-        public static bool A_PunchNoFat { get; set; } = false;
-        public static bool A_PunchTimerFreeze { get; set; } = false;
-
-        // public static GameManager C_GM { get { return GameManager.Instance; } }
         public static GameManager C_GM => GameManager.Instance;
-        public static PlayerController C_PlayerCtrl
-        {
-            get
-            {
-                GameManager gm = C_GM;
-                if (gm == null) { return null; }
-                return gm.PrimaryPlayer;
-            }
-        }
+
+        // --------------------
+        // 空响弹
+        // --------------------
+        public static PlayerController C_PlayerCtrl => (C_GM != null) ? C_GM.PrimaryPlayer : null;
         public static int A_Blanks
         {
-            get
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return 0; }
-                return player.Blanks;
-            }
-            set
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return; }
-                player.Blanks = value;
-            }
+            get => (C_PlayerCtrl != null) ? C_PlayerCtrl.Blanks : 0;
+            set { if (C_PlayerCtrl != null) { C_PlayerCtrl.Blanks = value; } }
         }
-        public static HealthHaver C_HealthHaver
-        {
-            get
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return null; }
-                return player.healthHaver;
-            }
-        }
-        public static void A_FullHeal()
-        {
-            HealthHaver hh = C_HealthHaver;
-            if (hh == null) { return; }
-            hh.FullHeal();
-        }
-        public static bool A_IsVulnerable
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return false; }
-                return hh.IsVulnerable;
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                hh.IsVulnerable = value;
-            }
-        }
-        public static float A_Health
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return 0f; }
-                return hh.GetCurrentHealth();
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                Traverse.Create(hh).Field("currentHealth").SetValue(value);
-            }
-        }
-        public static float A_HealthMax
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return 0f; }
-                return hh.GetMaxHealth();
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                Traverse.Create(hh).Field("maximumHealth").SetValue(value);
-            }
-        }
-        public static float A_Armor
-        {
-            get
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return 0f; }
-                return hh.Armor;
-            }
-            set
-            {
-                HealthHaver hh = C_HealthHaver;
-                if (hh == null) { return; }
-                hh.Armor = value;
-            }
-        }
-        public static PlayerConsumables C_CarriedConsumables
-        {
-            get
-            {
-                PlayerController player = C_PlayerCtrl;
-                if (player == null) { return null; }
-                return player.carriedConsumables;
-            }
-        }
-        public static int B_Currency
-        {
-            get
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return 0; }
-                return cc.Currency;
-            }
-            set
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return; }
-                cc.Currency = value;
-            }
-        }
-        public static int B_KeyBullets
-        {
-            get
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return 0; }
-                return cc.KeyBullets;
-            }
-            set
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return; }
-                cc.KeyBullets = value;
-            }
-        }
-        public static int B_RatKeys
-        {
-            get
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return 0; }
-                return cc.ResourcefulRatKeys;
-            }
-            set
-            {
-                PlayerConsumables cc = C_CarriedConsumables;
-                if (cc == null) { return; }
-                cc.ResourcefulRatKeys = value;
-            }
-        }
-        public static float A_PunchTime
-        {
-            get
-            {
-                if (PunchCtrl == null) { return 0f; }
-                return PunchCtrl.Timer;
-            }
-            set
-            {
-                if (PunchCtrl == null) { return; }
-                PunchCtrl.Timer = value;
-            }
-        }
-        public static float A_PunchFat
-        {
-            get
-            {
-                if (PunchCtrl == null) { return 0f; }
-                PunchoutPlayerController ppc = PunchCtrl.Player;
-                if (ppc == null) { return 0f; }
-                return ppc.CurrentExhaust;
-            }
-            set
-            {
-                if (PunchCtrl == null) { return; }
-                PunchoutPlayerController ppc = PunchCtrl.Player;
-                if (ppc == null) { return; }
-                ppc.CurrentExhaust = value;
-            }
-        }
+        public static bool A_BlanksInf { get; set; } = false;
+        public static bool A_BlanksLock { get; set; } = false;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PlayerController), nameof(PlayerController.Blanks), MethodType.Setter)]
         public static bool PlayerController_Blanks_Setter_Prefix(PlayerController __instance, ref int value)
@@ -211,11 +30,55 @@ namespace EnterTheGungeonPlugin
             return true;
         }
 
+        // --------------------
+        // HP、护盾
+        // --------------------
+        public static HealthHaver C_HealthHaver => (C_PlayerCtrl != null) ? C_PlayerCtrl.healthHaver : null;
+        public static float A_Health
+        {
+            get => (C_HealthHaver != null) ? C_HealthHaver.GetCurrentHealth() : 0f;
+            set { if (C_HealthHaver != null) { Traverse.Create(C_HealthHaver).Field("currentHealth").SetValue(value); } }
+        }
+        public static float A_HealthMax
+        {
+            get => (C_HealthHaver != null) ? C_HealthHaver.GetMaxHealth() : 0f;
+            set { if (C_HealthHaver != null) { Traverse.Create(C_HealthHaver).Field("maximumHealth").SetValue(value); } }
+        }
+        public static float A_Armor
+        {
+            get => (C_HealthHaver != null) ? C_HealthHaver.Armor : 0f;
+            set { if (C_HealthHaver != null) { C_HealthHaver.Armor = value; } }
+        }
+        public static bool A_GodMode { get; set; } = false;
+
         [HarmonyPostfix, HarmonyPatch(typeof(HealthHaver), nameof(HealthHaver.IsVulnerable), MethodType.Getter)]
         public static void HealthHaver_IsVulnerable_Getter_Postfix(HealthHaver __instance, ref bool __result)
         {
             if (A_GodMode && __instance.GetComponent<PlayerController>() != null) { __result = false; }
         }
+
+        // --------------------
+        // 金币、钥匙
+        // --------------------
+        public static PlayerConsumables C_CarriedConsumables => (C_PlayerCtrl != null) ? C_PlayerCtrl.carriedConsumables : null;
+        public static int B_Currency
+        {
+            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.Currency : 0;
+            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.Currency = value; } }
+        }
+        public static int B_KeyBullets
+        {
+            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.KeyBullets : 0;
+            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.KeyBullets = value; } }
+        }
+        public static int B_RatKeys
+        {
+            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.ResourcefulRatKeys : 0;
+            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.ResourcefulRatKeys = value; } }
+        }
+
+
+        public static PunchoutController PunchCtrl { get; set; }
 
         [HarmonyPostfix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Init))]
         public static void PunchoutController_Init_Postfix(PunchoutController __instance)
@@ -229,6 +92,13 @@ namespace EnterTheGungeonPlugin
             PunchCtrl = null;
         }
 
+        public static float A_PunchTime
+        {
+            get => (PunchCtrl != null) ? PunchCtrl.Timer : 0f;
+            set { if (PunchCtrl != null) { PunchCtrl.Timer = value; } }
+        }
+        public static bool A_PunchTimerFreeze { get; set; } = false;
+
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Timer), MethodType.Setter)]
         public static bool PunchoutController_Timer_Setter_Prefix(PunchoutController __instance, ref float value)
         {
@@ -240,6 +110,15 @@ namespace EnterTheGungeonPlugin
             return true;
         }
 
+        public static PunchoutPlayerController C_PunchPlayer => (PunchCtrl != null) ? PunchCtrl.Player : null;
+        public static float A_PunchHealth
+        {
+            get => (C_PunchPlayer != null) ? C_PunchPlayer.Health : 0f;
+            set { if (C_PunchPlayer != null) { C_PunchPlayer.Health = value; } }
+        }
+        public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
+        public static PunchGodModeType A_PunchGodMode { get; set; } = PunchGodModeType.Off;
+
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.Hit))]
         public static bool PunchoutPlayerController_Hit_Prefix(ref float damage)
         {
@@ -248,10 +127,23 @@ namespace EnterTheGungeonPlugin
             return true;
         }
 
+        public static float A_PunchFat
+        {
+            get => (C_PunchPlayer != null) ? C_PunchPlayer.CurrentExhaust : 0f;
+            set { if (C_PunchPlayer != null) { C_PunchPlayer.CurrentExhaust = value; } }
+        }
+        public static bool A_PunchNoFat { get; set; } = false;
+
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.CurrentExhaust), MethodType.Setter)]
         public static void PunchoutPlayerController_CurrentExhaust_Setter_Prefix(ref float value)
         {
             if (A_PunchNoFat) { value = 0f; }
+        }
+
+        public static int A_PunchStars
+        {
+            get => (C_PunchPlayer != null) ? C_PunchPlayer.Stars : 0;
+            set { if (C_PunchPlayer != null) { C_PunchPlayer.Stars = value; } }
         }
     }
 }

@@ -10,23 +10,24 @@
 ```csharp
 PlayerController player = GameManager.Instance.PrimaryPlayer;
 
-player.Blanks = 5; // 空响弹
+player.Blanks = 5;          // 空响弹
 player.SetIsFlying(true, "debug_flight", true, false);   // 飞行
 
 HealthHaver hh = playerl.healthHaver;
-hh.FullHeal();  // 回满血
-hh.IsVulnerable = false // 无敌
+hh.FullHeal();              // 回满血
+hh.IsVulnerable = false;    // 无敌
 
 PlayerConsumables pc = player.carriedConsumables;
-pc.Currency = 100;  // 货币
-pc.KeyBullets = 10; // 钥匙
-pc.ResourcefulRatKeys = 10; // 老鼠资源钥匙
+pc.Currency = 100;              // 货币
+pc.KeyBullets = 10;             // 钥匙
+pc.ResourcefulRatKeys = 10;     // 老鼠资源钥匙
 
 PunchoutController punchCtrl;
-punchCtrl.Timer = 120f;  // 打拳时间
+punchCtrl.Timer = 120f;             // 打拳时间
 PunchoutPlayerController punchPlayer= punchCtrl.Player;
-punchPlayer.Health = 100f;  // 打拳玩家血量
-punchPlayer.CurrentExhaust = 0f // 打拳玩家疲劳值
+punchPlayer.Health = 100f;          // 打拳玩家血量
+punchPlayer.CurrentExhaust = 0f;    // 打拳玩家疲劳值
+punchPlayer.Stars = 3;              // 超级拳
 
 ```
 
@@ -90,6 +91,7 @@ public class PunchoutPlayerController : PunchoutGameActor {
 
 public abstract class PunchoutGameActor : BraveBehaviour {
     public float Health = 100f;
+    public int Stars { get; set; }
 }
 
 ```

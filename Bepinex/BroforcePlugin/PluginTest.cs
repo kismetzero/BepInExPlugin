@@ -21,8 +21,6 @@ namespace BroforcePlugin
             Harmony.CreateAndPatchAll(typeof(PluginTest));
             Harmony.CreateAndPatchAll(typeof(CheatFunc));
             SceneManager.sceneLoaded += OnSceneLoaded;
-
-            heroLabels = Enum.GetNames(typeof(HeroType));
         }
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
@@ -85,47 +83,57 @@ namespace BroforcePlugin
                 windowRect = GUI.Window(114514, windowRect, WindowFunc, "窗口");
             }
         }
-        public string[] playerNumStrings = { "0", "1", "2", "3" };
+        public static readonly string[] PlayerNumStrings = { "0", "1", "2", "3" };
         public int tmp_int = 0;
-        public string[] heroLabels;
-        public int heroIndex = 0;
-
+        public string tmp_curr_str;
+        public string tmp_new_str;
+        public static readonly string[] HeroLabels = Enum.GetNames(typeof(HeroType));
         public Vector2 heroScrollPos;
         public void WindowFunc(int id)
         {
             GUILayout.Label($"窗口id = {id}");
 
             GUILayout.BeginHorizontal();
-            CheatFunc.A_PlayerNum = GUILayout.Toolbar(CheatFunc.A_PlayerNum, playerNumStrings);
+            CheatFunc.A_PlayerNum = GUILayout.Toolbar(CheatFunc.A_PlayerNum, PlayerNumStrings);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             CheatFunc.A_GodMode = GUILayout.Toggle(CheatFunc.A_GodMode, "无敌");
             GUILayout.Label($"生命数:");
-            if (int.TryParse(GUILayout.TextField(CheatFunc.A_Lives.ToString()), out tmp_int))
+            tmp_curr_str = CheatFunc.A_Lives.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
             { CheatFunc.A_Lives = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             CheatFunc.A_InfAmmo = GUILayout.Toggle(CheatFunc.A_InfAmmo, "无限弹药");
             GUILayout.Label($"弹药:");
-            if (int.TryParse(GUILayout.TextField(CheatFunc.A_Ammo.ToString()), out tmp_int))
+            tmp_curr_str = CheatFunc.A_Ammo.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
             { CheatFunc.A_Ammo = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"InfMin:");
-            if (int.TryParse(GUILayout.TextField(CheatFunc.A_InfAmmoMin.ToString()), out tmp_int))
+            tmp_curr_str = CheatFunc.A_InfAmmoMin.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
             { CheatFunc.A_InfAmmoMin = tmp_int; }
+
             GUILayout.Label($"InfMax:");
-            if (int.TryParse(GUILayout.TextField(CheatFunc.A_InfAmmoMax.ToString()), out tmp_int))
+            tmp_curr_str = CheatFunc.A_InfAmmoMax.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
             { CheatFunc.A_InfAmmoMax = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginVertical();
             heroScrollPos = GUILayout.BeginScrollView(heroScrollPos);
-            heroIndex = GUILayout.SelectionGrid((int)CheatFunc.A_HeroType, heroLabels, 1);
-            if (heroIndex != (int)CheatFunc.A_HeroType) { CheatFunc.A_HeroType = (HeroType)heroIndex; }
+            int currentIndex = Array.IndexOf(HeroLabels, CheatFunc.A_HeroType.ToString());
+            int heroIndex = GUILayout.SelectionGrid(currentIndex, HeroLabels, 1);
+            if (heroIndex != currentIndex) { CheatFunc.A_HeroType = (HeroType)Enum.Parse(typeof(HeroType), HeroLabels[heroIndex]); }
             GUILayout.EndScrollView();
             GUILayout.EndVertical();
 
