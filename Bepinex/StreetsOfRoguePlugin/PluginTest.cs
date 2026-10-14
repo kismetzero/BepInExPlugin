@@ -44,7 +44,7 @@ namespace StreetsOfRoguePlugin
         }
 
         public bool WindowsDisplay { get; set; }
-        public Rect windowRect = new Rect(100f, 100f, 200f, 200f); // 定义窗口位置 x y 宽 高
+        public Rect windowRect = new Rect(100f, 100f, 250f, 200f); // 定义窗口位置 x y 宽 高
         void OnGUI()
         {
             if (WindowsDisplay)
@@ -56,29 +56,50 @@ namespace StreetsOfRoguePlugin
                 windowRect = GUI.Window(114514, windowRect, WindowFunc, "窗口");
             }
         }
+        public int tmp_int = 0;
+        public float tmp_float = 0;
+        public string tmp_curr_str;
+        public string tmp_new_str;
+        public static readonly string[] GodModeLabels = { "关", "零伤害", "跳伤害", "无敌" };
         public void WindowFunc(int id)
         {
             GUILayout.Label($"窗口id = {id}");
 
             GUILayout.BeginHorizontal();
-            CheatFunc.C_Player.ghost = GUILayout.Toggle(CheatFunc.C_Player.ghost, "幽灵");
-            CheatFunc.C_Player.invisible = GUILayout.Toggle(CheatFunc.C_Player.invisible, "隐身");
-            CheatFunc.C_Player.dontHate = GUILayout.Toggle(CheatFunc.C_Player.dontHate, "不恨");
+            GUILayout.Label($"无敌模式:");
+            GUILayout.Label($"HP:");
+            tmp_curr_str = CheatFunc.A_health.ToString("F1");
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
+            { CheatFunc.A_health = tmp_float; }
+            GUILayout.Label($"/");
+            tmp_curr_str = CheatFunc.A_healthMax.ToString("F1");
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
+            { CheatFunc.A_healthMax = tmp_float; }
             GUILayout.EndHorizontal();
 
-            GUILayout.BeginHorizontal();
-            CheatFunc.C_Player.copsDontCare = GUILayout.Toggle(CheatFunc.C_Player.copsDontCare, "警察无视");
-            CheatFunc.C_Player.aboveTheLaw = GUILayout.Toggle(CheatFunc.C_Player.aboveTheLaw, "法外狂徒");
-            GUILayout.EndHorizontal();
+            CheatFunc.A_GodMode = (CheatFunc.GodModeType)GUILayout.Toolbar((int)CheatFunc.A_GodMode, GodModeLabels);
 
             GUILayout.BeginHorizontal();
-            CheatFunc.C_Player.resurrect = GUILayout.Toggle(CheatFunc.C_Player.resurrect, "复活");
-            CheatFunc.C_Player.quickResurrect = GUILayout.Toggle(CheatFunc.C_Player.quickResurrect, "快速复活");
+            CheatFunc.A_invisible = GUILayout.Toggle(CheatFunc.A_invisible, "隐身");
+            CheatFunc.A_aboveTheLaw = GUILayout.Toggle(CheatFunc.A_aboveTheLaw, "法外狂徒");
+            if (GUILayout.Button("效果 复活")) { CheatFunc.A_AddStatusEffect("Resurrection"); }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             if (GUILayout.Button("获得道具传送器")) { CheatFunc.A_AddItem("ItemTeleporter"); }
             if (GUILayout.Button("获得500")) { CheatFunc.A_AddMoney(500); }
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("效果 践踏法律")) { CheatFunc.A_AddStatusEffect("AboveTheLaw"); }
+            if (GUILayout.Button("技能 用药指南")) { CheatFunc.A_AddTrait("IdentifyScience"); }
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("技能 全球定位")) { CheatFunc.A_AddTrait("MapFilled"); }
+            if (GUILayout.Button("技能 随意传送")) { CheatFunc.A_AddTrait("TeleportAnytime"); }
             GUILayout.EndHorizontal();
 
             GUI.DragWindow();

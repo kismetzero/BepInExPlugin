@@ -6,75 +6,35 @@ namespace StreetsOfRoguePlugin
 {
     public class CheatFunc
     {
-        public enum GodModeType { Off, ZeroDamage, SkipDamage, Invincible }
-        public static GodModeType A_GodMode { get; set; } = GodModeType.Off;
         public static GameController C_GC => GameController.gameController;
-        public static Unlocks C_Unlocks
-        {
-            get
-            {
-                GameController gc = C_GC;
-                if (gc == null) { return null; }
-                return gc.unlocks;
-            }
-        }
-        public static Agent C_Player
-        {
-            get
-            {
-                GameController gc = C_GC;
-                if (gc == null) { return null; }
-                return gc.playerAgent;
-            }
-        }
+        public static Unlocks C_Unlocks => (C_GC != null) ? C_GC.unlocks : null;
+        public static InvDatabase C_inventory => (C_Player != null) ? C_Player.inventory : null;
 
-        public static InvDatabase C_inventory
+        public static Agent C_Player => (C_GC != null) ? C_GC.playerAgent : null;
+        public static float A_health
         {
-            get
-            {
-                Agent player = C_Player;
-                if (player == null) { return null; }
-                return player.inventory;
-            }
+            get => (C_Player != null) ? C_Player.health : 0f;
+            set { if (C_Player != null) { C_Player.health = value; } }
         }
-
+        public static float A_healthMax
+        {
+            get => (C_Player != null) ? C_Player.healthMax : 0f;
+            set { if (C_Player != null) { C_Player.healthMax = value; } }
+        }
         public static bool A_invisible
         {
-            get
-            {
-                Agent player = C_Player;
-                if (player == null) { return false; }
-                return player.invisible;
-            }
-            set
-            {
-                Agent player = C_Player;
-                if (player == null) { return; }
-                player.invisible = value;
-            }
+            get => (C_Player != null) ? C_Player.invisible : false;
+            set { if (C_Player != null) { C_Player.invisible = value; } }
         }
 
-        public static void A_AddMoney(int num)
+        public static bool A_aboveTheLaw
         {
-            Agent player = C_Player;
-            if (player == null) { return; }
-            InvItem invItem = new InvItem();
-            invItem.invItemName = "Money";
-            invItem.invItemCount = num;
-            invItem.ItemSetup(true);
-            player.inventory.AddItem(invItem);
+            get => (C_Player != null) ? C_Player.aboveTheLaw : false;
+            set { if (C_Player != null) { C_Player.aboveTheLaw = value; } }
         }
 
-        public static void A_AddItem(string name)
-        {
-            Agent player = C_Player;
-            if (player == null) { return; }
-            InvItem invItem = new InvItem();
-            invItem.invItemName = name;
-            invItem.ItemSetup(true);
-            invItem.invItemCount = invItem.rewardCount;
-            player.inventory.AddItem(invItem);
-        }
+        public enum GodModeType { Off, ZeroDamage, SkipDamage, Invincible }
+        public static GodModeType A_GodMode { get; set; } = GodModeType.Off;
 
         [HarmonyPrefix, HarmonyPatch(typeof(StatusEffects), nameof(StatusEffects.ChangeHealth),
             new Type[]
@@ -114,6 +74,40 @@ namespace StreetsOfRoguePlugin
                 }
             }
             return true;
+        }
+
+        public static void A_AddMoney(int num)
+        {
+            Agent player = C_Player;
+            if (player == null) { return; }
+            InvItem invItem = new InvItem();
+            invItem.invItemName = "Money";
+            invItem.invItemCount = num;
+            invItem.ItemSetup(true);
+            player.inventory.AddItem(invItem);
+        }
+
+        public static void A_AddItem(string name)
+        {
+            Agent player = C_Player;
+            if (player == null) { return; }
+            InvItem invItem = new InvItem();
+            invItem.invItemName = name;
+            invItem.ItemSetup(true);
+            invItem.invItemCount = invItem.rewardCount;
+            player.inventory.AddItem(invItem);
+        }
+
+        public static void A_AddTrait(string name)
+        {
+            if (C_Player == null) { return; }
+            C_Player.statusEffects.AddTrait(name);
+        }
+
+        public static void A_AddStatusEffect(string name)
+        {
+            if (C_Player == null) { return; }
+            C_Player.statusEffects.AddStatusEffect(name);
         }
     }
 }

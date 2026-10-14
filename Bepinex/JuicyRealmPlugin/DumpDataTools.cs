@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace JuicyRealmPlugin
 {

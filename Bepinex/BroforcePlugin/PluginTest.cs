@@ -49,26 +49,6 @@ namespace BroforcePlugin
                 Logger.LogInfo("Windows Toggle");
                 WindowsDisplay = !WindowsDisplay;
             }
-            //if (Input.GetKeyDown(KeyCode.Alpha1))
-            //{
-            //    CheatFunc.A_Lives += 1;
-            //}
-            //if (Input.GetKeyDown(KeyCode.Alpha2))
-            //{
-            //    CheatFunc.A_Ammo += 1;
-            //}
-            //if (Input.GetKeyDown(KeyCode.Alpha3))
-            //{
-            //    CheatFunc.A_InfAmmo = !CheatFunc.A_InfAmmo;
-            //}
-            //if (Input.GetKeyDown(KeyCode.Alpha4))
-            //{
-            //    CheatFunc.A_GodMode = !CheatFunc.A_GodMode;
-            //}
-            //if (Input.GetKeyDown(KeyCode.Alpha5))
-            //{
-            //    CheatFunc.A_HeroType = HeroType.IndianaBrones;
-            //}
         }
         public bool WindowsDisplay { get; set; }
         public Rect windowRect = new Rect(100f, 100f, 200f, 500f); // 定义窗口位置 x y 宽 高
@@ -94,6 +74,7 @@ namespace BroforcePlugin
             GUILayout.Label($"窗口id = {id}");
 
             GUILayout.BeginHorizontal();
+            GUILayout.Label($"玩家:");
             CheatFunc.A_PlayerNum = GUILayout.Toolbar(CheatFunc.A_PlayerNum, PlayerNumStrings);
             GUILayout.EndHorizontal();
 
