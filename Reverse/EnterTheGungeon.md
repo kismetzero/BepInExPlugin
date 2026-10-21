@@ -8,7 +8,8 @@
 
 ### 实现
 ```csharp
-PlayerController player = GameManager.Instance.PrimaryPlayer;
+GameManager GM = GameManager.Instance;
+PlayerController player = GM.PrimaryPlayer;
 
 player.Blanks = 5;          // 空响弹
 player.SetIsFlying(true, "debug_flight", true, false);   // 飞行
@@ -24,7 +25,7 @@ pc.ResourcefulRatKeys = 10;     // 老鼠资源钥匙
 
 PunchoutController punchCtrl;
 punchCtrl.Timer = 120f;             // 打拳时间
-PunchoutPlayerController punchPlayer= punchCtrl.Player;
+PunchoutPlayerController punchPlayer = punchCtrl.Player;
 punchPlayer.Health = 100f;          // 打拳玩家血量
 punchPlayer.CurrentExhaust = 0f;    // 打拳玩家疲劳值
 punchPlayer.Stars = 3;              // 超级拳
