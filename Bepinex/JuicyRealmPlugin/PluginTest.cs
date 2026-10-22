@@ -66,55 +66,55 @@ namespace JuicyRealmPlugin
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"玩家:");
-            tmp_curr_str = CheatFunc.A_PlayerNum.ToString();
+            tmp_curr_str = CheatFunc.PlayerNum.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_PlayerNum = tmp_int; }
+            { CheatFunc.PlayerNum = tmp_int; }
             GUILayout.Label($"护盾:");
-            tmp_curr_str = CheatFunc.A_CurrentShield.ToString("F1");
+            tmp_curr_str = CheatFunc.Shield.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_CurrentShield = tmp_float; }
-            GUILayout.Label($"/{CheatFunc.A_ShieldMax}");
+            { CheatFunc.Shield = tmp_float; }
+            GUILayout.Label($"/{CheatFunc.ShieldMax}");
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"无敌模式:");
             GUILayout.Label($"HP:");
-            tmp_curr_str = CheatFunc.A_CurrentHp.ToString("F1");
+            tmp_curr_str = CheatFunc.Health.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_CurrentHp = tmp_float; }
+            { CheatFunc.Health = tmp_float; }
             GUILayout.Label($"/");
-            tmp_curr_str = CheatFunc.A_HpMax.ToString("F1");
+            tmp_curr_str = CheatFunc.HealthMax.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_HpMax = tmp_float; }
+            { CheatFunc.HealthMax = tmp_float; }
             GUILayout.EndHorizontal();
 
             CheatFunc.A_GodMode = (CheatFunc.GodModeType)GUILayout.Toolbar((int)CheatFunc.A_GodMode, GodModeLabels);
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"金币:");
-            tmp_curr_str = CheatFunc.A_Coin.ToString();
+            tmp_curr_str = CheatFunc.Coin.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_Coin = tmp_int; }
+            { CheatFunc.Coin = tmp_int; }
             CheatFunc.A_InfSkill = GUILayout.Toggle(CheatFunc.A_InfSkill, "无限技能");
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"能量:");
-            tmp_curr_str = CheatFunc.A_CurrentEnergy.ToString("F1");
+            tmp_curr_str = CheatFunc.Energy.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_CurrentEnergy = tmp_float; }
+            { CheatFunc.Energy = tmp_float; }
             GUILayout.Label($"/");
-            tmp_curr_str = CheatFunc.A_EnergyMax.ToString("F1");
+            tmp_curr_str = CheatFunc.EnergyMax.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_EnergyMax = tmp_float; }
-            CheatFunc.A_InfEnergy = GUILayout.Toggle(CheatFunc.A_InfEnergy, "无限能量");
+            { CheatFunc.EnergyMax = tmp_float; }
+            CheatFunc.InfEnergy = GUILayout.Toggle(CheatFunc.InfEnergy, "无限能量");
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();

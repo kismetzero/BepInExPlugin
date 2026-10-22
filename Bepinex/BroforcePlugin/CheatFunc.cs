@@ -1,71 +1,69 @@
 ﻿using HarmonyLib;
-using static Text3D;
 
 namespace BroforcePlugin
 {
     public class CheatFunc
     {
-        public static int A_PlayerNum { get; set; } = 0;
+        public static int PlayerNum { get; set; } = 0;
 
-        public static HeroController B_HeroCtrl => HeroController.Instance;
-        public static Player B_Player
+        public static Player Player
         {
             get
             {
-                if (HeroController.Instance == null) { return null; }
-                if (A_PlayerNum < 0 || A_PlayerNum > 4) { return null; }
-                return HeroController.players[A_PlayerNum];
+                if (HeroController.Instance == null) { return default; }
+                if (PlayerNum < 0 || PlayerNum > 4) { return default; }
+                return HeroController.players[PlayerNum];
             }
         }
-        public static int A_Lives
+        public static int HP
         {
-            get => (B_Player != null) ? B_Player.Lives : 0;
-            set { if (B_Player != null) { B_Player.Lives = value; } }
+            get => (Player != null) ? Player.Lives : default;
+            set { if (Player != null) { Player.Lives = value; } }
         }
-        public static bool A_GodMode
+        public static bool GodMode
         {
-            get => (B_Player != null) ? B_Player.character.invulnerable : false;
-            set { if (B_Player != null) { B_Player.character.invulnerable = value; } }
+            get => (Player != null) ? Player.character.invulnerable : default;
+            set { if (Player != null) { Player.character.invulnerable = value; } }
         }
-        public static int A_Ammo
+        public static int Ammo
         {
             get
             {
-                Player player = B_Player;
-                if (player == null) { return 0; }
+                Player player = Player;
+                if (player == null) { return default; }
                 var broBase = player.character as BroBase;
                 return broBase.SpecialAmmo;
             }
             set
             {
-                Player player = B_Player;
+                Player player = Player;
                 if (player == null) { return; }
                 var broBase = player.character as BroBase;
                 broBase.SpecialAmmo = value;
             }
         }
-        public static bool A_InfAmmo { get; set; } = false;
-        public static int A_InfAmmoMin { get; set; } = 2;
-        public static int A_InfAmmoMax { get; set; } = 5;
+        public static bool InfAmmo { get; set; } = false;
+        public static int InfAmmoMin { get; set; } = 2;
+        public static int InfAmmoMax { get; set; } = 5;
 
         [HarmonyPrefix, HarmonyPatch(typeof(BroBase), nameof(BroBase.SpecialAmmo), MethodType.Setter)]
         public static void BroBase_SpecialAmmo_Setter_Prefix(ref int value)
         {
-            if (A_InfAmmo)
+            if (InfAmmo)
             {
-                if (value < A_InfAmmoMin) { value = A_InfAmmoMax; }
+                if (value < InfAmmoMin) { value = InfAmmoMax; }
             }
         }
 
         public static HeroType A_HeroType
         {
-            get => (B_Player != null) ? B_Player.heroType : HeroType.None;
+            get => (Player != null) ? Player.heroType : HeroType.None;
             set
             {
-                Player player = B_Player;
+                Player player = Player;
                 if (player == null) { return; }
-                if (A_PlayerNum < 0 || A_PlayerNum > 4) { return; }
-                HeroController.ChangeBro(A_PlayerNum, value);
+                if (PlayerNum < 0 || PlayerNum > 4) { return; }
+                HeroController.ChangeBro(PlayerNum, value);
             }
         }
     }

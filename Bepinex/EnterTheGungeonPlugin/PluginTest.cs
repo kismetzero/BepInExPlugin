@@ -65,88 +65,88 @@ namespace EnterTheGungeonPlugin
             GUILayout.BeginHorizontal();
             CheatFunc.A_GodMode = GUILayout.Toggle(CheatFunc.A_GodMode, "无敌");
             GUILayout.Label($"金币:");
-            tmp_curr_str = CheatFunc.B_Currency.ToString();
+            tmp_curr_str = CheatFunc.Coin.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.B_Currency = tmp_int; }
+            { CheatFunc.Coin = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"HP:");
-            tmp_curr_str = CheatFunc.A_Health.ToString("F1");
+            tmp_curr_str = CheatFunc.Health.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_Health = tmp_float; }
+            { CheatFunc.Health = tmp_float; }
             GUILayout.Label($"/");
-            tmp_curr_str = CheatFunc.A_HealthMax.ToString("F1");
+            tmp_curr_str = CheatFunc.HealthMax.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_HealthMax = tmp_float; }
+            { CheatFunc.HealthMax = tmp_float; }
             GUILayout.Label($"护盾:");
-            tmp_curr_str = CheatFunc.A_Armor.ToString("F1");
+            tmp_curr_str = CheatFunc.Armor.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_Armor = tmp_float; }
+            { CheatFunc.Armor = tmp_float; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"空饷弹:");
-            tmp_curr_str = CheatFunc.A_Blanks.ToString();
+            tmp_curr_str = CheatFunc.Blanks.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_Blanks = tmp_int; }
-            CheatFunc.A_BlanksInf = GUILayout.Toggle(CheatFunc.A_BlanksInf, "无限");
-            CheatFunc.A_BlanksLock = GUILayout.Toggle(CheatFunc.A_BlanksLock, "锁定");
+            { CheatFunc.Blanks = tmp_int; }
+            CheatFunc.BlanksInf = GUILayout.Toggle(CheatFunc.BlanksInf, "无限");
+            CheatFunc.BlanksLock = GUILayout.Toggle(CheatFunc.BlanksLock, "锁定");
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"钥匙:");
-            tmp_curr_str = CheatFunc.B_KeyBullets.ToString();
+            tmp_curr_str = CheatFunc.Keys.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.B_KeyBullets = tmp_int; }
+            { CheatFunc.Keys = tmp_int; }
             GUILayout.Label($"老鼠宝箱钥匙:");
-            tmp_curr_str = CheatFunc.B_RatKeys.ToString();
+            tmp_curr_str = CheatFunc.RatResKeys.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.B_RatKeys = tmp_int; }
+            { CheatFunc.RatResKeys = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"老鼠关卡:");
             GUILayout.Label($"必杀星:");
-            tmp_curr_str = CheatFunc.A_PunchStars.ToString();
+            tmp_curr_str = CheatFunc.PunchStars.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_PunchStars = tmp_int; }
+            { CheatFunc.PunchStars = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"无敌模式:");
             GUILayout.Label($"HP:");
-            tmp_curr_str = CheatFunc.A_PunchHealth.ToString("F1");
+            tmp_curr_str = CheatFunc.PunchHealth.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_PunchHealth = tmp_float; }
+            { CheatFunc.PunchHealth = tmp_float; }
             GUILayout.EndHorizontal();
-            CheatFunc.A_PunchGodMode = (CheatFunc.PunchGodModeType)GUILayout.Toolbar((int)CheatFunc.A_PunchGodMode, PunchGodModeLabels);
+            CheatFunc.PunchGodMode = (CheatFunc.PunchGodModeType)GUILayout.Toolbar((int)CheatFunc.PunchGodMode, PunchGodModeLabels);
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"时间:");
-            tmp_curr_str = CheatFunc.A_PunchTime.ToString("F1");
+            tmp_curr_str = CheatFunc.PunchTime.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_PunchTime = tmp_float; }
-            CheatFunc.A_PunchTimerFreeze = GUILayout.Toggle(CheatFunc.A_PunchTimerFreeze, "锁定");
+            { CheatFunc.PunchTime = tmp_float; }
+            CheatFunc.PunchTimerFreeze = GUILayout.Toggle(CheatFunc.PunchTimerFreeze, "锁定");
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"疲劳:");
-            tmp_curr_str = CheatFunc.A_PunchFat.ToString("F1");
+            tmp_curr_str = CheatFunc.PunchFat.ToString("F1");
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && float.TryParse(tmp_new_str, out tmp_float))
-            { CheatFunc.A_PunchFat = tmp_float; }
-            CheatFunc.A_PunchNoFat = GUILayout.Toggle(CheatFunc.A_PunchNoFat, "锁定零");
+            { CheatFunc.PunchFat = tmp_float; }
+            CheatFunc.PunchNoFat = GUILayout.Toggle(CheatFunc.PunchNoFat, "锁定零");
             GUILayout.EndHorizontal();
 
             GUI.DragWindow();

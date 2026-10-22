@@ -6,35 +6,33 @@ namespace StreetsOfRoguePlugin
 {
     public class CheatFunc
     {
-        public static GameController C_GC => GameController.gameController;
-        public static Unlocks C_Unlocks => (C_GC != null) ? C_GC.unlocks : null;
-        public static InvDatabase C_inventory => (C_Player != null) ? C_Player.inventory : null;
+        public static GameController GC => GameController.gameController;
 
-        public static Agent C_Player => (C_GC != null) ? C_GC.playerAgent : null;
-        public static float A_health
+        public static Agent Player => (GC != null) ? GC.playerAgent : default;
+        public static float Health
         {
-            get => (C_Player != null) ? C_Player.health : 0f;
-            set { if (C_Player != null) { C_Player.health = value; } }
+            get => (Player != null) ? Player.health : default;
+            set { if (Player != null) { Player.health = value; } }
         }
-        public static float A_healthMax
+        public static float HealthMax
         {
-            get => (C_Player != null) ? C_Player.healthMax : 0f;
-            set { if (C_Player != null) { C_Player.healthMax = value; } }
+            get => (Player != null) ? Player.healthMax : default;
+            set { if (Player != null) { Player.healthMax = value; } }
         }
-        public static bool A_invisible
+        public static bool Invisible
         {
-            get => (C_Player != null) ? C_Player.invisible : false;
-            set { if (C_Player != null) { C_Player.invisible = value; } }
+            get => (Player != null) ? Player.invisible : default;
+            set { if (Player != null) { Player.invisible = value; } }
         }
 
-        public static bool A_aboveTheLaw
+        public static bool AboveTheLaw
         {
-            get => (C_Player != null) ? C_Player.aboveTheLaw : false;
-            set { if (C_Player != null) { C_Player.aboveTheLaw = value; } }
+            get => (Player != null) ? Player.aboveTheLaw : default;
+            set { if (Player != null) { Player.aboveTheLaw = value; } }
         }
 
         public enum GodModeType { Off, ZeroDamage, SkipDamage, Invincible }
-        public static GodModeType A_GodMode { get; set; } = GodModeType.Off;
+        public static GodModeType GodMode { get; set; } = GodModeType.Off;
 
         [HarmonyPrefix, HarmonyPatch(typeof(StatusEffects), nameof(StatusEffects.ChangeHealth),
             new Type[]
@@ -49,10 +47,10 @@ namespace StreetsOfRoguePlugin
             )]
         public static bool StatusEffects_ChangeHealth_Prefix(StatusEffects __instance, ref float healthNum, ref float clientFinalHealthNum)
         {
-            if (A_GodMode != GodModeType.Off && __instance.agent != null && __instance.agent.localPlayer)
+            if (GodMode != GodModeType.Off && __instance.agent != null && __instance.agent.localPlayer)
             {
-                if (A_GodMode == GodModeType.SkipDamage) { return false; }
-                if (A_GodMode == GodModeType.ZeroDamage)
+                if (GodMode == GodModeType.SkipDamage) { return false; }
+                if (GodMode == GodModeType.ZeroDamage)
                 {
                     // if (healthNum == -200f || healthNum == -2000f) { return true; }
                     if (healthNum < 0f) { healthNum = 0f; }
@@ -65,7 +63,7 @@ namespace StreetsOfRoguePlugin
         [HarmonyPrefix, HarmonyPatch(typeof(StatusEffects), nameof(StatusEffects.hasStatusEffect))]
         public static bool StatusEffects_hasStatusEffect_Prefix(StatusEffects __instance, string statusEffectName, ref bool __result)
         {
-            if (A_GodMode == GodModeType.Invincible && __instance.agent != null && __instance.agent.localPlayer)
+            if (GodMode == GodModeType.Invincible && __instance.agent != null && __instance.agent.localPlayer)
             {
                 if (statusEffectName == "Invincible")
                 {
@@ -76,9 +74,9 @@ namespace StreetsOfRoguePlugin
             return true;
         }
 
-        public static void A_AddMoney(int num)
+        public static void AddMoney(int num)
         {
-            Agent player = C_Player;
+            Agent player = Player;
             if (player == null) { return; }
             InvItem invItem = new InvItem();
             invItem.invItemName = "Money";
@@ -87,9 +85,9 @@ namespace StreetsOfRoguePlugin
             player.inventory.AddItem(invItem);
         }
 
-        public static void A_AddItem(string name)
+        public static void AddItem(string name)
         {
-            Agent player = C_Player;
+            Agent player = Player;
             if (player == null) { return; }
             InvItem invItem = new InvItem();
             invItem.invItemName = name;
@@ -98,16 +96,16 @@ namespace StreetsOfRoguePlugin
             player.inventory.AddItem(invItem);
         }
 
-        public static void A_AddTrait(string name)
+        public static void AddTrait(string name)
         {
-            if (C_Player == null) { return; }
-            C_Player.statusEffects.AddTrait(name);
+            if (Player == null) { return; }
+            Player.statusEffects.AddTrait(name);
         }
 
-        public static void A_AddStatusEffect(string name)
+        public static void AddStatusEffect(string name)
         {
-            if (C_Player == null) { return; }
-            C_Player.statusEffects.AddStatusEffect(name);
+            if (Player == null) { return; }
+            Player.statusEffects.AddStatusEffect(name);
         }
     }
 }

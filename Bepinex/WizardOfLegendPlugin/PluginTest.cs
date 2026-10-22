@@ -59,9 +59,9 @@ namespace WizardOfLegendPlugin
         }
         public void WindowFunc(int id)
         {
-            GUILayout.BeginHorizontal();
             GUILayout.Label($"窗口id = {id}");
             GUILayout.Label($"Cursor.visible = {Cursor.visible}");
+            GUILayout.BeginHorizontal();
             GUILayout.EndHorizontal();
             GUI.DragWindow();
         }

@@ -4,25 +4,25 @@ namespace EnterTheGungeonPlugin
 {
     public class CheatFunc
     {
-        public static GameManager C_GM => GameManager.Instance;
+        public static GameManager GM => GameManager.Instance;
 
         // --------------------
         // 空响弹
         // --------------------
-        public static PlayerController C_PlayerCtrl => (C_GM != null) ? C_GM.PrimaryPlayer : null;
-        public static int A_Blanks
+        public static PlayerController PlayerCtrl => (GM != null) ? GM.PrimaryPlayer : default;
+        public static int Blanks
         {
-            get => (C_PlayerCtrl != null) ? C_PlayerCtrl.Blanks : 0;
-            set { if (C_PlayerCtrl != null) { C_PlayerCtrl.Blanks = value; } }
+            get => (PlayerCtrl != null) ? PlayerCtrl.Blanks : default;
+            set { if (PlayerCtrl != null) { PlayerCtrl.Blanks = value; } }
         }
-        public static bool A_BlanksInf { get; set; } = false;
-        public static bool A_BlanksLock { get; set; } = false;
+        public static bool BlanksInf { get; set; } = false;
+        public static bool BlanksLock { get; set; } = false;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PlayerController), nameof(PlayerController.Blanks), MethodType.Setter)]
         public static bool PlayerController_Blanks_Setter_Prefix(PlayerController __instance, ref int value)
         {
-            if (A_BlanksLock) { return false; }
-            if (A_BlanksInf)
+            if (BlanksLock) { return false; }
+            if (BlanksInf)
             {
                 int currentBlanks = __instance.Blanks;
                 if (value < currentBlanks) { return false; }
@@ -33,21 +33,21 @@ namespace EnterTheGungeonPlugin
         // --------------------
         // HP、护盾
         // --------------------
-        public static HealthHaver C_HealthHaver => (C_PlayerCtrl != null) ? C_PlayerCtrl.healthHaver : null;
-        public static float A_Health
+        public static HealthHaver HH => (PlayerCtrl != null) ? PlayerCtrl.healthHaver : default;
+        public static float Health
         {
-            get => (C_HealthHaver != null) ? C_HealthHaver.GetCurrentHealth() : 0f;
-            set { if (C_HealthHaver != null) { Traverse.Create(C_HealthHaver).Field("currentHealth").SetValue(value); } }
+            get => (HH != null) ? HH.GetCurrentHealth() : default;
+            set { if (HH != null) { Traverse.Create(HH).Field("currentHealth").SetValue(value); } }
         }
-        public static float A_HealthMax
+        public static float HealthMax
         {
-            get => (C_HealthHaver != null) ? C_HealthHaver.GetMaxHealth() : 0f;
-            set { if (C_HealthHaver != null) { Traverse.Create(C_HealthHaver).Field("maximumHealth").SetValue(value); } }
+            get => (HH != null) ? HH.GetMaxHealth() : default;
+            set { if (HH != null) { Traverse.Create(HH).Field("maximumHealth").SetValue(value); } }
         }
-        public static float A_Armor
+        public static float Armor
         {
-            get => (C_HealthHaver != null) ? C_HealthHaver.Armor : 0f;
-            set { if (C_HealthHaver != null) { C_HealthHaver.Armor = value; } }
+            get => (HH != null) ? HH.Armor : default;
+            set { if (HH != null) { HH.Armor = value; } }
         }
         public static bool A_GodMode { get; set; } = false;
 
@@ -60,21 +60,21 @@ namespace EnterTheGungeonPlugin
         // --------------------
         // 金币、钥匙
         // --------------------
-        public static PlayerConsumables C_CarriedConsumables => (C_PlayerCtrl != null) ? C_PlayerCtrl.carriedConsumables : null;
-        public static int B_Currency
+        public static PlayerConsumables PlayerConsumables => (PlayerCtrl != null) ? PlayerCtrl.carriedConsumables : default;
+        public static int Coin
         {
-            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.Currency : 0;
-            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.Currency = value; } }
+            get => (PlayerConsumables != null) ? PlayerConsumables.Currency : default;
+            set { if (PlayerConsumables != null) { PlayerConsumables.Currency = value; } }
         }
-        public static int B_KeyBullets
+        public static int Keys
         {
-            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.KeyBullets : 0;
-            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.KeyBullets = value; } }
+            get => (PlayerConsumables != null) ? PlayerConsumables.KeyBullets : default;
+            set { if (PlayerConsumables != null) { PlayerConsumables.KeyBullets = value; } }
         }
-        public static int B_RatKeys
+        public static int RatResKeys
         {
-            get => (C_CarriedConsumables != null) ? C_CarriedConsumables.ResourcefulRatKeys : 0;
-            set { if (C_CarriedConsumables != null) { C_CarriedConsumables.ResourcefulRatKeys = value; } }
+            get => (PlayerConsumables != null) ? PlayerConsumables.ResourcefulRatKeys : default;
+            set { if (PlayerConsumables != null) { PlayerConsumables.ResourcefulRatKeys = value; } }
         }
 
 
@@ -92,17 +92,17 @@ namespace EnterTheGungeonPlugin
             PunchCtrl = null;
         }
 
-        public static float A_PunchTime
+        public static float PunchTime
         {
-            get => (PunchCtrl != null) ? PunchCtrl.Timer : 0f;
+            get => (PunchCtrl != null) ? PunchCtrl.Timer : default;
             set { if (PunchCtrl != null) { PunchCtrl.Timer = value; } }
         }
-        public static bool A_PunchTimerFreeze { get; set; } = false;
+        public static bool PunchTimerFreeze { get; set; } = false;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutController), nameof(PunchoutController.Timer), MethodType.Setter)]
         public static bool PunchoutController_Timer_Setter_Prefix(PunchoutController __instance, ref float value)
         {
-            if (A_PunchTimerFreeze)
+            if (PunchTimerFreeze)
             {
                 float currentTimer = __instance.Timer;
                 if (value < currentTimer) { return false; }
@@ -110,40 +110,40 @@ namespace EnterTheGungeonPlugin
             return true;
         }
 
-        public static PunchoutPlayerController C_PunchPlayer => (PunchCtrl != null) ? PunchCtrl.Player : null;
-        public static float A_PunchHealth
+        public static PunchoutPlayerController PunchPlayer => (PunchCtrl != null) ? PunchCtrl.Player : null;
+        public static float PunchHealth
         {
-            get => (C_PunchPlayer != null) ? C_PunchPlayer.Health : 0f;
-            set { if (C_PunchPlayer != null) { C_PunchPlayer.Health = value; } }
+            get => (PunchPlayer != null) ? PunchPlayer.Health : 0f;
+            set { if (PunchPlayer != null) { PunchPlayer.Health = value; } }
         }
         public enum PunchGodModeType { Off, ZeroDamage, SkipHit }
-        public static PunchGodModeType A_PunchGodMode { get; set; } = PunchGodModeType.Off;
+        public static PunchGodModeType PunchGodMode { get; set; } = PunchGodModeType.Off;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.Hit))]
         public static bool PunchoutPlayerController_Hit_Prefix(ref float damage)
         {
-            if (A_PunchGodMode == PunchGodModeType.SkipHit) { return false; }
-            if (A_PunchGodMode == PunchGodModeType.ZeroDamage) { damage = 0f; }
+            if (PunchGodMode == PunchGodModeType.SkipHit) { return false; }
+            if (PunchGodMode == PunchGodModeType.ZeroDamage) { damage = 0f; }
             return true;
         }
 
-        public static float A_PunchFat
+        public static float PunchFat
         {
-            get => (C_PunchPlayer != null) ? C_PunchPlayer.CurrentExhaust : 0f;
-            set { if (C_PunchPlayer != null) { C_PunchPlayer.CurrentExhaust = value; } }
+            get => (PunchPlayer != null) ? PunchPlayer.CurrentExhaust : default;
+            set { if (PunchPlayer != null) { PunchPlayer.CurrentExhaust = value; } }
         }
-        public static bool A_PunchNoFat { get; set; } = false;
+        public static bool PunchNoFat { get; set; } = false;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PunchoutPlayerController), nameof(PunchoutPlayerController.CurrentExhaust), MethodType.Setter)]
         public static void PunchoutPlayerController_CurrentExhaust_Setter_Prefix(ref float value)
         {
-            if (A_PunchNoFat) { value = 0f; }
+            if (PunchNoFat) { value = 0f; }
         }
 
-        public static int A_PunchStars
+        public static int PunchStars
         {
-            get => (C_PunchPlayer != null) ? C_PunchPlayer.Stars : 0;
-            set { if (C_PunchPlayer != null) { C_PunchPlayer.Stars = value; } }
+            get => (PunchPlayer != null) ? PunchPlayer.Stars : default;
+            set { if (PunchPlayer != null) { PunchPlayer.Stars = value; } }
         }
     }
 }

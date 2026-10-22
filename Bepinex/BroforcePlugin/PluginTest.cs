@@ -75,39 +75,39 @@ namespace BroforcePlugin
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"玩家:");
-            CheatFunc.A_PlayerNum = GUILayout.Toolbar(CheatFunc.A_PlayerNum, PlayerNumStrings);
+            CheatFunc.PlayerNum = GUILayout.Toolbar(CheatFunc.PlayerNum, PlayerNumStrings);
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
-            CheatFunc.A_GodMode = GUILayout.Toggle(CheatFunc.A_GodMode, "无敌");
+            CheatFunc.GodMode = GUILayout.Toggle(CheatFunc.GodMode, "无敌");
             GUILayout.Label($"生命数:");
-            tmp_curr_str = CheatFunc.A_Lives.ToString();
+            tmp_curr_str = CheatFunc.HP.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_Lives = tmp_int; }
+            { CheatFunc.HP = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
-            CheatFunc.A_InfAmmo = GUILayout.Toggle(CheatFunc.A_InfAmmo, "无限弹药");
+            CheatFunc.InfAmmo = GUILayout.Toggle(CheatFunc.InfAmmo, "无限弹药");
             GUILayout.Label($"弹药:");
-            tmp_curr_str = CheatFunc.A_Ammo.ToString();
+            tmp_curr_str = CheatFunc.Ammo.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_Ammo = tmp_int; }
+            { CheatFunc.Ammo = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
             GUILayout.Label($"InfMin:");
-            tmp_curr_str = CheatFunc.A_InfAmmoMin.ToString();
+            tmp_curr_str = CheatFunc.InfAmmoMin.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_InfAmmoMin = tmp_int; }
+            { CheatFunc.InfAmmoMin = tmp_int; }
 
             GUILayout.Label($"InfMax:");
-            tmp_curr_str = CheatFunc.A_InfAmmoMax.ToString();
+            tmp_curr_str = CheatFunc.InfAmmoMax.ToString();
             tmp_new_str = GUILayout.TextField(tmp_curr_str);
             if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
-            { CheatFunc.A_InfAmmoMax = tmp_int; }
+            { CheatFunc.InfAmmoMax = tmp_int; }
             GUILayout.EndHorizontal();
 
             GUILayout.BeginVertical();

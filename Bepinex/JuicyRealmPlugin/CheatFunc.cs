@@ -8,62 +8,60 @@ namespace JuicyRealmPlugin
 {
     public class CheatFunc
     {
-        public static DataManager C_DataManager => GameManager.GetManager<DataManager>();
-        public static LootManager C_LootManager => GameManager.GetManager<LootManager>();
-        public static LogicManager C_LogicManager => GameManager.GetManager<LogicManager>();
+        public static LogicManager LM => GameManager.GetManager<LogicManager>();
 
-        public static int A_PlayerNum { get; set; } = 0;
-        public static PlayerObject C_PlayerObj
+        public static int PlayerNum { get; set; } = 0;
+        public static PlayerObject PlayerObj
         {
             get
             {
-                LogicManager logic = C_LogicManager;
-                if (logic == null) { return null; }
+                LogicManager logic = LM;
+                if (logic == null) { return default; }
                 List<SCPlayer> players = logic.GetPlayers();
-                if (players == null) { return null; }
-                if (players.Count < 1) { return null; }
-                if (A_PlayerNum < 0 || A_PlayerNum >= players.Count) { return null; }
-                SCPlayer player = players[A_PlayerNum];
-                if (player == null) { return null; }
+                if (players == null) { return default; }
+                if (players.Count < 1) { return default; }
+                if (PlayerNum < 0 || PlayerNum >= players.Count) { return default; }
+                SCPlayer player = players[PlayerNum];
+                if (player == null) { return default; }
                 return player.creature;
             }
         }
-        public static float A_CurrentHp
+        public static float Health
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.CurrentHp : 0f;
-            set { if (C_PlayerObj != null) { C_PlayerObj.CurrentHp = value; } }
+            get => (PlayerObj != null) ? PlayerObj.CurrentHp : default;
+            set { if (PlayerObj != null) { PlayerObj.CurrentHp = value; } }
         }
-        public static float A_HpMax
+        public static float HealthMax
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.HpMax : 0f;
-            set { if (C_PlayerObj != null) { C_PlayerObj.HpMax = value; } }
+            get => (PlayerObj != null) ? PlayerObj.HpMax : default;
+            set { if (PlayerObj != null) { PlayerObj.HpMax = value; } }
         }
 
 
-        public static float A_CurrentShield
+        public static float Shield
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.CurrentShield : 0f;
-            set { if (C_PlayerObj != null) { C_PlayerObj.CurrentShield = value; } }
+            get => (PlayerObj != null) ? PlayerObj.CurrentShield : default;
+            set { if (PlayerObj != null) { PlayerObj.CurrentShield = value; } }
         }
-        public static float A_ShieldMax => (C_PlayerObj != null) ? C_PlayerObj.ShieldMax : 0f;
+        public static float ShieldMax => (PlayerObj != null) ? PlayerObj.ShieldMax : default;
 
 
-        public static float A_CurrentEnergy
+        public static float Energy
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.currentEnergy : 0f;
-            set { if (C_PlayerObj != null) { C_PlayerObj.currentEnergy = value; } }
+            get => (PlayerObj != null) ? PlayerObj.currentEnergy : default;
+            set { if (PlayerObj != null) { PlayerObj.currentEnergy = value; } }
         }
-        public static float A_EnergyMax
+        public static float EnergyMax
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.energyMax : 0f;
-            set { if (C_PlayerObj != null) { C_PlayerObj.energyMax = value; } }
+            get => (PlayerObj != null) ? PlayerObj.energyMax : default;
+            set { if (PlayerObj != null) { PlayerObj.energyMax = value; } }
         }
-        public static bool A_InfEnergy { get; set; } = false;
+        public static bool InfEnergy { get; set; } = false;
 
         [HarmonyPrefix, HarmonyPatch(typeof(PlayerObject), "UpdateView")]
         public static void PlayerObject_UpdateView_Prefix(PlayerObject __instance)
         {
-            if (A_InfEnergy)
+            if (InfEnergy)
             {
                 if (__instance.currentEnergy < __instance.energyMax)
                 {
@@ -73,23 +71,23 @@ namespace JuicyRealmPlugin
         }
 
 
-        public static int A_Coin
+        public static int Coin
         {
-            get => (C_PlayerObj != null) ? C_PlayerObj.Coin : 0;
-            set { if (C_PlayerObj != null) { C_PlayerObj.Coin = value; } }
+            get => (PlayerObj != null) ? PlayerObj.Coin : default;
+            set { if (PlayerObj != null) { PlayerObj.Coin = value; } }
         }
 
 
-        public static bool A_CanNotHurt => (C_PlayerObj != null) ? C_PlayerObj.CanNotBeHurt : false;
+        public static bool CanNotHurt => (PlayerObj != null) ? PlayerObj.CanNotBeHurt : default;
         public static void A_GodModeOn()
         {
-            PlayerObject player = C_PlayerObj;
+            PlayerObject player = PlayerObj;
             if (player == null) { return; }
             Traverse.Create(player).Field("canNotHurt").GetValue<MultiBool>().SetTrue("debug_no_hurt");
         }
         public static void A_GodModeOff()
         {
-            PlayerObject player = C_PlayerObj;
+            PlayerObject player = PlayerObj;
             if (player == null) { return; }
             Traverse.Create(player).Field("canNotHurt").GetValue<MultiBool>().SetFalse("debug_no_hurt");
         }
