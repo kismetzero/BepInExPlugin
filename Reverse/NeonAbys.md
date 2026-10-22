@@ -7,6 +7,13 @@ NEON.Framework.InGameConsole.ProcessCommand();
 Services.GameState.IsNoAchievement = true;
 neonplayerState.HasUseConsole = true; 
 
+BossCoins       // 信仰宝石
+FinalCoins      // 
+AbyssCoins      // 深渊水晶
+ExchangeCoins   // 
+
+NEONPlayerState ps = (NEONPlayerState)Global.PlayerState;
+
 ```
 
 ### 参考
@@ -69,6 +76,7 @@ public class NEONPlayerState : PlayerState {
 NEON.Framework
 ```csharp
 public struct PlayerStateInt { }
+
 public class InGameConsole : PersistentService {
     private void ProcessCommand();
 }
@@ -76,18 +84,47 @@ public class InGameConsole : PersistentService {
 public class GameState : PersistentService {
     public bool IsNoAchievement { get; set; }
 }
+
+public class Global : MonoBehaviour {
+    public static PlayerState PlayerState
+    {
+        get
+        {
+            return Global.GetPlayerState<PlayerState>();
+        }
+    }
+
+    public static T GetPlayerState<T>() where T : PlayerState
+    {
+        if (Global.Instance == null)
+        {
+            return default(T);
+        }
+        if (Global.Instance._playerState == null)
+        {
+            Global.Instance._playerState = Global.GetService<PlayerState>(true);
+        }
+        return Global.Instance._playerState as T;
+    }
+
+    public static T GetService<T>(bool noCreate = false) where T : Service;
+}
+
+public class PlayerState : Service {
+    public Attri attrs = new Attri();
+}
+```
+
+NEON.Game.Managers
+```csharp
+public class NEONPlayerState : PlayerState {
+    public bool HasUseConsole { get; set; }
+}
 ```
 
 NEON.UI.UnlockSystem.Service
 ```csharp
 public class UnlockService : UnlockServiceBase {
-    public int IncAbyssCoins(int coins)
-    {
-        base.Data.AbyssCoins += coins;
-        base.Data.AbyssCoins = Mathf.Max(0, base.Data.AbyssCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.AbyssCoins;
-    }
     public int IncBossCoins(int coins)
     {
         base.Data.BossCoins += coins;
@@ -98,13 +135,6 @@ public class UnlockService : UnlockServiceBase {
         base.Data.BossCoins = Mathf.Max(0, base.Data.BossCoins);
         this._anyUnlockableCacheDirty = true;
         return base.Data.BossCoins;
-    }
-    public int IncExchangeCoins(int coins)
-    {
-        base.Data.ExchangeCoins += coins;
-        base.Data.ExchangeCoins = Mathf.Max(0, base.Data.ExchangeCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.ExchangeCoins;
     }
     public int IncFinalCoins(int coins)
     {
@@ -117,10 +147,24 @@ public class UnlockService : UnlockServiceBase {
         this._anyUnlockableCacheDirty = true;
         return base.Data.FinalCoins;
     }
+    public int IncAbyssCoins(int coins)
+    {
+        base.Data.AbyssCoins += coins;
+        base.Data.AbyssCoins = Mathf.Max(0, base.Data.AbyssCoins);
+        this._anyUnlockableCacheDirty = true;
+        return base.Data.AbyssCoins;
+    }
+    public int IncExchangeCoins(int coins)
+    {
+        base.Data.ExchangeCoins += coins;
+        base.Data.ExchangeCoins = Mathf.Max(0, base.Data.ExchangeCoins);
+        this._anyUnlockableCacheDirty = true;
+        return base.Data.ExchangeCoins;
+    }
 }
 
 public abstract class UnlockServiceBase : PersistentService {
-    protected UnlockSystemData Data { get { eturn Services.SaveDataService.Data.UnlockSystemData; } }
+    protected UnlockSystemData Data { get { return Services.SaveDataService.Data.UnlockSystemData; } }
 }
 ```
 

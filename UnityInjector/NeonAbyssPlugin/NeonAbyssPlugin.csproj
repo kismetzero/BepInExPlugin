@@ -47,7 +47,7 @@
     <Copy
       Condition=" '$(_GameAvailable)' == 'true' "
       SourceFiles="$(TargetPath)"
-      DestinationFolder="$(_GameMainDir)"
+      DestinationFolder="C:\PF\GameTools\SharpMonoInjector2.5"
       SkipUnchangedFiles="true"
       OverwriteReadOnlyFiles="true"
       Retries="3"
