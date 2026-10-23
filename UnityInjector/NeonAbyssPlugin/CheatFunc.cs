@@ -4,62 +4,90 @@ namespace NeonAbyssPlugin
 {
     public class CheatFunc
     {
-        public static NEON.UI.UnlockSystem.Service.UnlockService UnlockService => Global.GetService<NEON.UI.UnlockSystem.Service.UnlockService>(true);
         public static NEON.Framework.SaveData.SaveDataService SaveDataService => Global.GetService<NEON.Framework.SaveData.SaveDataService>(true);
         public static NEON.Framework.SaveData.SaveData SaveData => (SaveDataService != null) ? SaveDataService.Data : default;
         public static NEON.UI.UnlockSystem.Data.UnlockSystemData UnlockSystemData => (SaveData != null) ? SaveData.UnlockSystemData : default;
+        public static NEON.UI.UnlockSystem.Service.UnlockService UnlockService => Global.GetService<NEON.UI.UnlockSystem.Service.UnlockService>(true);
         public static int BossCoins
         {
             get => (UnlockSystemData != null) ? UnlockSystemData.BossCoins : default;
-            set { if (UnlockSystemData != null) { UnlockSystemData.BossCoins = value; } }
+            set
+            {
+                if (UnlockService == null || UnlockSystemData == null) { return; }
+                int delta = value - UnlockSystemData.BossCoins;
+                if (delta != 0) { UnlockService.IncBossCoins(delta); }
+            }
         }
         public static int FinalCoins
         {
             get => (UnlockSystemData != null) ? UnlockSystemData.FinalCoins : default;
-            set { if (UnlockSystemData != null) { UnlockSystemData.FinalCoins = value; } }
+            set
+            {
+                if (UnlockService == null || UnlockSystemData == null) { return; }
+                int delta = value - UnlockSystemData.BossCoins;
+                if (delta != 0) { UnlockService.IncFinalCoins(delta); }
+            }
         }
         public static int AbyssCoins
         {
             get => (UnlockSystemData != null) ? UnlockSystemData.AbyssCoins : default;
-            set { if (UnlockSystemData != null) { UnlockSystemData.AbyssCoins = value; } }
+            set
+            {
+                if (UnlockService == null || UnlockSystemData == null) { return; }
+                int delta = value - UnlockSystemData.BossCoins;
+                if (delta != 0) { UnlockService.IncAbyssCoins(delta); }
+            }
         }
         public static int ExchangeCoins
         {
             get => (UnlockSystemData != null) ? UnlockSystemData.ExchangeCoins : default;
-            set { if (UnlockSystemData != null) { UnlockSystemData.ExchangeCoins = value; } }
+            set
+            {
+                if (UnlockService == null || UnlockSystemData == null) { return; }
+                int delta = value - UnlockSystemData.BossCoins;
+                if (delta != 0) { UnlockService.IncExchangeCoins(delta); }
+            }
         }
 
         public static PlayerState PS => Global.PlayerState;
         public static Attri PlayerAttri => (PS != null) ? PS.attrs : null;
+        public static NEON.Game.Managers.NEONPlayerState NPS => Global.PlayerState as NEON.Game.Managers.NEONPlayerState;
+        public static NEON.Game.GameModes.ControlPlayerMode CPM => Global.GetGameMode<NEON.Game.GameModes.ControlPlayerMode>();
+        public static NEON.Game.Actors.PlayerActor PA => (CPM != null) ? CPM.Player : default;
+        public static bool GodMode
+        {
+            get => (PA != null) ? PA._hearts.isInvincible : default;
+            set { if (PA != null) { PA._hearts.isInvincible = value; } }
+        }
         public static int Health
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("CurrentHearts") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentHearts", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentHearts", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int HealthMax
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("MaxHearts") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxHearts", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxHearts", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int Shields
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("CurrentShields") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentShields", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentShields", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int ShieldsMax
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("MaxShields") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxShields", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxShields", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int Mana
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("CurrentMana") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentMana", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("CurrentMana", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int ManaMax
         {
             get => (PlayerAttri != null) ? PlayerAttri.i("MaxMana") : default;
-            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxMana", value); } }
+            set { if (PlayerAttri != null) { PlayerAttri.Set("MaxMana", value); NPS.RefreshTopLeftUi(); } }
         }
         public static int Coin
         {

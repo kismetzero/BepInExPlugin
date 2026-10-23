@@ -4,15 +4,13 @@
 ```csharp
 // 移除控制台惩罚
 NEON.Framework.InGameConsole.ProcessCommand();
-Services.GameState.IsNoAchievement = true;
-neonplayerState.HasUseConsole = true; 
+Services.GameState.IsNoAchievement = true;  // 改成 false
+neonplayerState.HasUseConsole = true;       // 改成 false
 
 BossCoins       // 信仰宝石
 FinalCoins      // 
 AbyssCoins      // 深渊水晶
 ExchangeCoins   // 
-
-NEONPlayerState ps = (NEONPlayerState)Global.PlayerState;
 
 ```
 
@@ -24,11 +22,11 @@ public static class Services {
 	{
 		get
 		{
-			if (Services.XxxService == null)
+			if (Services._XxxService == null)
 			{
-				Services.XxxService = Global.GetService<XxxService>(false);
+				Services._XxxService = Global.GetService<XxxService>(false);
 			}
-			return Services.XxxService;
+			return Services._XxxService;
 		}
 	}
     public static GameState GameState { get; }
@@ -38,9 +36,92 @@ public static class Services {
 }
 ```
 
+NEON.Framework
+```csharp
+public class Attri {
+    public FixedValueDict FixedValues = new FixedValueDict();
+    public StringString Formulas = new StringString();
+    public StringRange ClampList = new StringRange();
+}
+public class FixedValueDict : Dict<string, double> {}
+public class StringString : Dict<string, string> {}
+public class StringRange : Dict<string, Vector2> {}
+
+public abstract class GameMode : MonoBehaviour {
+    public PlayerState playerState { get; private set; }
+}
+
+public class GameState : PersistentService {
+    public bool IsNoAchievement { get; set; }
+}
+
+public class Global : MonoBehaviour {
+    public static T GetGameMode<T>() where T : GameMode;
+    public static Global Instance { get; }
+    public static GameState Gamestate { get; }
+    public static PlayerState PlayerState { get { return Global.GetPlayerState<PlayerState>(); } }
+    public static T GetPlayerState<T>() where T : PlayerState;
+    public static T GetService<T>(bool noCreate = false) where T : Service;
+}
+
+public class InGameConsole : PersistentService {
+    private void ProcessCommand();
+}
+
+public class PlayerState : Service {
+    public Attri attrs = new Attri();
+}
+
+public struct PlayerStateInt { }
+```
+
+NEON.Game
+```csharp
+public class Hearts : Killable {
+    public int currentArmor { get; set; }
+    public int currentHearts { get; set; }
+    private NEONPlayerState ps { get { return (Global.PlayerState as NEONPlayerState) ?? UnityEngine.Object.FindObjectOfType<NEONPlayerState>(); } }
+    private PlayerActor player { get { return Global.GetGameMode<ControlPlayerMode>().Player; } }
+    public int maxHearts { get; set; }
+    public int maxArmor { get; set; }
+    protected override bool DeductHP(DamageInfo damageInfo, int DamageCountThisFrame);
+    public bool isInvincible;
+    public bool UnKillable;
+}
+
+public abstract class Killable : MonoBehaviour {
+    public bool TakeDamage(DamageInfo damage);
+    protected abstract bool DeductHP(DamageInfo damageInfo, int damagedCount);
+    public bool isGodLike;
+}
+```
+
+NEON.Game.Actors
+```csharp
+public class PlayerActor : Actor, IExternalForceHandler, IEqualityComparer {
+    private NEONPlayerState ps { get { return Global.PlayerState as NEONPlayerState; } }
+    public bool canJump { get { return this.isOnGround; } }
+    public override bool isOnGround { get; set; }
+    public Hearts _hearts;
+}
+```
+
+NEON.Game.GameModes
+```csharp
+public class BattleMode : ControlPlayerMode, ILoading {
+    public void SaveInGameProgress(bool incrementLevel = false);
+}
+
+public abstract class ControlPlayerMode : GameMode {
+    public PlayerActor Player;
+}
+```
+
 NEON.Game.Managers
 ```csharp
 public class NEONPlayerState : PlayerState {
+    public bool HasUseConsole { get; set; }
+
     public void AddKey(int amount);
     public void AddCoin(int amount);
     public void AddMana(int value);
@@ -73,98 +154,14 @@ public class NEONPlayerState : PlayerState {
 }
 ```
 
-NEON.Framework
+NEON.Framework.SaveData
 ```csharp
-public struct PlayerStateInt { }
-
-public class InGameConsole : PersistentService {
-    private void ProcessCommand();
+public class SaveDataService : SaveDataServiceBase {
+    public SaveData Data;
 }
 
-public class GameState : PersistentService {
-    public bool IsNoAchievement { get; set; }
-}
-
-public class Global : MonoBehaviour {
-    public static PlayerState PlayerState
-    {
-        get
-        {
-            return Global.GetPlayerState<PlayerState>();
-        }
-    }
-
-    public static T GetPlayerState<T>() where T : PlayerState
-    {
-        if (Global.Instance == null)
-        {
-            return default(T);
-        }
-        if (Global.Instance._playerState == null)
-        {
-            Global.Instance._playerState = Global.GetService<PlayerState>(true);
-        }
-        return Global.Instance._playerState as T;
-    }
-
-    public static T GetService<T>(bool noCreate = false) where T : Service;
-}
-
-public class PlayerState : Service {
-    public Attri attrs = new Attri();
-}
-```
-
-NEON.Game.Managers
-```csharp
-public class NEONPlayerState : PlayerState {
-    public bool HasUseConsole { get; set; }
-}
-```
-
-NEON.UI.UnlockSystem.Service
-```csharp
-public class UnlockService : UnlockServiceBase {
-    public int IncBossCoins(int coins)
-    {
-        base.Data.BossCoins += coins;
-        if (coins > 0)
-        {
-            Global.GetService<AchievementService>(false).AchievementBossCoinGet(coins);
-        }
-        base.Data.BossCoins = Mathf.Max(0, base.Data.BossCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.BossCoins;
-    }
-    public int IncFinalCoins(int coins)
-    {
-        base.Data.FinalCoins += coins;
-        if (coins > 0)
-        {
-            Global.GetService<AchievementService>(false).AchievementBossCoinGet(coins);
-        }
-        base.Data.FinalCoins = Mathf.Max(0, base.Data.FinalCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.FinalCoins;
-    }
-    public int IncAbyssCoins(int coins)
-    {
-        base.Data.AbyssCoins += coins;
-        base.Data.AbyssCoins = Mathf.Max(0, base.Data.AbyssCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.AbyssCoins;
-    }
-    public int IncExchangeCoins(int coins)
-    {
-        base.Data.ExchangeCoins += coins;
-        base.Data.ExchangeCoins = Mathf.Max(0, base.Data.ExchangeCoins);
-        this._anyUnlockableCacheDirty = true;
-        return base.Data.ExchangeCoins;
-    }
-}
-
-public abstract class UnlockServiceBase : PersistentService {
-    protected UnlockSystemData Data { get { return Services.SaveDataService.Data.UnlockSystemData; } }
+public class SaveData {
+    public UnlockSystemData UnlockSystemData = new UnlockSystemData();
 }
 ```
 
@@ -178,20 +175,16 @@ public class UnlockSystemData {
 }
 ```
 
-NEON.Framework.SaveData
+NEON.UI.UnlockSystem.Service
 ```csharp
-public class SaveDataService : SaveDataServiceBase {
-    public SaveData Data;
+public class UnlockService : UnlockServiceBase {
+    public int IncBossCoins(int coins);
+    public int IncFinalCoins(int coins);
+    public int IncAbyssCoins(int coins);
+    public int IncExchangeCoins(int coins);
 }
 
-public class SaveData {
-    public UnlockSystemData UnlockSystemData = new UnlockSystemData();
-}
-```
-
-NEON.Game.GameModes
-```csharp
-public class BattleMode : ControlPlayerMode, ILoading {
-    public void SaveInGameProgress(bool incrementLevel = false);
+public abstract class UnlockServiceBase : PersistentService {
+    protected UnlockSystemData Data { get { return Services.SaveDataService.Data.UnlockSystemData; } }
 }
 ```
