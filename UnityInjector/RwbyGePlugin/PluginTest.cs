@@ -1,8 +1,5 @@
-﻿using System;
-using System.Reflection;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-using static PunTeams;
 
 namespace RwbyGePlugin
 {
@@ -39,7 +36,7 @@ namespace RwbyGePlugin
             }
         }
         public bool WindowsDisplay { get; set; }
-        public Rect windowRect = new Rect(100f, 100f, 500f, 600f); // 定义窗口位置 x y 宽 高
+        public Rect windowRect = new Rect(100f, 100f, 300f, 600f); // 定义窗口位置 x y 宽 高
         void OnGUI()
         {
             if (WindowsDisplay)
@@ -52,6 +49,10 @@ namespace RwbyGePlugin
             }
         }
         public Vector2 scrollPos;
+        public int tmp_int = 0;
+        public float tmp_float = 0;
+        public string tmp_curr_str;
+        public string tmp_new_str;
 
         public void WindowFunc(int id)
         {
@@ -60,62 +61,70 @@ namespace RwbyGePlugin
             GUILayout.Label($"Cursor.visible = {Cursor.visible}");
             GUILayout.EndHorizontal();
 
+
             GUILayout.BeginHorizontal();
-            GUILayout.Toggle(UeLoader.test1, "test1");
-            GUILayout.Toggle(UeLoader.test2, "test2");
-            GUILayout.Toggle(UeLoader.test3, "test3");
-            GUILayout.Toggle(UeLoader.test4, "test4");
-            GUILayout.Toggle(UeLoader.test5, "test5");
+            GlobalSettings.GodMode = GUILayout.Toggle(GlobalSettings.GodMode, "GodMode");
+
+            GUILayout.Label($"HP:");
+            tmp_curr_str = CheatFunc.Health.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.Health = tmp_int; }
+            GUILayout.Label($"/");
+            tmp_curr_str = CheatFunc.HealthMax.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.HealthMax = tmp_int; }
             GUILayout.EndHorizontal();
 
-            if (GUILayout.Button("UeInit")) { UeInit(); }
-            GUILayout.Label($"test_str = {test_str}");
+            GUILayout.BeginHorizontal();
+            GUILayout.Label($"S:");
+            tmp_curr_str = CheatFunc.Shields.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.Shields = tmp_int; }
+            GUILayout.Label($"/");
+            tmp_curr_str = CheatFunc.ShieldsMax.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.ShieldsMax = tmp_int; }
+
+            GUILayout.Label($"SP:");
+            tmp_curr_str = CheatFunc.Special.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.Special = tmp_int; }
+            GUILayout.Label($"/");
+            tmp_curr_str = CheatFunc.SpecialMax.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.SpecialMax = tmp_int; }
+            GUILayout.EndHorizontal();
+
+            GUILayout.BeginHorizontal();
+            if (GUILayout.Button("AddExp")) { CheatFunc.AddExp(999); }
+            GUILayout.Label($"经验: {CheatFunc.Experience}");
+
+            GUILayout.Label($"技能点:");
+            tmp_curr_str = CheatFunc.SkillPoints.ToString();
+            tmp_new_str = GUILayout.TextField(tmp_curr_str);
+            if (tmp_new_str != tmp_curr_str && int.TryParse(tmp_new_str, out tmp_int))
+            { CheatFunc.SkillPoints = tmp_int; }
+            GUILayout.EndHorizontal();
+
+            GlobalSettings.IgnorePrestigeRequirements = GUILayout.Toggle(GlobalSettings.IgnorePrestigeRequirements, "无条件");
 
             GUILayout.BeginVertical();
             scrollPos = GUILayout.BeginScrollView(scrollPos);
 
-            // foreach (var obj in GameObject.FindObjectsOfType<GameObject>()) { GUILayout.Label($"{obj.name}"); }
+            foreach (var obj in GameObject.FindObjectsOfType<GameObject>()) { GUILayout.Label($"{obj.name}"); }
 
-            foreach (var asm in AppDomain.CurrentDomain.GetAssemblies())
-            {
-                GUILayout.Label($"{asm.GetName().Name}");
-            }
+            //foreach (var asm in AppDomain.CurrentDomain.GetAssemblies()) { GUILayout.Label($"{asm.GetName().Name}"); }
 
             GUILayout.EndScrollView();
             GUILayout.EndVertical();
 
             GUI.DragWindow();
-        }
-
-        public string test_str = "null";
-        public void UeInit()
-        {
-            if (UeLoader.UeAsm == null)
-            {
-                test_str = $"fail: UeLoader.UeAsm == null";
-                return;
-            }
-            Type type = UeLoader.UeAsm.GetType("UnityExplorer.ExplorerStandalone");
-            if (type == null)
-            {
-                test_str = $"fail: type == null";
-                return;
-            }
-            MethodInfo methodinfo = type.GetMethod("CreateInstance", BindingFlags.Public | BindingFlags.Static, null, Type.EmptyTypes, null);
-            if (methodinfo == null)
-            {
-                test_str = $"fail: methodinfo == null";
-                return;
-            }
-            try
-            {
-                var res = methodinfo.Invoke(null, null);
-                test_str = $"sccess: {res}";
-            }
-            catch (Exception e)
-            {
-                test_str = $"fail: {e.Message}";
-            }
         }
     }
 }
