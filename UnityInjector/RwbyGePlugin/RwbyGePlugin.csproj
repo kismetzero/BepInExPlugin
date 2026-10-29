@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <RootNamespace>RwbyGePlugin</RootNamespace>
+    <AssemblyName>RwbyGePlugin</AssemblyName>
+
+    <Version>1.0.0</Version>
+    <Authors>YourName</Authors>
+    <Description>RWBY GE BepInEx Plugin</Description>
+    <Company>YourStudio</Company>
+    <Copyright>Copyright © 2026 YourName</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <_GameMainDir>$(GameRootDir)\RWBY_GE</_GameMainDir>
+    <_GameManagedDir>$(_GameMainDir)\rwby-ge_Data\Managed</_GameManagedDir>
+    <_GameAvailable Condition="Exists('$(_GameManagedDir)\Assembly-CSharp.dll')">true</_GameAvailable>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(_GameAvailable)' == 'true' ">
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(_GameManagedDir)\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(_GameManagedDir)\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(_GameAvailable)' != 'true'">
+    <Compile Remove="**\*.cs" />
+  </ItemGroup>
+
+  <Target Name="CopyToPlugin" AfterTargets="Build">
+    <Message Condition=" '$(_GameAvailable)' != 'true' " Text="$(TargetName) 构建失败！游戏不存在。" Importance="High" />
+    <Copy Condition=" '$(_GameAvailable)' == 'true' " SourceFiles="$(TargetPath)" DestinationFolder="C:\PF\GameTools\SharpMonoInjector2.5" SkipUnchangedFiles="true" OverwriteReadOnlyFiles="true" Retries="3" RetryDelayMilliseconds="1000" />
+    <Message Condition=" '$(_GameAvailable)' == 'true' " Text="$(TargetName) -&gt; $(_GameBepInExPluginDir)" Importance="High" />
+  </Target>
+
+</Project>

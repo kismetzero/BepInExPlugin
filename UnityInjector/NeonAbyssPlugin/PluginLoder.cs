@@ -4,12 +4,12 @@ namespace NeonAbyssPlugin
 {
     public class PluginLoader
     {
-        public static GameObject NeonAbyssPluginInstance;
+        public static GameObject PluginInstance;
         public static void Load()
         {
-            NeonAbyssPluginInstance = new GameObject();
-            NeonAbyssPluginInstance.AddComponent<PluginTest>();
-            UnityEngine.GameObject.DontDestroyOnLoad(NeonAbyssPluginInstance);
+            PluginInstance = new GameObject();
+            PluginInstance.AddComponent<PluginTest>();
+            UnityEngine.GameObject.DontDestroyOnLoad(PluginInstance);
         }
     }
 }

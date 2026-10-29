@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.37710.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeonAbyssPlugin", "NeonAbyssPlugin\NeonAbyssPlugin.csproj", "{3C03AB52-1C23-0B49-8878-85FEFAA1DE1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RwbyGePlugin", "RwbyGePlugin\RwbyGePlugin.csproj", "{8CD818A9-B06C-46C3-82A0-85F802499B00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3C03AB52-1C23-0B49-8878-85FEFAA1DE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C03AB52-1C23-0B49-8878-85FEFAA1DE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C03AB52-1C23-0B49-8878-85FEFAA1DE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD818A9-B06C-46C3-82A0-85F802499B00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD818A9-B06C-46C3-82A0-85F802499B00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD818A9-B06C-46C3-82A0-85F802499B00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD818A9-B06C-46C3-82A0-85F802499B00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

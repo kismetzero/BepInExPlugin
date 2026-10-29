@@ -1,5 +1,7 @@
 ﻿using NEON.Framework;
+using System;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -136,6 +138,7 @@ namespace NeonAbyssPlugin
 
             GUILayout.BeginVertical();
             scrollPos = GUILayout.BeginScrollView(scrollPos);
+
             Attri playerAttri = CheatFunc.PlayerAttri;
             if (playerAttri != null)
             {
@@ -154,6 +157,7 @@ namespace NeonAbyssPlugin
                     GUILayout.Label($"[ClampList] {kv.Key} = [{kv.Value.x}, {kv.Value.y}]");
                 }
             }
+
             GUILayout.EndScrollView();
             GUILayout.EndVertical();
 
